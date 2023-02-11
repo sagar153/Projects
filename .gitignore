@@ -3,3 +3,6 @@
 ################################################################################
 
 /FactoryManagementSystem/.vs
+/FactoryManagementSystem/bin
+/FactoryManagementSystem/obj/Debug
+/FactoryManagementSystem/packages

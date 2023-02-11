@@ -62,13 +62,38 @@
         <div class='dashboard'>
             <div class="dashboard-nav">
                 <header>
-                    <a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a><a href="#"
+                    <a href="#" class="menu-toggle"><i class="fas fa-bars"></i></a><a href="#"
                         class="brand-logo"><i
                             class="fas fa-anchor"></i><span>Welcome</span></a>
                 </header>
                 <nav class="dashboard-nav-list">
-                    <a href="#" class="dashboard-nav-item"><i class="fas fa-industry"></i>Factory </a>
-                    <a href="#" class="dashboard-nav-item"><i class="fas fa-wrench"></i>Production </a>
+                    <%--<a href="#" class="dashboard-nav-item"><i class="fas fa-industry"></i>Factory </a>--%>
+                    <div class='dashboard-nav-dropdown'>
+                        <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i
+                            class="fas fa-industry"></i>Factory </a>
+                        <div class='dashboard-nav-dropdown-menu'>
+                            <a href="#" class="dashboard-nav-dropdown-item">Companies</a>
+                            <a href="#" class="dashboard-nav-dropdown-item">Bins</a>  
+                            <a href="#" class="dashboard-nav-dropdown-item">InTake</a>
+                            <a href="#" class="dashboard-nav-dropdown-item">OutWard</a>  
+                            <a href="#" class="dashboard-nav-dropdown-item">Shelling</a>                           
+                        </div>
+                    </div>
+
+                    <%--<a href="#" class="dashboard-nav-item"><i class="fas fa-wrench"></i>Production </a>--%>
+                    <div class='dashboard-nav-dropdown'>
+                        <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i
+                            class="fas fa-wrench"></i>Production </a>
+                        <div class='dashboard-nav-dropdown-menu'>
+                            <a href="#" class="dashboard-nav-dropdown-item">Varieties</a>
+                            <a href="#" class="dashboard-nav-dropdown-item">Acres</a>  
+                            <a href="#" class="dashboard-nav-dropdown-item">Areas</a>
+                            <a href="#" class="dashboard-nav-dropdown-item">Organisers</a>  
+                            <a href="#" class="dashboard-nav-dropdown-item">Farmers</a> 
+                            <a href="#" class="dashboard-nav-dropdown-item">Advances</a>
+                            <a href="#" class="dashboard-nav-dropdown-item">Companies</a>                         
+                        </div>
+                    </div>
                     <a href="#" class="dashboard-nav-item"><i class="fas fa-users"></i>Users </a>
                     
                     <div class='dashboard-nav-dropdown'>
@@ -86,8 +111,10 @@
                 </nav>
             </div>
             <div class='dashboard-app'>
+                <div style="padding:5px;">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>
+                    </div>
                 <header class='dashboard-toolbar'>
                     <a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a>
                     <h1 style="text-align: center; color: black; width: 100%;">Factory Management System</h1>

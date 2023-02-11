@@ -15,7 +15,9 @@ CREATE PROCEDURE [dbo].[spProductionCRUD]
     -- Add the parameters for the stored procedure here  
 	@ProductionId int,
 	@Year nvarchar(50),
-	@Organiser nvarchar(100),  
+	@OrganiserId int,  
+	@FatherName varchar(100),
+	@Mobile int,
     @FarmerName nvarchar(100), 
 	@ACRES decimal(18, 2),
 	@Variety nvarchar(50),
@@ -47,7 +49,9 @@ BEGIN
     BEGIN  
         INSERT INTO [dbo].[Production]
            ([Year]
-           ,[Organiser]
+           ,[OrganiserId]
+		   ,[FatherName]
+		   ,[Mobile]
            ,[FarmerName]
            ,[ACRES]
            ,[Variety]
@@ -62,7 +66,9 @@ BEGIN
            ,[Remarks])
      VALUES
            (@Year
-           ,@Organiser
+           ,@OrganiserId
+		   ,@FatherName
+		   ,@Mobile
            ,@FarmerName
            ,@ACRES
            ,@Variety
@@ -80,7 +86,9 @@ BEGIN
     BEGIN  
         UPDATE [dbo].[Production] SET
             [Year] = @Year
-           ,[Organiser] = @Organiser
+           ,[OrganiserId] = @OrganiserId
+		   ,[FatherName] = @FatherName
+		   ,[Mobile] = @Mobile
            ,[FarmerName] = @FarmerName
            ,[ACRES] = @ACRES
            ,[Variety]= @Variety
@@ -103,7 +111,9 @@ BEGIN
     BEGIN  
         SELECT * FROM [dbo].[Production] 
 		WHERE [Year] = @Year
-           OR [Organiser] = @Organiser
+           OR [OrganiserId] = @OrganiserId
+		   OR [FatherName] = @FatherName
+		   OR [Mobile] = @Mobile
            OR [FarmerName] = @FarmerName
            OR [ACRES] = @ACRES
            OR [Variety]= @Variety

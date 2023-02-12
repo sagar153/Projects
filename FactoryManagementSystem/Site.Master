@@ -100,7 +100,19 @@
                         <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i
                             class="fas fa-user-cog"></i>Admin </a>
                         <div class='dashboard-nav-dropdown-menu'>
-                            <a href="#" class="dashboard-nav-dropdown-item">Factory</a>
+                           <%-- <a href="#" class="dashboard-nav-dropdown-item">Factory</a>--%>
+                            <div class='dashboard-nav-dropdown'>
+                        <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i
+                            class="fas fa-industry"></i>Factory </a>
+                        <div class='dashboard-nav-dropdown-menu'>
+                            <a href="#" class="dashboard-nav-dropdown-item">Companies</a>
+                            <a href="/Factory/Admin/Bins.aspx" class="dashboard-nav-dropdown-item">Bins</a>  
+                            <a href="#" class="dashboard-nav-dropdown-item">InTake</a>
+                            <a href="#" class="dashboard-nav-dropdown-item">OutWard</a>  
+                            <a href="#" class="dashboard-nav-dropdown-item">Shelling</a>                           
+                        </div>
+                    </div>
+
                             <a href="#" class="dashboard-nav-dropdown-item">Production</a>                           
                         </div>
                     </div>

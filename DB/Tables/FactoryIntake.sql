@@ -1,7 +1,7 @@
 USE [FactoryManagement]
 GO
 
-/****** Object:  Table [dbo].[FactoryIntake]    Script Date: 11-02-2023 14:50:36 ******/
+/****** Object:  Table [dbo].[FactoryIntake]    Script Date: 12-02-2023 22:47:03 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -9,8 +9,9 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[FactoryIntake](
-	[FactoryIntakeId] [int] NOT NULL,
+	[FactoryIntakeId] [int] IDENTITY(1,1) NOT NULL,
 	[CompanyId] [int] NOT NULL,
+	[Year] [varchar](50) NOT NULL,
 	[Date] [datetime] NOT NULL,
 	[LorryNo] [varchar](50) NOT NULL,
 	[Variety] [varchar](50) NOT NULL,

@@ -1,7 +1,7 @@
 USE [FactoryManagement]
 GO
 
-/****** Object:  Table [dbo].[BinMoist]    Script Date: 11-02-2023 14:49:20 ******/
+/****** Object:  Table [dbo].[BinMoist]    Script Date: 12-02-2023 22:45:27 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -9,8 +9,9 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[BinMoist](
-	[BinDailyMoistId] [int] NOT NULL,
+	[BinDailyMoistId] [int] IDENTITY(1,1) NOT NULL,
 	[BinId] [int] NOT NULL,
+	[Year] [varchar](50) NOT NULL,
 	[Date] [datetime] NOT NULL,
 	[CompanyId] [int] NOT NULL,
 	[Variety] [varchar](100) NOT NULL,

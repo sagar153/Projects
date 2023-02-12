@@ -1,7 +1,7 @@
 USE [FactoryManagement]
 GO
 
-/****** Object:  Table [dbo].[Bins]    Script Date: 11-02-2023 14:50:05 ******/
+/****** Object:  Table [dbo].[Bins]    Script Date: 12-02-2023 22:46:34 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -9,7 +9,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[Bins](
-	[BinId] [int] NOT NULL,
+	[BinId] [int] IDENTITY(1,1) NOT NULL,
 	[BinName] [varchar](50) NOT NULL,
 	[isActive] [bit] NOT NULL,
  CONSTRAINT [PK_Bins] PRIMARY KEY CLUSTERED 

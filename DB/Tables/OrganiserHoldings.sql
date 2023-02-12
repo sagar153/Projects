@@ -1,7 +1,7 @@
 USE [FactoryManagement]
 GO
 
-/****** Object:  Table [dbo].[OrganiserHoldings]    Script Date: 07-02-2023 19:26:19 ******/
+/****** Object:  Table [dbo].[OrganiserHoldings]    Script Date: 12-02-2023 22:47:52 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -9,7 +9,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[OrganiserHoldings](
-	[Id] [int] NOT NULL,
+	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[OrganiserId] [int] NOT NULL,
 	[Variety] [nvarchar](500) NOT NULL,
 	[Area] [nvarchar](100) NOT NULL,

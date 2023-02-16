@@ -46,7 +46,7 @@
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\WebApplication2\WebApplication2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <HintPath>bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -113,6 +113,9 @@
     <Content Include="Content\main.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Factory\Admin\Bins.aspx" />
+    <Content Include="Factory\Admin\Companies.aspx" />
+    <Content Include="Factory\User\Companies.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -176,6 +179,8 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DAL\BinDAL.cs" />
+    <Compile Include="DAL\CompanieDAL.cs" />
     <Compile Include="DAL\ProductionDAL.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -184,10 +189,32 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Factory\Admin\Bins.aspx.cs">
+      <DependentUpon>Bins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Factory\Admin\Bins.aspx.designer.cs">
+      <DependentUpon>Bins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Factory\Admin\Companies.aspx.cs">
+      <DependentUpon>Companies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Factory\Admin\Companies.aspx.designer.cs">
+      <DependentUpon>Companies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Factory\User\Companies.aspx.cs">
+      <DependentUpon>Companies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Factory\User\Companies.aspx.designer.cs">
+      <DependentUpon>Companies.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\SQLDataAccessHelper.cs" />
+    <Compile Include="Models\Bin.cs" />
     <Compile Include="Models\Organisercs.cs" />
     <Compile Include="Models\OrganiserHoldings.cs" />
     <Compile Include="Models\Production.cs" />
@@ -216,6 +243,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Production\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

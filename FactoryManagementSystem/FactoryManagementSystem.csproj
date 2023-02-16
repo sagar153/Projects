@@ -114,6 +114,7 @@
     <Content Include="Content\main.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Factory\Admin\AddEditFactoryIntake.aspx" />
     <Content Include="Factory\Admin\Bins.aspx" />
     <Content Include="Factory\Admin\Companies.aspx" />
     <Content Include="Factory\Admin\FactoryIntake.aspx" />
@@ -187,6 +188,7 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DAL\AddEditFactoryIntakeDAL.cs" />
     <Compile Include="DAL\BinDAL.cs" />
     <Compile Include="DAL\BinMoistDAL.cs" />
     <Compile Include="DAL\CompanieDAL.cs" />
@@ -199,6 +201,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Factory\Admin\AddEditFactoryIntake.aspx.cs">
+      <DependentUpon>AddEditFactoryIntake.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Factory\Admin\AddEditFactoryIntake.aspx.designer.cs">
+      <DependentUpon>AddEditFactoryIntake.aspx</DependentUpon>
     </Compile>
     <Compile Include="Factory\Admin\Bins.aspx.cs">
       <DependentUpon>Bins.aspx</DependentUpon>

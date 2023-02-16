@@ -5,11 +5,11 @@
     <div>
         <table style="width: 100%;">
             <tr>
-                <td style="text-align:center">
+                <td style="text-align: center">
                     <strong>Factory Intake Management</strong></td>
             </tr>
             <tr style="height: 20px;"></tr>
-            <tr class="p-0 m-0" style="height:auto">
+            <tr class="p-0 m-0" style="height: auto">
 
                 <td>
                     <asp:UpdatePanel ID="UpdatePanelCR" runat="server">
@@ -24,18 +24,37 @@
                                 EmptyDataText="No Records Found"
                                 DataKeyNames="FactoryIntakeId"
                                 CssClass="table table-striped table-bordered table-hover table-condensed"
-                                OnRowCancelingEdit="grdFactoryIntake_RowCancelingEdit"
-                                OnRowEditing="grdFactoryIntake_RowEditing"
-                                OnRowUpdating="grdFactoryIntake_RowUpdating"
+                                OnRowCommand="grdFactoryIntake_RowCommand"
                                 OnPageIndexChanging="grdFactoryIntake_PageIndexChanging"
                                 PageSize="5"
                                 Width="90%"
                                 Height="500px">
                                 <Columns>
+                                    <asp:TemplateField ItemStyle-Width="50px">
+
+                                        <FooterTemplate>
+                                            <asp:Button ID="btnAdd" runat="server" Text="Add"
+                                                ValidationGroup="Insert" CssClass="btn btn-primary btn-sm"
+                                                OnClick="btnAdd_Click" />
+                                        </FooterTemplate>
+                                    </asp:TemplateField>
+
+                                    <asp:TemplateField HeaderText="" HeaderStyle-HorizontalAlign="Center">
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="lnkEditDetails" Text="Edit Intake" CommandName="EditIntake" runat="server"></asp:LinkButton>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+
+                                    <asp:TemplateField HeaderText="" HeaderStyle-HorizontalAlign="Center">
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="lnkShowDetails" Text="Show Outake" CommandName="ShowOutake" runat="server"></asp:LinkButton>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+
                                     <%--CompanyId--%>
                                     <asp:TemplateField HeaderText="Company" HeaderStyle-HorizontalAlign="Center">
                                         <ItemTemplate>
-                                            <asp:Label ID="lblCompanyId" runat="server" Text='<%# Bind("CompanyId") %>'></asp:Label>
+                                            <asp:Label ID="lblCompanyId" runat="server" Text='<%# Bind("CompanyName") %>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
 
@@ -105,7 +124,7 @@
                                     <%--BinId--%>
                                     <asp:TemplateField HeaderText="Bin" HeaderStyle-HorizontalAlign="Center">
                                         <ItemTemplate>
-                                            <asp:Label ID="lblBinId" runat="server" Text='<%# Bind("BinId") %>'></asp:Label>
+                                            <asp:Label ID="lblBinId" runat="server" Text='<%# Bind("BinName") %>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
 
@@ -123,16 +142,7 @@
                                         </ItemTemplate>
                                     </asp:TemplateField>
 
-                                    <asp:CommandField ItemStyle-Width="100px" ShowEditButton="True"
-                                        ValidationGroup="Edit" />
-                                    <asp:TemplateField ItemStyle-Width="50px">
 
-                                        <FooterTemplate>
-                                            <asp:Button ID="btnAdd" runat="server" Text="Add"
-                                                ValidationGroup="Insert" CssClass="btn btn-primary btn-sm"
-                                                OnClick="btnAdd_Click" />
-                                        </FooterTemplate>
-                                    </asp:TemplateField>
                                 </Columns>
                                 <PagerStyle HorizontalAlign="Left" />
                             </asp:GridView>

@@ -35,7 +35,8 @@ namespace FactoryManagementSystem.Factory.Admin
                     grdFactoryIntake.HeaderRow.TableSection = TableRowSection.TableHeader;
                 }
 
-                grdFactoryIntake.Columns[13].Visible = true;
+                grdFactoryIntake.Columns[1].Visible = true;
+                grdFactoryIntake.Columns[2].Visible = true;
             }
             else
             {
@@ -43,7 +44,8 @@ namespace FactoryManagementSystem.Factory.Admin
                 grdFactoryIntake.DataSource = intakeDetails;
                 grdFactoryIntake.DataBind();
 
-                grdFactoryIntake.Columns[13].Visible = false;
+                grdFactoryIntake.Columns[1].Visible = false;
+                grdFactoryIntake.Columns[2].Visible = false;
 
             }
         }

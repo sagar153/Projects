@@ -18,37 +18,53 @@ namespace FactoryManagementSystem.Factory.Admin
 
                 if (intakeId != 0)
                 {
-                    LoadFactoryOutWardControls(intakeId);
+                    LoadData(intakeId);
                 }
             }
         }
 
-        private void LoadFactoryOutWardControls(int factoryIntakeId)
+        private void LoadData(int factoryIntakeId)  // To show the data in the DataGridView  
         {
+            DAL.FactoryOutwardDAL outwardDAL = new DAL.FactoryOutwardDAL();
+            var outTakeDetails = outwardDAL.GetFactoryOutwardByIntake(factoryIntakeId);
 
-            DAL.FactoryOutwardDAL factoryOutwardDAL = new DAL.FactoryOutwardDAL();
-
-            var data = factoryOutwardDAL.GetFactoryOutward(factoryIntakeId);
-
-            if (data != null && data.Rows.Count > 0)
+            if (outTakeDetails.Rows.Count > 0)
             {
-                txtDCNo.Text = data.Rows[0]["DCNo"].ToString();
-                calShowingDate.SelectedDate = Convert.ToDateTime(data.Rows[0]["ShowingDate"].ToString());
-                txtRemarks.Text = data.Rows[0]["Remarks"].ToString();
-                txtShowingMoist.Text = data.Rows[0]["ShowingMoist"].ToString();
-                txtHours.Text = data.Rows[0]["Hours"].ToString();
-                chkisActive.Checked = Convert.ToBoolean(data.Rows[0]["isActive"].ToString());
+
+                grdFactoryOutward.DataSource = outTakeDetails;
+                grdFactoryOutward.DataBind();
+                if (grdFactoryOutward.Rows.Count > 0)
+                {
+                    grdFactoryOutward.UseAccessibleHeader = true;
+                    grdFactoryOutward.HeaderRow.TableSection = TableRowSection.TableHeader;
+                }
+
+                grdFactoryOutward.Columns[1].Visible = true;
+            }
+            else
+            {
+                outTakeDetails.Rows.Add(outTakeDetails.NewRow());
+                grdFactoryOutward.DataSource = outTakeDetails;
+                grdFactoryOutward.DataBind();
+
+                grdFactoryOutward.Columns[1].Visible = false;
+
             }
         }
 
-        protected void btnSave_Click(object sender, EventArgs e)
+        protected void grdFactoryOutward_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            int factoryIntakeId = Convert.ToInt32(hdnFactoryIntakeId.Value);
+            grdFactoryOutward.PageIndex = e.NewPageIndex;
+            LoadData(Convert.ToInt32(hdnFactoryIntakeId.Value));
+        }
 
-            Models.FactoryOutward factoryOutward = new Models.FactoryOutward();
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Factory/Admin/AddEditFatcoryOutward.aspx?OutwardId=0");
+        }
 
-          
-
+        protected void grdFactoryOutward_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
 
         }
     }

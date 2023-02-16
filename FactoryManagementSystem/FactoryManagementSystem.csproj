@@ -115,6 +115,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Factory\Admin\AddEditFactoryIntake.aspx" />
+    <Content Include="Factory\Admin\AddEditFatcoryOutward.aspx" />
     <Content Include="Factory\Admin\Bins.aspx" />
     <Content Include="Factory\Admin\Companies.aspx" />
     <Content Include="Factory\Admin\FactoryIntake.aspx" />
@@ -210,6 +211,13 @@
     </Compile>
     <Compile Include="Factory\Admin\AddEditFactoryIntake.aspx.designer.cs">
       <DependentUpon>AddEditFactoryIntake.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Factory\Admin\AddEditFatcoryOutward.aspx.cs">
+      <DependentUpon>AddEditFatcoryOutward.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Factory\Admin\AddEditFatcoryOutward.aspx.designer.cs">
+      <DependentUpon>AddEditFatcoryOutward.aspx</DependentUpon>
     </Compile>
     <Compile Include="Factory\Admin\Bins.aspx.cs">
       <DependentUpon>Bins.aspx</DependentUpon>

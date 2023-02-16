@@ -73,7 +73,7 @@ BEGIN
     END  
 	ELSE IF @OperationType=4  
     BEGIN  
-        SELECT * FROM [dbo].[User]	WHERE UserName = @UserName AND [Password] = @Password AND isActive = 1  
+        SELECT * FROM [dbo].[User]	WHERE LOWER(UserName) = LOWER(@UserName) AND [Password] = @Password AND isActive = 1  
     END  
 	ELSE   
     BEGIN  

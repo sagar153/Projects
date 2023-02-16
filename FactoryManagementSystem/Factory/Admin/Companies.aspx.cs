@@ -20,106 +20,84 @@ namespace FactoryManagementSystem.Factory.Admin
 
         private void LoadData()  // To show the data in the DataGridView  
         {
-            BinDAL binDAL = new BinDAL();
-            var binDetails = binDAL.GetAllBin();
+            CompanieDAL companyDAL = new CompanieDAL();
+            var companyDetails = companyDAL.GetAllCompanies();
 
-            if (binDetails.Rows.Count > 0)
+            if (companyDetails.Rows.Count > 0)
             {
 
-                grdBins.DataSource = binDAL.GetAllBin();
-                grdBins.DataBind();
-                if (grdBins.Rows.Count > 0)
+                grdCompany.DataSource = companyDAL.GetAllCompanies();
+                grdCompany.DataBind();
+                if (grdCompany.Rows.Count > 0)
                 {
-                    grdBins.UseAccessibleHeader = true;
-                    grdBins.HeaderRow.TableSection = TableRowSection.TableHeader;
+                    grdCompany.UseAccessibleHeader = true;
+                    grdCompany.HeaderRow.TableSection = TableRowSection.TableHeader;
                 }
 
-                grdBins.Columns[2].Visible = true;
+                grdCompany.Columns[2].Visible = true;
             }
             else
             {
-                binDetails.Rows.Add(binDetails.NewRow());
-                grdBins.DataSource = binDetails;
-                grdBins.DataBind();
+                companyDetails.Rows.Add(companyDetails.NewRow());
+                grdCompany.DataSource = companyDetails;
+                grdCompany.DataBind();
 
-                grdBins.Columns[2].Visible = false;
-                foreach (GridViewRow row in grdBins.Rows)
-                {
-                    if (row.RowType == DataControlRowType.DataRow)
-                    {
-                        LinkButton lb = ((LinkButton)row.FindControl("lnkRemove"));
-                        lb.Visible = false;
-                    }
-                }
+                grdCompany.Columns[2].Visible = false;
 
             }
         }
 
         protected void grdBins_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
-            grdBins.EditIndex = -1;
+            grdCompany.EditIndex = -1;
             LoadData();
         }
 
         protected void grdBins_RowEditing(object sender, GridViewEditEventArgs e)
         {
-            grdBins.EditIndex = e.NewEditIndex;
+            grdCompany.EditIndex = e.NewEditIndex;
             LoadData();
         }
 
         protected void grdBins_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            int id = Convert.ToInt16(grdBins.DataKeys[e.RowIndex].Values["BinId"].ToString());
-            BinDAL binDAL = new BinDAL();
-            Models.Bin bin = new Models.Bin();
-            bin.BinId = id;
-            bin.BinName = "";
-            bin.isActive = false;
-            binDAL.Delete(bin);
+            int id = Convert.ToInt16(grdCompany.DataKeys[e.RowIndex].Values["CompanyId"].ToString());
+            CompanieDAL companyDAL = new CompanieDAL();
+            Models.Company company = new Models.Company();
+            company.CompanyId = id;
+            company.CompanyName = "";
+            company.isActive = false;
+            companyDAL.Delete(company);
             LoadData();
         }
 
         protected void grdBins_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            int id = Convert.ToInt16(grdBins.DataKeys[e.RowIndex].Values["BinId"].ToString());
-            TextBox txtbinName = grdBins.Rows[e.RowIndex].FindControl("txtBinName") as TextBox;
-            CheckBox chkIsActive = grdBins.Rows[e.RowIndex].FindControl("chIsActive") as CheckBox;
+            int id = Convert.ToInt16(grdCompany.DataKeys[e.RowIndex].Values["CompanyId"].ToString());
+            TextBox txtCompanyName = grdCompany.Rows[e.RowIndex].FindControl("txtCompanyName") as TextBox;
+            CheckBox chkIsActive = grdCompany.Rows[e.RowIndex].FindControl("chIsActive") as CheckBox;
 
-            BinDAL binDAL = new BinDAL();
-            Models.Bin bin = new Models.Bin();
-            bin.BinId = id;
-            bin.BinName = txtbinName.Text.ToString();
-            bin.isActive = chkIsActive.Checked;
-            binDAL.Update(bin);
-            grdBins.EditIndex = -1;
-            LoadData();
-        }
-
-        protected void lnkRemove_Click(object sender, EventArgs e)
-        {
-            LinkButton lnkRemove = (LinkButton)sender;
-            int id = Convert.ToInt32(lnkRemove.CommandArgument);
-            BinDAL binDAL = new BinDAL();
-            Models.Bin bin = new Models.Bin();
-            bin.BinId = id;
-            bin.BinName = "";
-            bin.isActive = false;
-            binDAL.Delete(bin);
+            CompanieDAL companyDAL = new CompanieDAL();
+            Models.Company company = new Models.Company();
+            company.CompanyId = id;
+            company.CompanyName = txtCompanyName.Text.ToString();
+            company.isActive = chkIsActive.Checked;
+            companyDAL.Update(company);
+            grdCompany.EditIndex = -1;
             LoadData();
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            TextBox txtbinName = grdBins.FooterRow.FindControl("txtBinNames") as TextBox;
-            //CheckBox chkIsActive = grdBins.FooterRow.FindControl("chkIsActive") as CheckBox;
+            TextBox txtCompanyName = grdCompany.FooterRow.FindControl("txtCompanyNames") as TextBox;
 
-            BinDAL binDAL = new BinDAL();
-            Models.Bin bin = new Models.Bin();
-            bin.BinId = 0;
-            bin.BinName = txtbinName.Text.ToString();
-            bin.isActive = true;
-            binDAL.Save(bin);
-            grdBins.EditIndex = -1;
+            CompanieDAL companyDAL = new CompanieDAL();
+            Models.Company company = new Models.Company();
+            company.CompanyId = 0;
+            company.CompanyName = txtCompanyName.Text.ToString();
+            company.isActive = true;
+            companyDAL.Save(company);
+            grdCompany.EditIndex = -1;
             LoadData();
         }
     }

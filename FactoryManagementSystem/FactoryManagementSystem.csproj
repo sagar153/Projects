@@ -215,6 +215,7 @@
     </Compile>
     <Compile Include="Helper\SQLDataAccessHelper.cs" />
     <Compile Include="Models\Bin.cs" />
+    <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Organisercs.cs" />
     <Compile Include="Models\OrganiserHoldings.cs" />
     <Compile Include="Models\Production.cs" />

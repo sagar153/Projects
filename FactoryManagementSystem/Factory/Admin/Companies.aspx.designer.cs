@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FactoryManagementSystem.Factory.Admin {
-    
-    
-    public partial class Companies {
-        
+namespace FactoryManagementSystem.Factory.Admin
+{
+
+
+    public partial class Companies
+    {
+
         /// <summary>
         /// UpdatePanelCR control.
         /// </summary>
@@ -20,14 +22,14 @@ namespace FactoryManagementSystem.Factory.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanelCR;
-        
+
         /// <summary>
-        /// grdBins control.
+        /// grdCompany control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdBins;
+        protected global::System.Web.UI.WebControls.GridView grdCompany;
     }
 }

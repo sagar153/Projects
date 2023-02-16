@@ -56,21 +56,11 @@
                                     <ItemTemplate>
                                         <asp:Label ID="lblisActive" runat="server" Text='<%# Bind("isActive") %>'></asp:Label>
                                     </ItemTemplate>
-                                    <%--<FooterTemplate>
-                                        <asp:CheckBox ID="chkIsActive" runat="server" Checked='<%# Bind("isActive") %>'></asp:CheckBox>
-
-                                    </FooterTemplate>--%>
                                 </asp:TemplateField>
                                 <asp:CommandField ItemStyle-Width="100px" ShowEditButton="True"
                                     ValidationGroup="Edit" />
                                 <asp:TemplateField ItemStyle-Width="50px">
-                                    <%--<ItemTemplate>
-                                        <asp:LinkButton ID="lnkRemove" runat="server"
-                                            CommandArgument='<%# Bind("BinId")%>'
-                                            OnClientClick="return confirm
-					('Are you sure you want to delete this bin?')"
-                                            Text="Delete" OnClick="lnkRemove_Click"></asp:LinkButton>
-                                    </ItemTemplate>--%>
+
                                     <FooterTemplate>
                                         <asp:Button ID="btnAdd" runat="server" Text="Add"
                                             ValidationGroup="Insert" CssClass="btn btn-primary btn-sm"

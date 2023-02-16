@@ -44,14 +44,6 @@ namespace FactoryManagementSystem.Factory.Admin
                 grdBins.DataBind();
 
                 grdBins.Columns[2].Visible = false;
-                foreach (GridViewRow row in grdBins.Rows)
-                {
-                    if (row.RowType == DataControlRowType.DataRow)
-                    {
-                        LinkButton lb = ((LinkButton)row.FindControl("lnkRemove"));
-                        lb.Visible = false;
-                    }
-                }
 
             }
         }
@@ -93,19 +85,6 @@ namespace FactoryManagementSystem.Factory.Admin
             bin.isActive = chkIsActive.Checked;
             binDAL.Update(bin);
             grdBins.EditIndex = -1;
-            LoadData();
-        }
-
-        protected void lnkRemove_Click(object sender, EventArgs e)
-        {
-            LinkButton lnkRemove = (LinkButton)sender;
-            int id = Convert.ToInt32(lnkRemove.CommandArgument);                
-            BinDAL binDAL = new BinDAL();
-            Models.Bin bin = new Models.Bin();
-            bin.BinId = id;
-            bin.BinName = "";
-            bin.isActive = false;
-            binDAL.Delete(bin);
             LoadData();
         }
 

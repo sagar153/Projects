@@ -21,6 +21,18 @@ namespace FactoryManagementSystem.DAL
             return ds.Tables[0];
         }
 
+        public DataTable GetActiveCompanies()
+        {
+            var sqlHelper = new SQLDataAccessHelper();
+            var paramArray = new SqlParameter[4];
+            paramArray[0] = new SqlParameter() { ParameterName = "@CompanyId", Value = 0 };
+            paramArray[1] = new SqlParameter() { ParameterName = "@CompanyName", Value = "" };
+            paramArray[2] = new SqlParameter() { ParameterName = "@isActive", Value = true };
+            paramArray[3] = new SqlParameter() { ParameterName = "@OperationType", Value = 4 };
+            var ds = sqlHelper.ExecuteQuery("spCompaniesCRUD", CommandType.StoredProcedure, paramArray);
+            return ds.Tables[0];
+        }
+
         public void Save(Models.Company company)
         {
             var sqlHelper = new SQLDataAccessHelper();

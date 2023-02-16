@@ -115,6 +115,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Factory\Admin\Bins.aspx" />
     <Content Include="Factory\Admin\Companies.aspx" />
+    <Content Include="Factory\User\Bins.aspx" />
     <Content Include="Factory\User\Companies.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -202,6 +203,13 @@
     </Compile>
     <Compile Include="Factory\Admin\Companies.aspx.designer.cs">
       <DependentUpon>Companies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Factory\User\Bins.aspx.cs">
+      <DependentUpon>Bins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Factory\User\Bins.aspx.designer.cs">
+      <DependentUpon>Bins.aspx</DependentUpon>
     </Compile>
     <Compile Include="Factory\User\Companies.aspx.cs">
       <DependentUpon>Companies.aspx</DependentUpon>

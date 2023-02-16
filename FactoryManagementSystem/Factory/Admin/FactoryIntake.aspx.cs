@@ -70,7 +70,7 @@ namespace FactoryManagementSystem.Factory.Admin
             {
                 Response.Redirect("/Factory/Admin/AddEditFactoryIntake.aspx?IntakeId="+id.ToString());
             }
-            else if (e.CommandName == "EditIntake")
+            else if (e.CommandName == "ShowOutake")
             {
                 Response.Redirect("/Factory/Admin/FactoryOutward.aspx?IntakeId=" + id.ToString());
             }

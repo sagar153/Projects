@@ -51,6 +51,7 @@ namespace FactoryManagementSystem.Factory.Admin
         protected void btnAdd_Click(object sender, EventArgs e)
         {
             Models.FactoryIntake factoryIntake = GetFilledFactoryInstakeModel();
+            factoryIntake.FactoryIntakeId = 0;
             factoryIntake.isActive = true;
 
             FactoryIntakeDAL factoryIntakeDAL = new FactoryIntakeDAL();
@@ -113,9 +114,11 @@ namespace FactoryManagementSystem.Factory.Admin
 
         protected void grdFactoryIntake_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            int id = Convert.ToInt16(grdFactoryIntake.DataKeys[e.RowIndex].Values["FactoryIntakeId"].ToString());
             CheckBox chkIsActive = grdFactoryIntake.Rows[e.RowIndex].FindControl("chIsActive") as CheckBox;
 
             Models.FactoryIntake factoryIntake = GetFilledFactoryInstakeModel();
+            factoryIntake.FactoryIntakeId = id;
             factoryIntake.isActive = chkIsActive.Checked; ;
 
             FactoryIntakeDAL factoryIntakeDAL = new FactoryIntakeDAL();
@@ -155,7 +158,7 @@ namespace FactoryManagementSystem.Factory.Admin
 
 
             Models.FactoryIntake factoryIntake = new Models.FactoryIntake();
-            factoryIntake.FactoryIntakeId = 0;
+            
             factoryIntake.CompanyId = Convert.ToInt32(ddlCompanyList.SelectedItem.Value);
             factoryIntake.Year = txtYear.Text.ToString();
             factoryIntake.Date = calDate.SelectedDate;

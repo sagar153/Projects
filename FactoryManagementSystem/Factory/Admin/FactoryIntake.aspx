@@ -20,7 +20,7 @@
                             AllowSorting="True"
                             ShowFooter="True"
                             EmptyDataText="No Records Found"
-                            DataKeyNames="BinId"
+                            DataKeyNames="FactoryIntakeId"
                             CssClass="table table-striped table-bordered table-hover table-condensed"
                             OnRowCancelingEdit="grdFactoryIntake_RowCancelingEdit"
                             OnRowEditing="grdFactoryIntake_RowEditing"

@@ -27,23 +27,23 @@ namespace FactoryManagementSystem.Factory.Admin
             if (binDetails.Rows.Count > 0)
             {
 
-                grdBins.DataSource = binDAL.GetAllBin();
-                grdBins.DataBind();
-                if (grdBins.Rows.Count > 0)
+                grdFactoryIntake.DataSource = binDAL.GetAllBin();
+                grdFactoryIntake.DataBind();
+                if (grdFactoryIntake.Rows.Count > 0)
                 {
-                    grdBins.UseAccessibleHeader = true;
-                    grdBins.HeaderRow.TableSection = TableRowSection.TableHeader;
+                    grdFactoryIntake.UseAccessibleHeader = true;
+                    grdFactoryIntake.HeaderRow.TableSection = TableRowSection.TableHeader;
                 }
 
-                grdBins.Columns[2].Visible = true;
+                grdFactoryIntake.Columns[2].Visible = true;
             }
             else
             {
                 binDetails.Rows.Add(binDetails.NewRow());
-                grdBins.DataSource = binDetails;
-                grdBins.DataBind();
+                grdFactoryIntake.DataSource = binDetails;
+                grdFactoryIntake.DataBind();
 
-                grdBins.Columns[2].Visible = false;
+                grdFactoryIntake.Columns[2].Visible = false;
 
             }
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FactoryManagementSystem.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,20 @@ namespace FactoryManagementSystem.Factory.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var binId = Convert.ToInt32(Request.Params["binId"]);            
+            if (!Page.IsPostBack)
+            {
 
+                LoadData(binId);
+            }
+        }
+
+        private void LoadData(int binId)  // To show the data in the DataGridView  
+        {
+            string strYear = "2022-23";
+            BinMoistDAL binsDAL = new BinMoistDAL();
+            gvBinMoist.DataSource = binsDAL.GetActiveBinMoist(strYear, binId);
+            gvBinMoist.DataBind();
         }
     }
 }

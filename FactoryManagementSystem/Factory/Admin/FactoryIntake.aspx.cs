@@ -60,58 +60,6 @@ namespace FactoryManagementSystem.Factory.Admin
             LoadData();
         }
 
-
-        protected void grdFactoryIntake_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-
-            if ((e.Row.RowType == DataControlRowType.Footer) )
-            {
-                DropDownList ddlCompanyFooterList = (DropDownList)e.Row.FindControl("ddlCompanies");
-                DropDownList ddlBinFooterList = (DropDownList)e.Row.FindControl("ddlBins");
-
-                CompanieDAL companieDAL = new CompanieDAL();
-                var dt = companieDAL.GetActiveCompanies();
-
-                ddlCompanyFooterList.DataSource = dt;
-                ddlCompanyFooterList.DataTextField = "CompanyName";
-                ddlCompanyFooterList.DataValueField = "CompanyId";
-                ddlCompanyFooterList.DataBind();
-
-                BinDAL binDAL = new BinDAL();
-                var binDt = binDAL.GetActiveBins();
-
-                ddlBinFooterList.DataSource = binDt;
-                ddlBinFooterList.DataTextField = "BinName";
-                ddlBinFooterList.DataValueField = "BinId";
-                ddlBinFooterList.DataBind();
-
-
-            }
-
-            if((e.Row.RowState & DataControlRowState.Edit) > 0)
-            {
-                DropDownList ddlCompanyEditList = (DropDownList)e.Row.FindControl("ddlCompany");
-                DropDownList ddlBinEditList = (DropDownList)e.Row.FindControl("ddlBin");
-
-                CompanieDAL companieDAL = new CompanieDAL();
-                var dt = companieDAL.GetActiveCompanies();
-
-                ddlCompanyEditList.DataSource = dt;
-                ddlCompanyEditList.DataTextField = "CompanyName";
-                ddlCompanyEditList.DataValueField = "CompanyId";
-                ddlCompanyEditList.DataBind();
-
-                BinDAL binDAL = new BinDAL();
-                var binDt = binDAL.GetActiveBins();
-
-                ddlBinEditList.DataSource = binDt;
-                ddlBinEditList.DataTextField = "BinName";
-                ddlBinEditList.DataValueField = "BinId";
-                ddlBinEditList.DataBind();
-            }
-
-        }
-
         protected void grdFactoryIntake_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             int id = Convert.ToInt16(grdFactoryIntake.DataKeys[e.RowIndex].Values["FactoryIntakeId"].ToString());

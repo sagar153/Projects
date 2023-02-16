@@ -2,10 +2,10 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div style="width:64.3%; height:100%; overflow-x:scroll">
-        <table >
+    <div>
+        <table style="width: 100%;">
             <tr>
-                <td>
+                <td style="text-align:center">
                     <strong>Factory Intake Management</strong></td>
             </tr>
             <tr style="height: 20px;"></tr>
@@ -27,10 +27,9 @@
                                 OnRowCancelingEdit="grdFactoryIntake_RowCancelingEdit"
                                 OnRowEditing="grdFactoryIntake_RowEditing"
                                 OnRowUpdating="grdFactoryIntake_RowUpdating"
-                                OnRowDataBound="grdFactoryIntake_RowDataBound"
                                 OnPageIndexChanging="grdFactoryIntake_PageIndexChanging"
                                 PageSize="5"
-                                Width="600px"
+                                Width="90%"
                                 Height="500px">
                                 <Columns>
                                     <%--CompanyId--%>

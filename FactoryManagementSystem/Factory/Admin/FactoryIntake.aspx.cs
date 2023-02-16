@@ -117,9 +117,35 @@ namespace FactoryManagementSystem.Factory.Admin
             int id = Convert.ToInt16(grdFactoryIntake.DataKeys[e.RowIndex].Values["FactoryIntakeId"].ToString());
             CheckBox chkIsActive = grdFactoryIntake.Rows[e.RowIndex].FindControl("chIsActive") as CheckBox;
 
-            Models.FactoryIntake factoryIntake = GetFilledFactoryInstakeModel();
+            DropDownList ddlCompanyList = grdFactoryIntake.Rows[e.RowIndex].FindControl("ddlCompany") as DropDownList;
+            TextBox txtYear = grdFactoryIntake.Rows[e.RowIndex].FindControl("txtYear") as TextBox;
+            Calendar calDate = grdFactoryIntake.Rows[e.RowIndex].FindControl("calDate") as Calendar;
+            TextBox txtLorryNo = grdFactoryIntake.Rows[e.RowIndex].FindControl("txtLorryNo") as TextBox;
+            TextBox txtVariety = grdFactoryIntake.Rows[e.RowIndex].FindControl("txtVariety") as TextBox;
+            TextBox txtWeight = grdFactoryIntake.Rows[e.RowIndex].FindControl("txtWeight") as TextBox;
+            TextBox txtMoist = grdFactoryIntake.Rows[e.RowIndex].FindControl("txtMoist") as TextBox;
+            TextBox txtBags = grdFactoryIntake.Rows[e.RowIndex].FindControl("txtBags") as TextBox;
+            TextBox txtLot = grdFactoryIntake.Rows[e.RowIndex].FindControl("txtLot") as TextBox;
+            TextBox txtExecutive = grdFactoryIntake.Rows[e.RowIndex].FindControl("txtExecutive") as TextBox;
+            DropDownList ddlBinList = grdFactoryIntake.Rows[e.RowIndex].FindControl("ddlBin") as DropDownList;
+            TextBox txtRemark = grdFactoryIntake.Rows[e.RowIndex].FindControl("txtRemark") as TextBox;
+
+            Models.FactoryIntake factoryIntake = new Models.FactoryIntake();
             factoryIntake.FactoryIntakeId = id;
-            factoryIntake.isActive = chkIsActive.Checked; ;
+            factoryIntake.isActive = chkIsActive.Checked;
+
+            factoryIntake.CompanyId = Convert.ToInt32(ddlCompanyList.SelectedItem.Value);
+            factoryIntake.Year = txtYear.Text.ToString();
+            factoryIntake.Date = calDate.SelectedDate;
+            factoryIntake.LorryNo = txtLorryNo.Text;
+            factoryIntake.Variety = txtVariety.Text;
+            factoryIntake.Weight = Convert.ToDecimal(txtWeight.Text);
+            factoryIntake.Moist = Convert.ToDecimal(txtMoist.Text);
+            factoryIntake.Bags = Convert.ToInt32(txtBags.Text);
+            factoryIntake.Lot = Convert.ToInt32(txtLot.Text);
+            factoryIntake.Executive = txtExecutive.Text;
+            factoryIntake.BinId = Convert.ToInt32(ddlBinList.SelectedItem.Value);
+            factoryIntake.Remarks = txtRemark.Text;
 
             FactoryIntakeDAL factoryIntakeDAL = new FactoryIntakeDAL();
             factoryIntakeDAL.Update(factoryIntake);

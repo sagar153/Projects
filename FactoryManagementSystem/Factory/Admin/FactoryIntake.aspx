@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div style="width:55%; height:100%; overflow-x:scroll">
+    <div style="width:64.3%; height:100%; overflow-x:scroll">
         <table >
             <tr>
                 <td>
@@ -94,11 +94,11 @@
                                         </ItemTemplate>
                                         <FooterTemplate>
                                             <asp:Calendar ID="calDates" runat="server" SelectedDate='<%# DateTime.Now %>'></asp:Calendar>
-                                            <asp:RequiredFieldValidator runat="server"
+<%--                                            <asp:RequiredFieldValidator runat="server"
                                                 ControlToValidate="txtYears" Display="Dynamic"
                                                 ValidationGroup="Edit"
                                                 CssClass="text-danger"
-                                                ErrorMessage="The Date field is required." />
+                                                ErrorMessage="The Date field is required." />--%>
                                         </FooterTemplate>
                                     </asp:TemplateField>
 

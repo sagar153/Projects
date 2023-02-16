@@ -12,3 +12,8 @@ Production Tables:
 2. Production - All the Process details including farmers
 3. OrganiserHoldings - Contains details of what all areas, varieties (seeds) the organiser has.
 
+
+
+GridView:
+
+https://www.codeproject.com/articles/851092/asp-net-gridview-crud-operations

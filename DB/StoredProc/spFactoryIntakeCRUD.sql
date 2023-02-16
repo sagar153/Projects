@@ -1,9 +1,11 @@
-USE [FactoryManagement]
-GO
-/****** Object:  StoredProcedure [dbo].[spFactoryIntakeCRUD]    Script Date: 12-02-2023 20:25:26 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
+USE [FactoryManagement]  
+GO  
+SET ANSI_NULLS ON  
+GO  
+SET QUOTED_IDENTIFIER ON  
+GO  
+
+DROP PROCEDURE IF EXISTS [dbo].[spFactoryIntakeCRUD]  
 GO
 -- =============================================  
 -- Author:      <Sagar>   
@@ -73,7 +75,10 @@ BEGIN
     END 
     ELSE IF @OperationType = 4  
     BEGIN  
-        SELECT * FROM [dbo].[FactoryIntake] WHERE isActive = 1		
+        SELECT B.BinName, C.CompanyName, FI.* FROM [dbo].[FactoryIntake] FI
+		LEFT JOIN [dbo].[Bins] B ON FI.BinId = B.BinId
+		LEFT JOIN [dbo].[Companies] C ON FI.CompanyId = C.CompanyId
+		WHERE FI.isActive = 1 AND [Year] = @Year
     END  
 	ELSE
 	BEGIN  

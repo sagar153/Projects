@@ -11,13 +11,13 @@ namespace FactoryManagementSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
+            if (Session["UserName"] == null)
             {
-                if (Session["UserName"] == null)
-                {
-                    Response.Redirect("~/Login.aspx");
-                }
+                Response.Redirect("~/Login.aspx");
+            }
 
+            if (!Page.IsPostBack)
+            {                
                 if (Convert.ToBoolean(Session["FactoryOnly"]))
                 {
                     UserFactory.Visible = true;

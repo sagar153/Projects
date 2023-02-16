@@ -1,5 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="FactoryManagementSystem.SiteMaster" %>
 
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -66,9 +67,8 @@
                         class="brand-logo"><i
                             class="fas fa-anchor"></i><span>Welcome</span></a>
                 </header>
-                <nav class="dashboard-nav-list">
-                    <%--<a href="#" class="dashboard-nav-item"><i class="fas fa-industry"></i>Factory </a>--%>
-                    <div class='dashboard-nav-dropdown'>
+                <nav class="dashboard-nav-list">                   
+                    <div class='dashboard-nav-dropdown' runat="server" id="UserFactory">
                         <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i
                             class="fas fa-industry"></i>Factory </a>
                         <div class='dashboard-nav-dropdown-menu'>
@@ -81,7 +81,7 @@
                     </div>
 
                     <%--<a href="#" class="dashboard-nav-item"><i class="fas fa-wrench"></i>Production </a>--%>
-                    <div class='dashboard-nav-dropdown'>
+                    <div class='dashboard-nav-dropdown' runat="server" id="UserProduction">
                         <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i
                             class="fas fa-wrench"></i>Production </a>
                         <div class='dashboard-nav-dropdown-menu'>
@@ -94,12 +94,12 @@
                             <a href="#" class="dashboard-nav-dropdown-item">Companies</a>                         
                         </div>
                     </div>
-                    <a href="#" class="dashboard-nav-item"><i class="fas fa-users"></i>Users </a>
+                    <a href="/User/UserManagement.aspx" runat="server" id="users" class="dashboard-nav-item"><i class="fas fa-users"></i>Users </a>
                     
-                    <div class='dashboard-nav-dropdown'>
+                    <div class='dashboard-nav-dropdown' runat="server" id="Admin">
                         <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i
                             class="fas fa-user-cog"></i>Admin </a>
-                        <div class='dashboard-nav-dropdown-menu'>
+                        <div class='dashboard-nav-dropdown-menu' runat="server" id="AdminFactory">
                            <%-- <a href="#" class="dashboard-nav-dropdown-item">Factory</a>--%>
                             <div class='dashboard-nav-dropdown'>
                         <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i
@@ -113,7 +113,19 @@
                         </div>
                     </div>
 
-                            <a href="#" class="dashboard-nav-dropdown-item">Production</a>                           
+                            <div class='dashboard-nav-dropdown' runat="server" id="AdminProduction">
+                        <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i
+                            class="fas fa-wrench"></i>Production </a>
+                        <div class='dashboard-nav-dropdown-menu'>
+                            <a href="#" class="dashboard-nav-dropdown-item">Varieties</a>
+                            <a href="#" class="dashboard-nav-dropdown-item">Acres</a>  
+                            <a href="#" class="dashboard-nav-dropdown-item">Areas</a>
+                            <a href="#" class="dashboard-nav-dropdown-item">Organisers</a>  
+                            <a href="#" class="dashboard-nav-dropdown-item">Farmers</a> 
+                            <a href="#" class="dashboard-nav-dropdown-item">Advances</a>
+                            <a href="#" class="dashboard-nav-dropdown-item">Companies</a>                         
+                        </div>
+                    </div>                          
                         </div>
                     </div>
 
@@ -131,18 +143,7 @@
                     <a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a>
                     <h1 style="text-align: center; color: black; width: 100%;">Factory Management System</h1>
                 </header>
-                <%--  <div class='dashboard-content'>
-            <div class='container'>
-                <div class='card'>
-                    <div class='card-header'>
-                        <h1>Welcome back Jim</h1>
-                    </div>
-                    <div class='card-body'>
-                        
-                   </div>
-                </div>
-            </div>
-        </div>--%>
+                
             </div>
         </div>
     </form>

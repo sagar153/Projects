@@ -11,7 +11,25 @@ namespace FactoryManagementSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                if (Convert.ToBoolean(Session["FullAccess"]))
+                {
 
+                }
+                else if (Convert.ToBoolean(Session["AdminOnly"]))
+                {
+
+                }
+                else if (Convert.ToBoolean(Session["UsersOnly"]))
+                {
+
+                }
+                else if (Convert.ToBoolean(Session["FactoryOnly"]))
+                {
+
+                }
+            }
         }
     }
 }

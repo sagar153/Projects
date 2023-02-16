@@ -64,11 +64,10 @@
             <div class="dashboard-nav">
                 <header>
                     <a href="#" class="menu-toggle"><i class="fas fa-bars"></i></a><a href="#"
-                        class="brand-logo"><i
-                            class="fas fa-anchor"></i><span>Welcome</span></a>
+                        class="brand-logo"><span style="font-size:15px;">Welcome</span><label runat="server" id="lblUserName" style="padding-top:5px;padding-left:5px;font-size:20px;"/></a>
                 </header>
                 <nav class="dashboard-nav-list">                   
-                    <div class='dashboard-nav-dropdown' runat="server" id="UserFactory">
+                    <div class='dashboard-nav-dropdown' runat="server" visible="false" id="UserFactory">
                         <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i
                             class="fas fa-industry"></i>Factory </a>
                         <div class='dashboard-nav-dropdown-menu'>
@@ -81,7 +80,7 @@
                     </div>
 
                     <%--<a href="#" class="dashboard-nav-item"><i class="fas fa-wrench"></i>Production </a>--%>
-                    <div class='dashboard-nav-dropdown' runat="server" id="UserProduction">
+                    <div class='dashboard-nav-dropdown' runat="server" visible="false" id="UserProduction">
                         <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i
                             class="fas fa-wrench"></i>Production </a>
                         <div class='dashboard-nav-dropdown-menu'>
@@ -94,12 +93,12 @@
                             <a href="#" class="dashboard-nav-dropdown-item">Companies</a>                         
                         </div>
                     </div>
-                    <a href="/User/UserManagement.aspx" runat="server" id="users" class="dashboard-nav-item"><i class="fas fa-users"></i>Users </a>
+                    <a href="/User/UserManagement.aspx" runat="server" visible="false" id="users" class="dashboard-nav-item"><i class="fas fa-users"></i>Users </a>
                     
-                    <div class='dashboard-nav-dropdown' runat="server" id="Admin">
+                    <div class='dashboard-nav-dropdown' runat="server" visible="false" id="Admin">
                         <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i
                             class="fas fa-user-cog"></i>Admin </a>
-                        <div class='dashboard-nav-dropdown-menu' runat="server" id="AdminFactory">
+                        <div class='dashboard-nav-dropdown-menu' runat="server" visible="false" id="AdminFactory">
                            <%-- <a href="#" class="dashboard-nav-dropdown-item">Factory</a>--%>
                             <div class='dashboard-nav-dropdown'>
                         <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i
@@ -113,7 +112,7 @@
                         </div>
                     </div>
 
-                            <div class='dashboard-nav-dropdown' runat="server" id="AdminProduction">
+                            <div class='dashboard-nav-dropdown' runat="server" visible="false" id="AdminProduction">
                         <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i
                             class="fas fa-wrench"></i>Production </a>
                         <div class='dashboard-nav-dropdown-menu'>
@@ -131,7 +130,7 @@
 
                     
                     <div class="nav-item-divider"></div>
-                    <a href="#" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i>Logout </a>
+                    <a runat="server" href="#" id="btnLogOut" onserverclick="btnLogOut_ServerClick" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i>Logout </a>
                 </nav>
             </div>
             <div class='dashboard-app'>
@@ -142,6 +141,7 @@
                 <header class='dashboard-toolbar'>
                     <a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a>
                     <h1 style="text-align: center; color: black; width: 100%;">Factory Management System</h1>
+                    <label runat="server" id="lblYear" style="text-align:right;padding-right:20px;width:15%"/>
                 </header>
                 
             </div>

@@ -16,7 +16,7 @@ namespace FactoryManagementSystem.User
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
-        {            
+        {
             UserDAL userDAL = new UserDAL();
             Models.User user = new Models.User();
 
@@ -25,13 +25,16 @@ namespace FactoryManagementSystem.User
             {
                 lblStatus.Text = string.Empty;
                 Session["UserName"] = userDetails.Rows[0]["UserName"].ToString();
-                Session["Year"] = userDetails.Rows[0]["Year"].ToString();
+                Session["Year"] = ddlYear.SelectedValue;
                 Session["FullAccess"] = Convert.ToBoolean(userDetails.Rows[0]["Full"]);
                 Session["AdminOnly"] = Convert.ToBoolean(userDetails.Rows[0]["Admin"]);
                 Session["UsersOnly"] = Convert.ToBoolean(userDetails.Rows[0]["User"]);
-                Session["FactoryOnly"] = Convert.ToBoolean(userDetails.Rows[0]["Factory"]);
+                Session["FactoryOnly"] = Convert.ToBoolean(userDetails.Rows[0]["FactoryOnly"]);
+
+                Response.Redirect("Default.aspx");
             }
-            else {
+            else
+            {
                 lblStatus.Text = "Invalid UserName/Password.";
             }
 

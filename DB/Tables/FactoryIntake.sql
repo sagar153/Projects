@@ -22,6 +22,9 @@ CREATE TABLE [dbo].[FactoryIntake](
 	[Executive] [varchar](100) NULL,
 	[BinId] [int] NULL,
 	[Remarks] [varchar](1000) NULL,
+	[isActive] [bit] NOT NULL,
+	[DateAdded] [DateTime],
+	[DateModified] [DateTime]
  CONSTRAINT [PK_CompanyIntake] PRIMARY KEY CLUSTERED 
 (
 	[FactoryIntakeId] ASC

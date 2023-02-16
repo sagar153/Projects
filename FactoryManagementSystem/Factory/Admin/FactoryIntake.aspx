@@ -25,7 +25,7 @@
                             OnRowCancelingEdit="grdFactoryIntake_RowCancelingEdit"
                             OnRowEditing="grdFactoryIntake_RowEditing"
                             OnRowUpdating="grdFactoryIntake_RowUpdating"
-                            OnRowDataBound ="grdFactoryIntake_RowDataBound"
+                            OnRowDataBound="grdFactoryIntake_RowDataBound"
                             Width="600px">
                             <Columns>
                                 <%--CompanyId--%>
@@ -78,23 +78,22 @@
                                 <asp:TemplateField HeaderText="Date" HeaderStyle-HorizontalAlign="Center">
                                     <EditItemTemplate>
                                         <asp:Calendar ID="calDate" runat="server" SelectedDate='<%# Bind("Date") %>'></asp:Calendar>
-                                        <asp:RequiredFieldValidator runat="server"
+<%--                                        <asp:RequiredFieldValidator runat="server"
                                             ControlToValidate="calDate" Display="Dynamic"
                                             ValidationGroup="Edit"
                                             CssClass="text-danger"
-                                            ErrorMessage="The Date field is required." />
+                                            ErrorMessage="The Date field is required." />--%>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lblDate" runat="server" Text='<%# Bind("Date") %>'></asp:Label>
                                     </ItemTemplate>
                                     <FooterTemplate>
-                                        <asp:Calendar ID="calDates" runat="server" SelectedDate='<%# Bind("Date") %>'></asp:Calendar>
+                                        <asp:Calendar ID="calDates" runat="server" SelectedDate='<%# DateTime.Now %>'></asp:Calendar>
                                         <asp:RequiredFieldValidator runat="server"
-                                            ControlToValidate="calDates" Display="Dynamic"
+                                            ControlToValidate="txtYears" Display="Dynamic"
                                             ValidationGroup="Edit"
                                             CssClass="text-danger"
                                             ErrorMessage="The Date field is required." />
-                                        </EditItemTemplate>
                                     </FooterTemplate>
                                 </asp:TemplateField>
 
@@ -253,12 +252,22 @@
                                 <asp:TemplateField HeaderText="Bin" HeaderStyle-HorizontalAlign="Center">
                                     <EditItemTemplate>
                                         <asp:DropDownList ID="ddlBin" runat="server"></asp:DropDownList>
+                                        <asp:RequiredFieldValidator runat="server"
+                                            ControlToValidate="ddlBin" Display="Dynamic"
+                                            ValidationGroup="Edit"
+                                            CssClass="text-danger"
+                                            ErrorMessage="The Company field is required." />
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lblBinId" runat="server" Text='<%# Bind("BinId") %>'></asp:Label>
                                     </ItemTemplate>
                                     <FooterTemplate>
                                         <asp:DropDownList ID="ddlBins" runat="server"></asp:DropDownList>
+                                        <asp:RequiredFieldValidator runat="server"
+                                            ControlToValidate="ddlBins" Display="Dynamic"
+                                            ValidationGroup="Edit"
+                                            CssClass="text-danger"
+                                            ErrorMessage="The Company field is required." />
                                     </FooterTemplate>
                                 </asp:TemplateField>
 
@@ -268,7 +277,7 @@
                                         <asp:TextBox ID="txtRemark" runat="server" Text='<%# Bind("Remarks") %>'></asp:TextBox>
                                     </EditItemTemplate>
                                     <ItemTemplate>
-                                        <asp:Label ID="lblRemark" runat="server" Text='<%# Bind("ExeRemarkscutive") %>'></asp:Label>
+                                        <asp:Label ID="lblRemark" runat="server" Text='<%# Bind("Remarks") %>'></asp:Label>
                                     </ItemTemplate>
                                     <FooterTemplate>
                                         <asp:TextBox ID="txtRemarks" runat="server"></asp:TextBox>
@@ -276,7 +285,7 @@
                                 </asp:TemplateField>
 
                                 <%--isActive--%>
-                                <asp:TemplateField HeaderText="Active"  HeaderStyle-HorizontalAlign="Center">
+                                <asp:TemplateField HeaderText="Active" HeaderStyle-HorizontalAlign="Center">
                                     <EditItemTemplate>
                                         <asp:CheckBox ID="chIsActive" runat="server" Checked='<%# Bind("isActive") %>'></asp:CheckBox>
 

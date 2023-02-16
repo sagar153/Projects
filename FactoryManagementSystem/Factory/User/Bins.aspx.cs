@@ -32,7 +32,7 @@ namespace FactoryManagementSystem.Factory.User
                 GridViewRow row = (GridViewRow)((Control)e.CommandSource).NamingContainer;
 
                 Label Id = (Label)row.FindControl("lblBinId");
-                Response.Redirect("/Factory/Admin/Bins.aspx");
+                Response.Redirect("/Factory/User/BinDetails.aspx?binId=" + Id.Text);
             }
         }
     }

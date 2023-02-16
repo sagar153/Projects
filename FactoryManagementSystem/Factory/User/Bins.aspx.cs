@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FactoryManagementSystem.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,28 @@ namespace FactoryManagementSystem.Factory.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                LoadData();
+            }
+        }
 
+        private void LoadData()  // To show the data in the DataGridView  
+        {
+            BinDAL binsDAL = new BinDAL();
+            gvBins.DataSource = binsDAL.GetActiveBins();
+            gvBins.DataBind();
+        }
+
+        protected void gvBins_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Details")
+            {
+                GridViewRow row = (GridViewRow)((Control)e.CommandSource).NamingContainer;
+
+                Label Id = (Label)row.FindControl("lblBinId");
+                Response.Redirect("/Factory/Admin/Bins.aspx");
+            }
         }
     }
 }

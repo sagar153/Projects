@@ -21,6 +21,18 @@ namespace FactoryManagementSystem.DAL
             return ds.Tables[0];
         }
 
+        public DataTable GetActiveBins()
+        {
+            var sqlHelper = new SQLDataAccessHelper();
+            var paramArray = new SqlParameter[4];
+            paramArray[0] = new SqlParameter() { ParameterName = "@BinId", Value = 0 };
+            paramArray[1] = new SqlParameter() { ParameterName = "@BinName", Value = "" };
+            paramArray[2] = new SqlParameter() { ParameterName = "@isActive", Value = true };
+            paramArray[3] = new SqlParameter() { ParameterName = "@OperationType", Value = 5 };
+            var ds = sqlHelper.ExecuteQuery("spBinCRUD", CommandType.StoredProcedure, paramArray);
+            return ds.Tables[0];
+        }
+
         public void Save(Models.Bin bin)
         {
             var sqlHelper = new SQLDataAccessHelper();

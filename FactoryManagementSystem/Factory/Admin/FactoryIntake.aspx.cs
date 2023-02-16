@@ -62,16 +62,21 @@ namespace FactoryManagementSystem.Factory.Admin
 
         protected void grdFactoryIntake_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            GridViewRow row = (GridViewRow)((Control)e.CommandSource).NamingContainer;
+
+            int id = Convert.ToInt16(grdFactoryIntake.DataKeys[row.RowIndex].Values["FactoryIntakeId"].ToString());
+
             if (e.CommandName == "EditIntake")
             {
-                GridViewRow row = (GridViewRow)((Control)e.CommandSource).NamingContainer;
-
-                Label Id = (Label)row.FindControl("lblCompanyId");
-                int id = Convert.ToInt16(grdFactoryIntake.DataKeys[row.RowIndex].Values["FactoryIntakeId"].ToString());
                 Response.Redirect("/Factory/Admin/AddEditFactoryIntake.aspx?IntakeId="+id.ToString());
             }
+            else if (e.CommandName == "EditIntake")
+            {
+                Response.Redirect("/Factory/Admin/FactoryOutward.aspx?IntakeId=" + id.ToString());
+            }
 
-            
+
+
         }
     }
 }

@@ -17,6 +17,8 @@ CREATE TABLE [dbo].[FactoryOutward](
 	[ShowingMoist] [decimal](18, 2) NULL,
 	[Hours] [int] NULL,
 	[isActive] [bit] NOT NULL,
+	[DateAdded] [datetime],
+	[DateModified] [datetime]
  CONSTRAINT [PK_CompanyOutward] PRIMARY KEY CLUSTERED 
 (
 	[FactoryOutWardId] ASC

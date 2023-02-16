@@ -16,7 +16,7 @@
     <table style="width: 100%;">
         <tr>
             <td style="text-align: center" colspan="9">
-                <strong>Add Edit Intake</strong>
+                <strong>Add Edit Factory Intake</strong>
             </td>
 
         </tr>

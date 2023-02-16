@@ -30,39 +30,42 @@ namespace FactoryManagementSystem.Factory.Admin
 
             var data = addEditFactoryIntakeDAL.GetFactoryIntake(factoryIntakeId);
 
-            txtYear.Text = data.Rows[0]["Year"].ToString();
-            calDate.SelectedDate = Convert.ToDateTime(data.Rows[0]["Date"].ToString());
-            txtLorryNo.Text = data.Rows[0]["LorryNo"].ToString();
-            txtVariety.Text = data.Rows[0]["Variety"].ToString();
-            txtWeight.Text = data.Rows[0]["Weight"].ToString();
-            txtMoist.Text = data.Rows[0]["Moist"].ToString();
-            txtBags.Text = data.Rows[0]["Bags"].ToString();
-            txtLot.Text = data.Rows[0]["Lot"].ToString();
-            txtExecutive.Text = data.Rows[0]["Executive"].ToString();
-            txtRemarks.Text = data.Rows[0]["Remarks"].ToString();
-            chkActive.Checked = Convert.ToBoolean(data.Rows[0]["isActive"].ToString());
+            if (data.Rows.Count > 0)
+            {
+                txtYear.Text = data.Rows[0]["Year"].ToString();
+                calDate.SelectedDate = Convert.ToDateTime(data.Rows[0]["Date"].ToString());
+                txtLorryNo.Text = data.Rows[0]["LorryNo"].ToString();
+                txtVariety.Text = data.Rows[0]["Variety"].ToString();
+                txtWeight.Text = data.Rows[0]["Weight"].ToString();
+                txtMoist.Text = data.Rows[0]["Moist"].ToString();
+                txtBags.Text = data.Rows[0]["Bags"].ToString();
+                txtLot.Text = data.Rows[0]["Lot"].ToString();
+                txtExecutive.Text = data.Rows[0]["Executive"].ToString();
+                txtRemarks.Text = data.Rows[0]["Remarks"].ToString();
+                chkActive.Checked = Convert.ToBoolean(data.Rows[0]["isActive"].ToString());
 
-            DAL.CompanieDAL companieDAL = new DAL.CompanieDAL();
+                DAL.CompanieDAL companieDAL = new DAL.CompanieDAL();
 
-            var companyData = companieDAL.GetActiveCompanies();
+                var companyData = companieDAL.GetActiveCompanies();
 
-            ddlCompany.DataSource = companyData;
-            ddlCompany.DataTextField = "CompanyName";
-            ddlCompany.DataValueField = "CompanyId";
-            ddlCompany.DataBind();
+                ddlCompany.DataSource = companyData;
+                ddlCompany.DataTextField = "CompanyName";
+                ddlCompany.DataValueField = "CompanyId";
+                ddlCompany.DataBind();
 
-            ddlCompany.SelectedItem.Value = data.Rows[0]["CompanyId"].ToString();
+                ddlCompany.SelectedItem.Value = data.Rows[0]["CompanyId"].ToString();
 
-            DAL.BinDAL binDAL = new DAL.BinDAL();
+                DAL.BinDAL binDAL = new DAL.BinDAL();
 
-            var binData = binDAL.GetActiveBins();
+                var binData = binDAL.GetActiveBins();
 
-            ddlBin.DataSource = binData;
-            ddlBin.DataTextField = "BinName";
-            ddlBin.DataValueField = "BinId";
-            ddlBin.DataBind();
+                ddlBin.DataSource = binData;
+                ddlBin.DataTextField = "BinName";
+                ddlBin.DataValueField = "BinId";
+                ddlBin.DataBind();
 
-            ddlBin.SelectedItem.Value = data.Rows[0]["BinId"].ToString();
+                ddlBin.SelectedItem.Value = data.Rows[0]["BinId"].ToString();
+            }
         }
 
         protected void btnSave_Click(object sender, EventArgs e)

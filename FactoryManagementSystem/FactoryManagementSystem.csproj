@@ -118,6 +118,7 @@
     <Content Include="Factory\Admin\Bins.aspx" />
     <Content Include="Factory\Admin\Companies.aspx" />
     <Content Include="Factory\Admin\FactoryIntake.aspx" />
+    <Content Include="Factory\Admin\FactoryOutward.aspx" />
     <Content Include="Factory\User\BinDetails.aspx" />
     <Content Include="Factory\User\Bins.aspx" />
     <Content Include="Factory\User\Companies.aspx" />
@@ -193,6 +194,7 @@
     <Compile Include="DAL\BinMoistDAL.cs" />
     <Compile Include="DAL\CompanieDAL.cs" />
     <Compile Include="DAL\FactoryIntakeDAL.cs" />
+    <Compile Include="DAL\FactoryOutwardDAL.cs" />
     <Compile Include="DAL\ProductionDAL.cs" />
     <Compile Include="DAL\UserDAL.cs" />
     <Compile Include="Default.aspx.cs">
@@ -229,6 +231,13 @@
     </Compile>
     <Compile Include="Factory\Admin\FactoryIntake.aspx.designer.cs">
       <DependentUpon>FactoryIntake.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Factory\Admin\FactoryOutward.aspx.cs">
+      <DependentUpon>FactoryOutward.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Factory\Admin\FactoryOutward.aspx.designer.cs">
+      <DependentUpon>FactoryOutward.aspx</DependentUpon>
     </Compile>
     <Compile Include="Factory\User\BinDetails.aspx.cs">
       <DependentUpon>BinDetails.aspx</DependentUpon>
@@ -273,6 +282,7 @@
     <Compile Include="Models\BinMoist.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\FactoryIntake.cs" />
+    <Compile Include="Models\FactoryOutward.cs" />
     <Compile Include="Models\Organisercs.cs" />
     <Compile Include="Models\OrganiserHoldings.cs" />
     <Compile Include="Models\Production.cs" />

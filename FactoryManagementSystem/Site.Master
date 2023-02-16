@@ -107,7 +107,6 @@
                             <a href="/Factory/Admin/Companies.aspx" class="dashboard-nav-dropdown-item">Companies</a>
                             <a href="/Factory/Admin/Bins.aspx" class="dashboard-nav-dropdown-item">Bins</a>  
                             <a href="/Factory/Admin/FactoryIntake.aspx" class="dashboard-nav-dropdown-item">InTake</a>
-                            <a href="#" class="dashboard-nav-dropdown-item">OutWard</a>  
                             <a href="#" class="dashboard-nav-dropdown-item">Shelling</a>                           
                         </div>
                     </div>

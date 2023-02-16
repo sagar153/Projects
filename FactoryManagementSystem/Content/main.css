@@ -102,7 +102,8 @@ h1, .h1 {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    min-height: 100vh;
+    min-height: 80vh;
+    overflow:hidden !important;
 }
 
 .dashboard-app {
@@ -120,6 +121,7 @@ h1, .h1 {
     -ms-flex-positive: 2;
     flex-grow: 2;
     margin-top: 84px;
+    
 }
 
 .dashboard-content {
@@ -138,6 +140,7 @@ h1, .h1 {
     bottom: 0;
     overflow: auto;
     background-color: #373193;
+    overflow-x: hidden;
 }
 
 .dashboard-compact .dashboard-nav {

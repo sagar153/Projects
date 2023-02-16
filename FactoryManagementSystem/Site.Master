@@ -59,7 +59,7 @@
                 });
             });
         </script>
-        <div class='dashboard'>
+        <div class='dashboard' style="overflow:hidden">
             <div class="dashboard-nav">
                 <header>
                     <a href="#" class="menu-toggle"><i class="fas fa-bars"></i></a><a href="#"

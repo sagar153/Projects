@@ -174,5 +174,11 @@ namespace FactoryManagementSystem.Factory.Admin
 
             return factoryIntake;
         }
+
+        protected void grdFactoryIntake_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grdFactoryIntake.PageIndex = e.NewPageIndex;
+            LoadData();
+        }
     }
 }

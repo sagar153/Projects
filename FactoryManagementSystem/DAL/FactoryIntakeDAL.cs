@@ -24,10 +24,33 @@ namespace FactoryManagementSystem.DAL
             paramArray[8] = new SqlParameter() { ParameterName = "@Bags", Value = 0 };
             paramArray[9] = new SqlParameter() { ParameterName = "@Lot", Value = 0 };
             paramArray[10] = new SqlParameter() { ParameterName = "@Executive", Value = "" };
-            paramArray[11] = new SqlParameter() { ParameterName = "@BinId", Value = 1 };
+            paramArray[11] = new SqlParameter() { ParameterName = "@BinId", Value = 0 };
             paramArray[12] = new SqlParameter() { ParameterName = "@Remarks", Value = "" };
             paramArray[13] = new SqlParameter() { ParameterName = "@isActive", Value = true };
             paramArray[14] = new SqlParameter() { ParameterName = "@OperationType", Value = 5 };
+            var ds = sqlHelper.ExecuteQuery("spFactoryIntakeCRUD", CommandType.StoredProcedure, paramArray);
+            return ds.Tables[0];
+        }
+
+        public DataTable GetActiveFactoryIntake(string strYear)
+        {
+            var sqlHelper = new SQLDataAccessHelper();
+            var paramArray = new SqlParameter[15];
+            paramArray[0] = new SqlParameter() { ParameterName = "@FactoryIntakeId", Value = 0 };
+            paramArray[1] = new SqlParameter() { ParameterName = "@CompanyId", Value = 0 };
+            paramArray[2] = new SqlParameter() { ParameterName = "@Year", Value = strYear };
+            paramArray[3] = new SqlParameter() { ParameterName = "@Date", Value = DateTime.Now };
+            paramArray[4] = new SqlParameter() { ParameterName = "@LorryNo", Value = "" };
+            paramArray[5] = new SqlParameter() { ParameterName = "@Variety", Value = "" };
+            paramArray[6] = new SqlParameter() { ParameterName = "@Weight", Value = 0.0 };
+            paramArray[7] = new SqlParameter() { ParameterName = "@Moist", Value = 0.0 };
+            paramArray[8] = new SqlParameter() { ParameterName = "@Bags", Value = 0 };
+            paramArray[9] = new SqlParameter() { ParameterName = "@Lot", Value = 0 };
+            paramArray[10] = new SqlParameter() { ParameterName = "@Executive", Value = "" };
+            paramArray[11] = new SqlParameter() { ParameterName = "@BinId", Value = 0 };
+            paramArray[12] = new SqlParameter() { ParameterName = "@Remarks", Value = "" };
+            paramArray[13] = new SqlParameter() { ParameterName = "@isActive", Value = true };
+            paramArray[14] = new SqlParameter() { ParameterName = "@OperationType", Value = 4 };
             var ds = sqlHelper.ExecuteQuery("spFactoryIntakeCRUD", CommandType.StoredProcedure, paramArray);
             return ds.Tables[0];
         }

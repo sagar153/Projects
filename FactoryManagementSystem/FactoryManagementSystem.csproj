@@ -120,6 +120,7 @@
     <Content Include="Factory\User\Bins.aspx" />
     <Content Include="Factory\User\Companies.aspx" />
     <Content Include="Factory\User\CompanyDetails.aspx" />
+    <Content Include="Factory\User\FactoryIntake.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -243,6 +244,13 @@
     </Compile>
     <Compile Include="Factory\User\CompanyDetails.aspx.designer.cs">
       <DependentUpon>CompanyDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Factory\User\FactoryIntake.aspx.cs">
+      <DependentUpon>FactoryIntake.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Factory\User\FactoryIntake.aspx.designer.cs">
+      <DependentUpon>FactoryIntake.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

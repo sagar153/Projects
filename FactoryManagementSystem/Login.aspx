@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="label" for="Year">Year</label>
-                                    <asp:DropDownList runat="server" class="form-control" required="">
+                                    <asp:DropDownList ID="ddlYear" runat="server" class="form-control" required="">
                                         <asp:ListItem Text="" Value="" />
                                         <asp:ListItem Text="2022-23" Value="2022-23"></asp:ListItem>
                                         <asp:ListItem Text="2023-24" Value="2023-24"></asp:ListItem>

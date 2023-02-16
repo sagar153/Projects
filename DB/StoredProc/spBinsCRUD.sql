@@ -1,9 +1,11 @@
-USE [FactoryManagement]
-GO
-/****** Object:  StoredProcedure [dbo].[spBinCRUD]    Script Date: 12-02-2023 20:25:26 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
+USE [FactoryManagement]  
+GO  
+SET ANSI_NULLS ON  
+GO  
+SET QUOTED_IDENTIFIER ON  
+GO  
+
+DROP PROCEDURE IF EXISTS [dbo].[spBinCRUD]  
 GO
 -- =============================================  
 -- Author:      <Naveen>   
@@ -20,7 +22,8 @@ CREATE PROCEDURE [dbo].[spBinCRUD]
     -- 1) Insert  
     -- 2) Update  
     -- 3) Delete  
-    -- 4) Selec All  
+    -- 4) Selec All 
+	-- 5) All Active
 AS  
 BEGIN  
     -- SET NOCOUNT ON added to prevent extra result sets from  
@@ -45,10 +48,14 @@ BEGIN
     ELSE IF @OperationType=3  
     BEGIN  
         UPDATE [dbo].[Bins] SET isActive = 0 WHERE BinId = @BinId  
-    END 
-    ELSE   
+    END  
+	ELSE IF @OperationType=5  
+    BEGIN  
+        SELECT * FROM [dbo].[Bins]	WHERE isActive = 1  
+    END  
+	ELSE   
     BEGIN  
         SELECT * FROM [dbo].[Bins]		
-    END  
+    END 
        
 END  

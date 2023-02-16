@@ -115,8 +115,10 @@
     <Content Include="Default.aspx" />
     <Content Include="Factory\Admin\Bins.aspx" />
     <Content Include="Factory\Admin\Companies.aspx" />
-    <Content Include="Factory\Admin\FactoryIntake.aspx" />
+    <Content Include="Factory\User\BinDetails.aspx" />
+    <Content Include="Factory\User\Bins.aspx" />
     <Content Include="Factory\User\Companies.aspx" />
+    <Content Include="Factory\User\CompanyDetails.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -182,7 +184,6 @@
     </Compile>
     <Compile Include="DAL\BinDAL.cs" />
     <Compile Include="DAL\CompanieDAL.cs" />
-    <Compile Include="DAL\FactoryIntakeDAL.cs" />
     <Compile Include="DAL\ProductionDAL.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -205,12 +206,19 @@
     <Compile Include="Factory\Admin\Companies.aspx.designer.cs">
       <DependentUpon>Companies.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Factory\Admin\FactoryIntake.aspx.cs">
-      <DependentUpon>FactoryIntake.aspx</DependentUpon>
+    <Compile Include="Factory\User\BinDetails.aspx.cs">
+      <DependentUpon>BinDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Factory\Admin\FactoryIntake.aspx.designer.cs">
-      <DependentUpon>FactoryIntake.aspx</DependentUpon>
+    <Compile Include="Factory\User\BinDetails.aspx.designer.cs">
+      <DependentUpon>BinDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Factory\User\Bins.aspx.cs">
+      <DependentUpon>Bins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Factory\User\Bins.aspx.designer.cs">
+      <DependentUpon>Bins.aspx</DependentUpon>
     </Compile>
     <Compile Include="Factory\User\Companies.aspx.cs">
       <DependentUpon>Companies.aspx</DependentUpon>
@@ -218,6 +226,13 @@
     </Compile>
     <Compile Include="Factory\User\Companies.aspx.designer.cs">
       <DependentUpon>Companies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Factory\User\CompanyDetails.aspx.cs">
+      <DependentUpon>CompanyDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Factory\User\CompanyDetails.aspx.designer.cs">
+      <DependentUpon>CompanyDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

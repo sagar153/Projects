@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace FactoryManagementSystem.Factory.User
 {
-    public partial class Companies : System.Web.UI.Page
+    public partial class Bins : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,18 +20,18 @@ namespace FactoryManagementSystem.Factory.User
 
         private void LoadData()  // To show the data in the DataGridView  
         {
-            CompanieDAL companiesDAL = new CompanieDAL();
-            gvCompanies.DataSource = companiesDAL.GetActiveCompanies();
-            gvCompanies.DataBind();
+            BinDAL binsDAL = new BinDAL();
+            gvBins.DataSource = binsDAL.GetActiveBins();
+            gvBins.DataBind();
         }
 
-        protected void gvCompanies_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void gvBins_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "Details")
             {
                 GridViewRow row = (GridViewRow)((Control)e.CommandSource).NamingContainer;
 
-                Label Id = (Label)row.FindControl("lblCompanyId");
+                Label Id = (Label)row.FindControl("lblBinId");
                 Response.Redirect("/Factory/Admin/Bins.aspx");
             }
         }

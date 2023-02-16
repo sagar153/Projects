@@ -10,7 +10,7 @@
 namespace FactoryManagementSystem.Factory.User {
     
     
-    public partial class Companies {
+    public partial class Bins {
         
         /// <summary>
         /// UpdatePanelCR control.
@@ -22,12 +22,12 @@ namespace FactoryManagementSystem.Factory.User {
         protected global::System.Web.UI.UpdatePanel UpdatePanelCR;
         
         /// <summary>
-        /// gvCompanies control.
+        /// gvBins control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvCompanies;
+        protected global::System.Web.UI.WebControls.GridView gvBins;
     }
 }

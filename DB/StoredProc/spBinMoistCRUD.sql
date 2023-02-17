@@ -24,6 +24,8 @@ CREATE PROCEDURE [dbo].[spBinMoistCRUD]
 	@EvnUpmoist decimal(18, 2),
 	@EvnDownMoist decimal(18, 2),
 	@Shelling bit,
+	@ShellingDate datetime,
+	@Lot int,
 	@Remarks varchar(1000),
 	@isActive bit,
     @OperationType int   
@@ -54,6 +56,8 @@ BEGIN
            ,[EvnUpmoist]
            ,[EvnDownMoist]
            ,[Shelling]
+		   ,[ShellingDate]
+		   ,[Lot]
            ,[Remarks]
            ,[isActive])
      VALUES
@@ -67,6 +71,8 @@ BEGIN
            ,@EvnUpmoist
            ,@EvnDownMoist
            ,@Shelling
+		   ,@ShellingDate
+		   ,@Lot
            ,@Remarks
            ,@isActive)
     END  
@@ -85,6 +91,8 @@ BEGIN
 			  ,[Shelling] = @Shelling
 			  ,[Remarks] = @Remarks
 			  ,[isActive] = @isActive
+			  ,[ShellingDate] = @ShellingDate
+			  ,[Lot] = @Lot
 		 WHERE BinDailyMoistId = @BinMoistId
     END  
     ELSE IF @OperationType=3  

@@ -12,7 +12,7 @@ namespace FactoryManagementSystem.DAL
         public DataTable GetAllBinMoist(string strYear)
         {
             var sqlHelper = new SQLDataAccessHelper();
-            var paramArray = new SqlParameter[14];
+            var paramArray = new SqlParameter[16];
             paramArray[0] = new SqlParameter() { ParameterName = "@BinMoistId", Value = 0 };
             paramArray[1] = new SqlParameter() { ParameterName = "@BinId", Value = 0 };
             paramArray[2] = new SqlParameter() { ParameterName = "@Date", Value = DateTime.Now.Date };
@@ -24,9 +24,11 @@ namespace FactoryManagementSystem.DAL
             paramArray[8] = new SqlParameter() { ParameterName = "@EvnUpmoist", Value = 0 };
             paramArray[9] = new SqlParameter() { ParameterName = "@EvnDownMoist", Value = 0 };
             paramArray[10] = new SqlParameter() { ParameterName = "@Shelling", Value = true };
-            paramArray[11] = new SqlParameter() { ParameterName = "@Remarks", Value = "" };
-            paramArray[12] = new SqlParameter() { ParameterName = "@isActive", Value = true };
-            paramArray[13] = new SqlParameter() { ParameterName = "@OperationType", Value = 5 };
+            paramArray[11] = new SqlParameter() { ParameterName = "@ShellingDate", Value = DateTime.Now.Date };
+            paramArray[12] = new SqlParameter() { ParameterName = "@Lot", Value = 0 };
+            paramArray[13] = new SqlParameter() { ParameterName = "@Remarks", Value = "" };
+            paramArray[14] = new SqlParameter() { ParameterName = "@isActive", Value = true };
+            paramArray[15] = new SqlParameter() { ParameterName = "@OperationType", Value = 5 };
 
             var ds = sqlHelper.ExecuteQuery("spBinMoistCRUD", CommandType.StoredProcedure, paramArray);
             return ds.Tables[0];
@@ -35,7 +37,7 @@ namespace FactoryManagementSystem.DAL
         public DataTable GetActiveBinMoist(string strYear, int intBinId)
         {
             var sqlHelper = new SQLDataAccessHelper();
-            var paramArray = new SqlParameter[14];
+            var paramArray = new SqlParameter[16];
             paramArray[0] = new SqlParameter() { ParameterName = "@BinMoistId", Value = 0 };
             paramArray[1] = new SqlParameter() { ParameterName = "@BinId", Value = intBinId };
             paramArray[2] = new SqlParameter() { ParameterName = "@Date", Value = DateTime.Now.Date };
@@ -47,9 +49,11 @@ namespace FactoryManagementSystem.DAL
             paramArray[8] = new SqlParameter() { ParameterName = "@EvnUpmoist", Value = 0 };
             paramArray[9] = new SqlParameter() { ParameterName = "@EvnDownMoist", Value = 0 };
             paramArray[10] = new SqlParameter() { ParameterName = "@Shelling", Value = true };
-            paramArray[11] = new SqlParameter() { ParameterName = "@Remarks", Value = "" };
-            paramArray[12] = new SqlParameter() { ParameterName = "@isActive", Value = true };
-            paramArray[13] = new SqlParameter() { ParameterName = "@OperationType", Value = 4 };
+            paramArray[11] = new SqlParameter() { ParameterName = "@ShellingDate", Value = DateTime.Now.Date };
+            paramArray[12] = new SqlParameter() { ParameterName = "@Lot", Value = 0 };
+            paramArray[13] = new SqlParameter() { ParameterName = "@Remarks", Value = "" };
+            paramArray[14] = new SqlParameter() { ParameterName = "@isActive", Value = true };
+            paramArray[15] = new SqlParameter() { ParameterName = "@OperationType", Value = 4 };
             var ds = sqlHelper.ExecuteQuery("spBinMoistCRUD", CommandType.StoredProcedure, paramArray);
             return ds.Tables[0];
         }
@@ -77,7 +81,7 @@ namespace FactoryManagementSystem.DAL
 
         private SqlParameter[] ComputeParams(Models.BinMoist binMoist, int operatorType)
         {
-            var paramArray = new SqlParameter[14];
+            var paramArray = new SqlParameter[16];
             paramArray[0] = new SqlParameter() { ParameterName = "@BinMoistId", Value = binMoist.BinMoistId };
             paramArray[1] = new SqlParameter() { ParameterName = "@BinId", Value = binMoist.BinId };
             paramArray[2] = new SqlParameter() { ParameterName = "@Date", Value = binMoist.Date };
@@ -89,9 +93,11 @@ namespace FactoryManagementSystem.DAL
             paramArray[8] = new SqlParameter() { ParameterName = "@EvnUpmoist", Value = binMoist.EvnUpmoist };
             paramArray[9] = new SqlParameter() { ParameterName = "@EvnDownMoist", Value = binMoist.EvnDownMoist };
             paramArray[10] = new SqlParameter() { ParameterName = "@Shelling", Value = binMoist.Shelling };
-            paramArray[11] = new SqlParameter() { ParameterName = "@Remarks", Value = binMoist.Remarks };
-            paramArray[12] = new SqlParameter() { ParameterName = "@isActive", Value = binMoist.isActive };
-            paramArray[13] = new SqlParameter() { ParameterName = "@OperationType", Value = operatorType };
+            paramArray[11] = new SqlParameter() { ParameterName = "@ShellingDate", Value = binMoist.ShellingDate };
+            paramArray[12] = new SqlParameter() { ParameterName = "@Lot", Value = binMoist.Lot };
+            paramArray[13] = new SqlParameter() { ParameterName = "@Remarks", Value = binMoist.Remarks };
+            paramArray[14] = new SqlParameter() { ParameterName = "@isActive", Value = binMoist.isActive };
+            paramArray[15] = new SqlParameter() { ParameterName = "@OperationType", Value = operatorType };
 
             return paramArray;
         }

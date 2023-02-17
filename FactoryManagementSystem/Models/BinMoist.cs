@@ -20,6 +20,8 @@ namespace FactoryManagementSystem.Models
         public decimal EvnUpmoist { get; set; }
         public decimal EvnDownMoist { get; set; }
         public bool Shelling { get; set; }
+        public DateTime ShellingDate { get; set; }
+        public int Lot { get; set; }
         public string Remarks { get; set; }
         public bool isActive { get; set; }
     }

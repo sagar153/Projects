@@ -7,21 +7,18 @@
             <tr>
                 <td style="text-align: center">
                     <strong>Factory Intake Management</strong></td>
-                
+
             </tr>
-            <tr style="height: 20px;text-align:right"> 
+            <tr style="height: 20px; text-align: right">
                 <td>
-                    
-                        
-                            <button ID="btnAdd" runat="server" CssClass="btn btn-primary btn-sm"
-                                                OnClick="btnAdd_Click">
-                                <i class="fas fa-plus"></i>
-                                </button>            
+
+                    <asp:Button ID="btnAdd" runat="server" Text="Add"
+                        CssClass="btn btn-primary btn-sm fas fa-plus" OnClick="btnAdd_Click"></asp:Button>
                 </td>
             </tr>
             <tr class="p-0 m-0" style="height: auto">
 
-                <td style="padding-top:2px;">
+                <td style="padding-top: 2px;">
                     <asp:UpdatePanel ID="UpdatePanelCR" runat="server">
                         <ContentTemplate>
                             <asp:GridView ID="grdFactoryIntake"
@@ -37,16 +34,8 @@
                                 OnRowCommand="grdFactoryIntake_RowCommand"
                                 OnPageIndexChanging="grdFactoryIntake_PageIndexChanging"
                                 PageSize="5"
-                                Width="100%"
-                                >
+                                Width="100%">
                                 <Columns>
-                                                                     
-
-<%--                                    <asp:TemplateField HeaderText="" HeaderStyle-HorizontalAlign="Center">
-                                        <ItemTemplate>
-                                            <asp:LinkButton ID="lnkShowDetails" Text="Show Outake" CommandName="ShowOutake" runat="server"></asp:LinkButton>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>--%>
 
                                     <%--CompanyId--%>
                                     <asp:TemplateField HeaderText="Company" HeaderStyle-HorizontalAlign="Center">
@@ -143,7 +132,7 @@
                                             <asp:LinkButton ID="lnkEditDetails" Text="Edit" CommandName="EditIntake" runat="server"></asp:LinkButton>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                     <%--<asp:TemplateField ItemStyle-Width="50px">
+                                    <%--<asp:TemplateField ItemStyle-Width="50px">
 
                                         <FooterTemplate>
                                             <asp:Button ID="btnAdd" runat="server" Text="Add"

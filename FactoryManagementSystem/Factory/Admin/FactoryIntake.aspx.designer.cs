@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FactoryManagementSystem.Factory.Admin {
-    
-    
-    public partial class FactoryIntake {
-        
+namespace FactoryManagementSystem.Factory.Admin
+{
+
+
+    public partial class FactoryIntake
+    {
+
         /// <summary>
         /// btnAdd control.
         /// </summary>
@@ -19,8 +21,8 @@ namespace FactoryManagementSystem.Factory.Admin {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btnAdd;
-        
+        protected global::System.Web.UI.WebControls.Button btnAdd;
+
         /// <summary>
         /// UpdatePanelCR control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace FactoryManagementSystem.Factory.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanelCR;
-        
+
         /// <summary>
         /// grdFactoryIntake control.
         /// </summary>

@@ -103,6 +103,7 @@ namespace FactoryManagementSystem.Factory.Admin
                 factoryIntakeDAL.Update(factoryIntake);
             }
 
+            Response.Redirect("/Factory/Admin/FactoryIntake.aspx");
 
         }
     }

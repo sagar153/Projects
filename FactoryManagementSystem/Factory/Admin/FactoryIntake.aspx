@@ -12,8 +12,11 @@
             <tr style="height: 20px; text-align: right">
                 <td>
 
-                    <asp:Button ID="btnAdd" runat="server" Text="Add"
-                        CssClass="btn btn-primary btn-sm fas fa-plus" OnClick="btnAdd_Click"></asp:Button>
+
+                    <button id="btnAdd" runat="server" cssclass="btn btn-primary btn-sm"
+                        onserverclick="btnAdd_Click">
+                        <i class="fas fa-plus"></i>
+                    </button>
                 </td>
             </tr>
             <tr class="p-0 m-0" style="height: auto">

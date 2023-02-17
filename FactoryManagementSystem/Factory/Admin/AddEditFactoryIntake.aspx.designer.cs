@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FactoryManagementSystem.Factory.Admin
-{
-
-
-    public partial class AddEditFactoryIntake
-    {
-
+namespace FactoryManagementSystem.Factory.Admin {
+    
+    
+    public partial class AddEditFactoryIntake {
+        
         /// <summary>
         /// hdnFactoryIntakeId control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hdnFactoryIntakeId;
-
+        
         /// <summary>
         /// lblCompany control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCompany;
-
+        
         /// <summary>
         /// ddlCompany control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlCompany;
-
+        
         /// <summary>
         /// lblYear control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblYear;
-
+        
         /// <summary>
         /// txtYear control.
         /// </summary>
@@ -58,7 +56,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtYear;
-
+        
         /// <summary>
         /// lblDate control.
         /// </summary>
@@ -67,7 +65,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDate;
-
+        
         /// <summary>
         /// calDate control.
         /// </summary>
@@ -75,8 +73,8 @@ namespace FactoryManagementSystem.Factory.Admin
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar calDate;
-
+        protected global::System.Web.UI.WebControls.TextBox calDate;
+        
         /// <summary>
         /// lblLorryNo control.
         /// </summary>
@@ -85,7 +83,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblLorryNo;
-
+        
         /// <summary>
         /// txtLorryNo control.
         /// </summary>
@@ -94,7 +92,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtLorryNo;
-
+        
         /// <summary>
         /// lblVariety control.
         /// </summary>
@@ -103,7 +101,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblVariety;
-
+        
         /// <summary>
         /// txtVariety control.
         /// </summary>
@@ -112,7 +110,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtVariety;
-
+        
         /// <summary>
         /// lblWeight control.
         /// </summary>
@@ -121,7 +119,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblWeight;
-
+        
         /// <summary>
         /// txtWeight control.
         /// </summary>
@@ -130,7 +128,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtWeight;
-
+        
         /// <summary>
         /// lblMoist control.
         /// </summary>
@@ -139,7 +137,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMoist;
-
+        
         /// <summary>
         /// txtMoist control.
         /// </summary>
@@ -148,7 +146,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMoist;
-
+        
         /// <summary>
         /// lblBags control.
         /// </summary>
@@ -157,7 +155,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblBags;
-
+        
         /// <summary>
         /// txtBags control.
         /// </summary>
@@ -166,7 +164,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBags;
-
+        
         /// <summary>
         /// lblLot control.
         /// </summary>
@@ -175,7 +173,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblLot;
-
+        
         /// <summary>
         /// txtLot control.
         /// </summary>
@@ -184,7 +182,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtLot;
-
+        
         /// <summary>
         /// Exective control.
         /// </summary>
@@ -193,7 +191,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Exective;
-
+        
         /// <summary>
         /// txtExecutive control.
         /// </summary>
@@ -202,7 +200,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtExecutive;
-
+        
         /// <summary>
         /// lblBin control.
         /// </summary>
@@ -211,7 +209,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblBin;
-
+        
         /// <summary>
         /// ddlBin control.
         /// </summary>
@@ -220,7 +218,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlBin;
-
+        
         /// <summary>
         /// lblActive control.
         /// </summary>
@@ -229,7 +227,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblActive;
-
+        
         /// <summary>
         /// chkActive control.
         /// </summary>
@@ -238,7 +236,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkActive;
-
+        
         /// <summary>
         /// lblRemarks control.
         /// </summary>
@@ -247,7 +245,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblRemarks;
-
+        
         /// <summary>
         /// txtRemarks control.
         /// </summary>
@@ -256,7 +254,7 @@ namespace FactoryManagementSystem.Factory.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRemarks;
-
+        
         /// <summary>
         /// btnSave control.
         /// </summary>

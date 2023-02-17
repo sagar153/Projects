@@ -1,7 +1,7 @@
 USE [FactoryManagement]
 GO
 
-/****** Object:  Table [dbo].[FactoryOutward]    Script Date: 12-02-2023 22:47:15 ******/
+/****** Object:  Table [dbo].[FactoryOutward]    Script Date: 17-02-2023 12:12:16 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -10,15 +10,17 @@ GO
 
 CREATE TABLE [dbo].[FactoryOutward](
 	[FactoryOutWardId] [int] IDENTITY(1,1) NOT NULL,
-	[FactoryInTakeId] [int] NOT NULL,
+	[Year] [varchar](50) NULL,
+	[Date] [datetime] NULL,
+	[CompanyId] [int] NOT NULL,
+	[Variety] [nchar](50) NULL,
+	[LorryNo] [varchar](50) NOT NULL,
+	[Weight] [decimal](18, 2) NULL,
+	[Bags] [int] NULL,
 	[DCNo] [int] NULL,
+	[CompanyExecutive] [varchar](100) NULL,
 	[Remarks] [varchar](1000) NULL,
-	[ShowingDate] [datetime] NULL,
-	[ShowingMoist] [decimal](18, 2) NULL,
-	[Hours] [int] NULL,
 	[isActive] [bit] NOT NULL,
-	[DateAdded] [datetime],
-	[DateModified] [datetime]
  CONSTRAINT [PK_CompanyOutward] PRIMARY KEY CLUSTERED 
 (
 	[FactoryOutWardId] ASC
@@ -27,13 +29,6 @@ CREATE TABLE [dbo].[FactoryOutward](
 GO
 
 ALTER TABLE [dbo].[FactoryOutward] ADD  CONSTRAINT [DF_CompanyOutward_isActive]  DEFAULT ((1)) FOR [isActive]
-GO
-
-ALTER TABLE [dbo].[FactoryOutward]  WITH CHECK ADD  CONSTRAINT [FK_FactoryOutward_FactoryIntake] FOREIGN KEY([FactoryInTakeId])
-REFERENCES [dbo].[FactoryIntake] ([FactoryIntakeId])
-GO
-
-ALTER TABLE [dbo].[FactoryOutward] CHECK CONSTRAINT [FK_FactoryOutward_FactoryIntake]
 GO
 
 

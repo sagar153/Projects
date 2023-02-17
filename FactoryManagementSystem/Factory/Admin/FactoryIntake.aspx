@@ -7,11 +7,21 @@
             <tr>
                 <td style="text-align: center">
                     <strong>Factory Intake Management</strong></td>
+                
             </tr>
-            <tr style="height: 20px;"></tr>
+            <tr style="height: 20px;text-align:right"> 
+                <td>
+                    
+                        
+                            <button ID="btnAdd" runat="server" CssClass="btn btn-primary btn-sm"
+                                                OnClick="btnAdd_Click">
+                                <i class="fas fa-plus"></i>
+                                </button>            
+                </td>
+            </tr>
             <tr class="p-0 m-0" style="height: auto">
 
-                <td>
+                <td style="padding-top:2px;">
                     <asp:UpdatePanel ID="UpdatePanelCR" runat="server">
                         <ContentTemplate>
                             <asp:GridView ID="grdFactoryIntake"
@@ -27,29 +37,16 @@
                                 OnRowCommand="grdFactoryIntake_RowCommand"
                                 OnPageIndexChanging="grdFactoryIntake_PageIndexChanging"
                                 PageSize="5"
-                                Width="90%"
-                                Height="500px">
+                                Width="100%"
+                                >
                                 <Columns>
-                                    <asp:TemplateField ItemStyle-Width="50px">
+                                                                     
 
-                                        <FooterTemplate>
-                                            <asp:Button ID="btnAdd" runat="server" Text="Add"
-                                                ValidationGroup="Insert" CssClass="btn btn-primary btn-sm"
-                                                OnClick="btnAdd_Click" />
-                                        </FooterTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="" HeaderStyle-HorizontalAlign="Center">
-                                        <ItemTemplate>
-                                            <asp:LinkButton ID="lnkEditDetails" Text="Edit Intake" CommandName="EditIntake" runat="server"></asp:LinkButton>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="" HeaderStyle-HorizontalAlign="Center">
+<%--                                    <asp:TemplateField HeaderText="" HeaderStyle-HorizontalAlign="Center">
                                         <ItemTemplate>
                                             <asp:LinkButton ID="lnkShowDetails" Text="Show Outake" CommandName="ShowOutake" runat="server"></asp:LinkButton>
                                         </ItemTemplate>
-                                    </asp:TemplateField>
+                                    </asp:TemplateField>--%>
 
                                     <%--CompanyId--%>
                                     <asp:TemplateField HeaderText="Company" HeaderStyle-HorizontalAlign="Center">
@@ -141,8 +138,19 @@
                                             <asp:Label ID="lblisActive" runat="server" Text='<%# Bind("isActive") %>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="" HeaderStyle-HorizontalAlign="Center">
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="lnkEditDetails" Text="Edit" CommandName="EditIntake" runat="server"></asp:LinkButton>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                     <%--<asp:TemplateField ItemStyle-Width="50px">
 
-
+                                        <FooterTemplate>
+                                            <asp:Button ID="btnAdd" runat="server" Text="Add"
+                                                ValidationGroup="Insert" CssClass="btn btn-primary btn-sm"
+                                                OnClick="btnAdd_Click" />
+                                        </FooterTemplate>
+                                    </asp:TemplateField>--%>
                                 </Columns>
                                 <PagerStyle HorizontalAlign="Left" />
                             </asp:GridView>

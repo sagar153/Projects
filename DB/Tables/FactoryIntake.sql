@@ -1,7 +1,7 @@
 USE [FactoryManagement]
 GO
 
-/****** Object:  Table [dbo].[FactoryIntake]    Script Date: 12-02-2023 22:47:03 ******/
+/****** Object:  Table [dbo].[FactoryIntake]    Script Date: 17-02-2023 12:13:18 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -23,13 +23,16 @@ CREATE TABLE [dbo].[FactoryIntake](
 	[BinId] [int] NULL,
 	[Remarks] [varchar](1000) NULL,
 	[isActive] [bit] NOT NULL,
-	[DateAdded] [DateTime],
-	[DateModified] [DateTime]
+	[DateAdded] [datetime] NULL,
+	[DateModified] [datetime] NULL,
  CONSTRAINT [PK_CompanyIntake] PRIMARY KEY CLUSTERED 
 (
 	[FactoryIntakeId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[FactoryIntake] ADD  CONSTRAINT [DF_FactoryIntake_isActive]  DEFAULT ((1)) FOR [isActive]
 GO
 
 ALTER TABLE [dbo].[FactoryIntake]  WITH CHECK ADD  CONSTRAINT [FK_FactoryIntake_Bins] FOREIGN KEY([BinId])

@@ -1,7 +1,7 @@
 USE [FactoryManagement]
 GO
 
-/****** Object:  Table [dbo].[BinMoist]    Script Date: 12-02-2023 22:45:27 ******/
+/****** Object:  Table [dbo].[BinMoist]    Script Date: 17-02-2023 12:18:17 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -20,6 +20,8 @@ CREATE TABLE [dbo].[BinMoist](
 	[EvnUpmoist] [decimal](18, 2) NULL,
 	[EvnDownMoist] [decimal](18, 2) NULL,
 	[Shelling] [bit] NULL,
+	[ShellingDate] [datetime] NULL,
+	[Lot] [int] NULL,
 	[Remarks] [varchar](1000) NULL,
 	[isActive] [bit] NOT NULL,
  CONSTRAINT [PK_BinMoist] PRIMARY KEY CLUSTERED 

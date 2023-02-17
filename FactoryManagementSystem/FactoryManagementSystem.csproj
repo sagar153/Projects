@@ -192,6 +192,7 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="DAL\AddEditFactoryIntakeDAL.cs" />
+    <Compile Include="DAL\AddEditFactoryOutwardDAL.cs" />
     <Compile Include="DAL\BinDAL.cs" />
     <Compile Include="DAL\BinMoistDAL.cs" />
     <Compile Include="DAL\CompanieDAL.cs" />

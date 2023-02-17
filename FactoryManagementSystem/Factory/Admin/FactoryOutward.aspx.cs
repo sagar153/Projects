@@ -13,20 +13,14 @@ namespace FactoryManagementSystem.Factory.Admin
         {
             if (!IsPostBack)
             {
-                var intakeId = Convert.ToInt32(Request.Params["IntakeId"]);
-                hdnFactoryIntakeId.Value = intakeId.ToString();
-
-                if (intakeId != 0)
-                {
-                    LoadData(intakeId);
-                }
+                LoadData();
             }
         }
 
-        private void LoadData(int factoryIntakeId)  // To show the data in the DataGridView  
+        private void LoadData()  // To show the data in the DataGridView  
         {
             DAL.FactoryOutwardDAL outwardDAL = new DAL.FactoryOutwardDAL();
-            var outTakeDetails = outwardDAL.GetFactoryOutwardByIntake(factoryIntakeId);
+            var outTakeDetails = outwardDAL.GetAllFactoryOutward();
 
             if (outTakeDetails.Rows.Count > 0)
             {
@@ -38,24 +32,18 @@ namespace FactoryManagementSystem.Factory.Admin
                     grdFactoryOutward.UseAccessibleHeader = true;
                     grdFactoryOutward.HeaderRow.TableSection = TableRowSection.TableHeader;
                 }
-
-                grdFactoryOutward.Columns[1].Visible = true;
             }
             else
             {
-                outTakeDetails.Rows.Add(outTakeDetails.NewRow());
                 grdFactoryOutward.DataSource = outTakeDetails;
                 grdFactoryOutward.DataBind();
-
-                grdFactoryOutward.Columns[1].Visible = false;
-
             }
         }
 
         protected void grdFactoryOutward_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             grdFactoryOutward.PageIndex = e.NewPageIndex;
-            LoadData(Convert.ToInt32(hdnFactoryIntakeId.Value));
+            LoadData();
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -65,7 +53,14 @@ namespace FactoryManagementSystem.Factory.Admin
 
         protected void grdFactoryOutward_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            GridViewRow row = (GridViewRow)((Control)e.CommandSource).NamingContainer;
 
+            int id = Convert.ToInt16(grdFactoryOutward.DataKeys[row.RowIndex].Values["FactoryOutWardId"].ToString());
+
+            if (e.CommandName == "EditIntake")
+            {
+                Response.Redirect("/Factory/Admin/AddEditFatcoryOutward.aspx?OutwardId=" + id.ToString());
+            }
         }
     }
 }

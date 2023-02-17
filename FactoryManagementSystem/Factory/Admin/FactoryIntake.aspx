@@ -130,19 +130,12 @@
                                             <asp:Label ID="lblisActive" runat="server" Text='<%# Bind("isActive") %>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
+
                                     <asp:TemplateField HeaderText="" HeaderStyle-HorizontalAlign="Center">
                                         <ItemTemplate>
                                             <asp:LinkButton ID="lnkEditDetails" Text="Edit" CommandName="EditIntake" runat="server"></asp:LinkButton>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <%--<asp:TemplateField ItemStyle-Width="50px">
-
-                                        <FooterTemplate>
-                                            <asp:Button ID="btnAdd" runat="server" Text="Add"
-                                                ValidationGroup="Insert" CssClass="btn btn-primary btn-sm"
-                                                OnClick="btnAdd_Click" />
-                                        </FooterTemplate>
-                                    </asp:TemplateField>--%>
                                 </Columns>
                                 <PagerStyle HorizontalAlign="Left" />
                             </asp:GridView>

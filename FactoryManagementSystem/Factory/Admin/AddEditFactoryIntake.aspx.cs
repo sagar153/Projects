@@ -21,6 +21,10 @@ namespace FactoryManagementSystem.Factory.Admin
                 {
                     LoadFactoryIntakeControls(intakeId);
                 }
+                else
+                {
+                    LoadDropDown();
+                }
             }
         }
 
@@ -46,28 +50,33 @@ namespace FactoryManagementSystem.Factory.Admin
                 txtRemarks.Text = data.Rows[0]["Remarks"].ToString();
                 chkActive.Checked = Convert.ToBoolean(data.Rows[0]["isActive"].ToString());
 
-                DAL.CompanieDAL companieDAL = new DAL.CompanieDAL();
-
-                var companyData = companieDAL.GetActiveCompanies();
-
-                ddlCompany.DataSource = companyData;
-                ddlCompany.DataTextField = "CompanyName";
-                ddlCompany.DataValueField = "CompanyId";
-                ddlCompany.DataBind();
+                LoadDropDown();
 
                 ddlCompany.SelectedItem.Value = data.Rows[0]["CompanyId"].ToString();
 
-                DAL.BinDAL binDAL = new DAL.BinDAL();
-
-                var binData = binDAL.GetActiveBins();
-
-                ddlBin.DataSource = binData;
-                ddlBin.DataTextField = "BinName";
-                ddlBin.DataValueField = "BinId";
-                ddlBin.DataBind();
-
                 ddlBin.SelectedItem.Value = data.Rows[0]["BinId"].ToString();
             }
+        }
+
+        private void LoadDropDown()
+        {
+            DAL.CompanieDAL companieDAL = new DAL.CompanieDAL();
+
+            var companyData = companieDAL.GetActiveCompanies();
+
+            ddlCompany.DataSource = companyData;
+            ddlCompany.DataTextField = "CompanyName";
+            ddlCompany.DataValueField = "CompanyId";
+            ddlCompany.DataBind();
+
+            DAL.BinDAL binDAL = new DAL.BinDAL();
+
+            var binData = binDAL.GetActiveBins();
+
+            ddlBin.DataSource = binData;
+            ddlBin.DataTextField = "BinName";
+            ddlBin.DataValueField = "BinId";
+            ddlBin.DataBind();
         }
 
         protected void btnSave_Click(object sender, EventArgs e)

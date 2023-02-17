@@ -9,11 +9,10 @@ DROP PROCEDURE IF EXISTS [dbo].[spGetFactoryOutwardDetails]
 GO
 -- =============================================  
 -- Author:      <Sagar>   
--- Description: <Get Factory Outtake Data>  
+-- Description: <Get Factory Intake Data>  
 -- =============================================  
 CREATE PROCEDURE [dbo].[spGetFactoryOutwardDetails]   
     -- Add the parameters for the stored procedure here  
-	@FactoryIntakeId int,
 	@FactoryOutwardId int
 AS  
 BEGIN  
@@ -21,13 +20,6 @@ BEGIN
     -- interfering with SELECT statements.  
     SET NOCOUNT ON;  
       
-	IF(@FactoryIntakeId = 0)
-	BEGIN
-		SELECT * FROM dbo.FactoryOutward WHERE FactoryOutWardId = @FactoryOutwardId
-	END
-	ELSE
-	BEGIN
-		SELECT * FROM dbo.FactoryOutward WHERE FactoryIntakeId = @FactoryIntakeId
-	END
+    SELECT * FROM dbo.FactoryOutward WHERE FactoryOutWardId = @FactoryOutwardId
        
 END  

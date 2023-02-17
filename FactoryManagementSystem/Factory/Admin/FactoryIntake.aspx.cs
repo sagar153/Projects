@@ -34,19 +34,11 @@ namespace FactoryManagementSystem.Factory.Admin
                     grdFactoryIntake.UseAccessibleHeader = true;
                     grdFactoryIntake.HeaderRow.TableSection = TableRowSection.TableHeader;
                 }
-
-                grdFactoryIntake.Columns[1].Visible = true;
-                grdFactoryIntake.Columns[2].Visible = true;
             }
             else
             {
-                intakeDetails.Rows.Add(intakeDetails.NewRow());
                 grdFactoryIntake.DataSource = intakeDetails;
                 grdFactoryIntake.DataBind();
-
-                grdFactoryIntake.Columns[1].Visible = false;
-                grdFactoryIntake.Columns[2].Visible = false;
-
             }
         }
 
@@ -72,13 +64,6 @@ namespace FactoryManagementSystem.Factory.Admin
             {
                 Response.Redirect("/Factory/Admin/AddEditFactoryIntake.aspx?IntakeId="+id.ToString());
             }
-            else if (e.CommandName == "ShowOutake")
-            {
-                Response.Redirect("/Factory/Admin/FactoryOutward.aspx?IntakeId=" + id.ToString());
-            }
-
-
-
         }
     }
 }

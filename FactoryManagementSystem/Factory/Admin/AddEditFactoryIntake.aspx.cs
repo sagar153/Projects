@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -33,7 +34,8 @@ namespace FactoryManagementSystem.Factory.Admin
             if (data.Rows.Count > 0)
             {
                 txtYear.Text = data.Rows[0]["Year"].ToString();
-                calDate.SelectedDate = Convert.ToDateTime(data.Rows[0]["Date"].ToString());
+                DateTime d = DateTime.Parse(data.Rows[0]["Date"].ToString());
+                calDate.Text = d.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
                 txtLorryNo.Text = data.Rows[0]["LorryNo"].ToString();
                 txtVariety.Text = data.Rows[0]["Variety"].ToString();
                 txtWeight.Text = data.Rows[0]["Weight"].ToString();
@@ -77,7 +79,7 @@ namespace FactoryManagementSystem.Factory.Admin
             factoryIntake.FactoryIntakeId = factoryIntakeId;
             factoryIntake.CompanyId = Convert.ToInt32(ddlCompany.SelectedItem.Value);
             factoryIntake.Year = txtYear.Text;
-            factoryIntake.Date = calDate.SelectedDate;
+            factoryIntake.Date = Convert.ToDateTime(calDate.Text);
             factoryIntake.LorryNo = txtLorryNo.Text;
             factoryIntake.Variety = txtVariety.Text;
             factoryIntake.Weight = Convert.ToDecimal(txtWeight.Text);

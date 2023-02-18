@@ -3,7 +3,7 @@
     <table style="width: 100%;">
         <tr>
             <td style="text-align:center">
-                <strong>Companies</strong></td>
+                <strong>COMPANIES</strong></td>
         </tr>
         <tr style="height:20px;"></tr>
         <tr>

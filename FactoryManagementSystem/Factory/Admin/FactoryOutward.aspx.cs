@@ -19,8 +19,9 @@ namespace FactoryManagementSystem.Factory.Admin
 
         private void LoadData()  // To show the data in the DataGridView  
         {
+            string strYear = Convert.ToString(Session["Year"]);
             DAL.FactoryOutwardDAL outwardDAL = new DAL.FactoryOutwardDAL();
-            var outTakeDetails = outwardDAL.GetAllFactoryOutward();
+            var outTakeDetails = outwardDAL.GetAllFactoryOutward(strYear);
 
             if (outTakeDetails.Rows.Count > 0)
             {

@@ -125,6 +125,7 @@
     <Content Include="Factory\User\Company.aspx" />
     <Content Include="Factory\User\CompanyDetails.aspx" />
     <Content Include="Factory\User\FactoryIntake.aspx" />
+    <Content Include="Factory\User\FactoryOutward.aspx" />
     <Content Include="Factory\User\Shelling.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -283,6 +284,13 @@
     </Compile>
     <Compile Include="Factory\User\FactoryIntake.aspx.designer.cs">
       <DependentUpon>FactoryIntake.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Factory\User\FactoryOutward.aspx.cs">
+      <DependentUpon>FactoryOutward.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Factory\User\FactoryOutward.aspx.designer.cs">
+      <DependentUpon>FactoryOutward.aspx</DependentUpon>
     </Compile>
     <Compile Include="Factory\User\Shelling.aspx.cs">
       <DependentUpon>Shelling.aspx</DependentUpon>

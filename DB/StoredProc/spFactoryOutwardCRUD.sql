@@ -74,9 +74,8 @@ BEGIN
     END  
 	ELSE
 	BEGIN  
-
         SELECT  C.CompanyName, FO.* FROM [dbo].FactoryOutward FO
-		 JOIN [dbo].[Companies] C ON FO.CompanyId = C.CompanyId		
+		 JOIN [dbo].[Companies] C ON FO.CompanyId = C.CompanyId AND [Year] = @Year
     END 
        
 END  

@@ -1,7 +1,7 @@
 USE [FactoryManagement]
 GO
 
-/****** Object:  Table [dbo].[Organiser]    Script Date: 12-02-2023 22:47:28 ******/
+/****** Object:  Table [dbo].[Organiser]    Script Date: 18-02-2023 23:52:13 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -12,9 +12,9 @@ CREATE TABLE [dbo].[Organiser](
 	[OrganiserId] [int] IDENTITY(1,1) NOT NULL,
 	[OrganiserName] [varchar](100) NOT NULL,
 	[FatherName] [varchar](100) NOT NULL,
-	[Mobile] [int] NOT NULL,
+	[Mobile] [varchar](20) NOT NULL,
 	[Area] [varchar](100) NOT NULL,
-	[Villlage] [varchar](100) NULL,
+	[Village] [varchar](100) NULL,
 	[isActive] [bit] NOT NULL,
  CONSTRAINT [PK_Organiser] PRIMARY KEY CLUSTERED 
 (

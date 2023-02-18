@@ -116,13 +116,13 @@
                         <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i
                             class="fas fa-wrench"></i>Production </a>
                         <div class='dashboard-nav-dropdown-menu'>
-                            <a href="#" class="dashboard-nav-dropdown-item">Varieties</a>
+                            <%--<a href="#" class="dashboard-nav-dropdown-item">Varieties</a>
                             <a href="#" class="dashboard-nav-dropdown-item">Acres</a>  
-                            <a href="#" class="dashboard-nav-dropdown-item">Areas</a>
-                            <a href="#" class="dashboard-nav-dropdown-item">Organisers</a>  
-                            <a href="#" class="dashboard-nav-dropdown-item">Farmers</a> 
-                            <a href="#" class="dashboard-nav-dropdown-item">Advances</a>
-                            <a href="#" class="dashboard-nav-dropdown-item">Companies</a>                         
+                            <a href="#" class="dashboard-nav-dropdown-item">Areas</a>--%>
+                            <a href="/Production/Admin/Organiser.aspx" class="dashboard-nav-dropdown-item">Organisers</a>  
+                            <a href="/Production/Admin/Production.aspx" class="dashboard-nav-dropdown-item">Production</a> 
+                            <a href="/Production/Admin/OrgAdvance.aspx" class="dashboard-nav-dropdown-item">Advances</a>
+                            <%--<a href="#" class="dashboard-nav-dropdown-item">Companies</a>  --%>                       
                         </div>
                     </div>                          
                         </div>

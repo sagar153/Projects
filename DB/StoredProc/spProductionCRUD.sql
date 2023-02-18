@@ -17,7 +17,7 @@ CREATE PROCEDURE [dbo].[spProductionCRUD]
 	@Year nvarchar(50),
 	@OrganiserId int,  
 	@FatherName varchar(100),
-	@Mobile int,
+	@Mobile varchar(20),
     @FarmerName nvarchar(100), 
 	@ACRES decimal(18, 2),
 	@Variety nvarchar(50),
@@ -27,8 +27,7 @@ CREATE PROCEDURE [dbo].[spProductionCRUD]
 	@ShowingDate datetime,
 	@HarvestDate datetime,
 	@TotalTonnage decimal(18, 2),
-	@PROD1 decimal(18, 2),
-	@LoadingDate date,
+	@AddDate datetime,
 	@Remarks nvarchar(1000),
     @OperationType int   
     --================================================  
@@ -36,8 +35,9 @@ CREATE PROCEDURE [dbo].[spProductionCRUD]
     -- 1) Insert  
     -- 2) Update  
     -- 3) Delete  
-    -- 4) Select Perticular Record  
+    -- 4) Select Active Record  
     -- 5) Selec All  
+	-- 6) By Id
 AS  
 BEGIN  
     -- SET NOCOUNT ON added to prevent extra result sets from  
@@ -60,9 +60,8 @@ BEGIN
            ,[Area]
            ,[ShowingDate]
            ,[HarvestDate]
-           ,[TotalTonnage]
-           ,[PROD1]
-           ,[LoadingDate]
+           ,[TotalTonnage]           
+           ,[AddDate]
            ,[Remarks])
      VALUES
            (@Year
@@ -78,8 +77,7 @@ BEGIN
            ,@ShowingDate
            ,@HarvestDate
            ,@TotalTonnage
-           ,@PROD1
-           ,@LoadingDate
+           ,@AddDate
            ,@Remarks)
     END  
     ELSE IF @OperationType=2  
@@ -98,8 +96,7 @@ BEGIN
            ,[ShowingDate] = @ShowingDate
            ,[HarvestDate] = @HarvestDate
            ,[TotalTonnage]= @TotalTonnage
-           ,[PROD1] = @PROD1
-           ,[LoadingDate] = @LoadingDate
+           ,[AddDate] = @AddDate
            ,[Remarks] = @Remarks           
 		   WHERE ProductionId = @ProductionId  
     END  
@@ -109,27 +106,19 @@ BEGIN
     END  
     ELSE IF @OperationType=4  
     BEGIN  
+        SELECT O.OrganiserName,P.* FROM [dbo].[Production] P
+		LEFT JOIN [dbo].[Organiser] O ON P.OrganiserId = O.OrganiserId
+		WHERE [Year] = @Year  AND P.isActive = 1           
+    END
+	ELSE IF @OperationType=6  
+    BEGIN  
         SELECT * FROM [dbo].[Production] 
-		WHERE [Year] = @Year
-           OR [OrganiserId] = @OrganiserId
-		   OR [FatherName] = @FatherName
-		   OR [Mobile] = @Mobile
-           OR [FarmerName] = @FarmerName
-           OR [ACRES] = @ACRES
-           OR [Variety]= @Variety
-           OR [SurveyNo] = @SurveyNo
-           OR [Village]= @Village
-           OR [Area] = @Area
-           OR [ShowingDate] = @ShowingDate
-           OR [HarvestDate] = @HarvestDate
-           OR [TotalTonnage]= @TotalTonnage
-           OR [PROD1] = @PROD1
-           OR [LoadingDate] = @LoadingDate
-           OR [Remarks] = @Remarks    
-    END  
+		WHERE [Year] = @Year  AND ProductionId = @ProductionId           
+    END
     ELSE   
     BEGIN  
-        SELECT * FROM [dbo].[Production]
+        SELECT O.OrganiserName, P.* FROM [dbo].[Production] P
+		LEFT JOIN [dbo].[Organiser] O ON P.OrganiserId = O.OrganiserId
 		WHERE [Year] = @Year
     END  
        

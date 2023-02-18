@@ -13,7 +13,7 @@ namespace FactoryManagementSystem.Models
         public string FarmerName { get; set; }
         public int OrganiserId { get; set; }
         public string FatherName { get; set; }
-        public int Mobile { get; set; }
+        public string Mobile { get; set; }
         public decimal ACRES { get; set; }
         public string Variety { get; set; }
         public string SurveyNo { get; set; }
@@ -22,9 +22,8 @@ namespace FactoryManagementSystem.Models
         public DateTime ShowingDate { get; set; }
         public DateTime HarvestDate { get; set; }
         public decimal TotalTonnage { get; set; }
-        public decimal PROD1 { get; set; }
-        public DateTime LoadingDate { get; set; }
         public string Remarks { get; set; }
         public bool isActive { get; set; }
+        public DateTime AddDate { get; set; }
     }
 }

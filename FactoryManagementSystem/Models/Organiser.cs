@@ -5,14 +5,14 @@ using System.Web;
 
 namespace FactoryManagementSystem.Models
 {
-    public class Organisercs
+    public class Organiser
     {
         public int OrganiserId { get; set; }
         public string OrganiserName { get; set; }
         public string FatherName { get; set; }
-        public int Mobile { get; set; }
+        public string Mobile { get; set; }
         public string Area { get; set; }
-        public string Villlage { get; set; }
+        public string Village { get; set; }
         public bool isActive { get; set; }
     }
 }

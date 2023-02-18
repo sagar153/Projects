@@ -1,7 +1,7 @@
 USE [FactoryManagement]
 GO
 
-/****** Object:  Table [dbo].[Production]    Script Date: 07-02-2023 19:29:50 ******/
+/****** Object:  Table [dbo].[Production]    Script Date: 19-02-2023 00:00:45 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -13,7 +13,7 @@ CREATE TABLE [dbo].[Production](
 	[Year] [nvarchar](50) NOT NULL,
 	[OrganiserId] [int] NOT NULL,
 	[FarmerName] [nvarchar](100) NOT NULL,
-	[Mobile] [int] NOT NULL,
+	[Mobile] [varchar](20) NOT NULL,
 	[FatherName] [varchar](100) NOT NULL,
 	[ACRES] [decimal](18, 2) NOT NULL,
 	[Variety] [nvarchar](50) NOT NULL,
@@ -23,8 +23,7 @@ CREATE TABLE [dbo].[Production](
 	[ShowingDate] [datetime] NULL,
 	[HarvestDate] [datetime] NULL,
 	[TotalTonnage] [decimal](18, 2) NULL,
-	[PROD1] [decimal](18, 2) NULL,
-	[LoadingDate] [date] NULL,
+	[AddDate] [datetime] NOT NULL,
 	[Remarks] [nvarchar](1000) NULL,
 	[isActive] [bit] NOT NULL,
  CONSTRAINT [PK_Production] PRIMARY KEY CLUSTERED 

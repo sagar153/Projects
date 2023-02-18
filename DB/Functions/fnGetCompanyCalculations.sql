@@ -24,7 +24,8 @@ RETURNS @CompanyDetails TABLE (
 	StartDate Datetime,
 	Hours int,
 	Lot int,
-	LastMoist decimal(18,2)
+	LastMoist decimal(18,2),
+	InMoist decimal(18,2)
 	)
 AS
 BEGIN
@@ -34,7 +35,9 @@ BEGIN
 	Declare @Hours int
 	Declare @Lot int
 	Declare @LastMoist decimal(18,2)
-	select top 1 @StartDate = Date from [dbo].[BinMoist] 
+	Declare @InMoist decimal(18,2)
+
+	select top 1 @InMoist = MorningDownMoist ,@StartDate = Date from [dbo].[BinMoist] 
 	WHERE [Year] = @Year AND isActive = 1 AND CompanyId = @CompanyId  AND Variety = @Variety Order by BinDailyMoistId
 	
 	select top 1 @EndDate = ShellingDate, @Lot = Lot, @LastMoist = EvnUpmoist from [dbo].[BinMoist] 
@@ -43,7 +46,7 @@ BEGIN
 	Order by BinDailyMoistId
 
 	select @Hours = DATEDIFF(HH,@StartDate,@EndDate)
-	INSERT INTO @CompanyDetails VALUES(@StartDate,@EndDate,@Hours,@Lot,@LastMoist);
+	INSERT INTO @CompanyDetails VALUES(@StartDate,@EndDate,@Hours,@Lot,@LastMoist,@InMoist);
 	RETURN 
 END
 GO

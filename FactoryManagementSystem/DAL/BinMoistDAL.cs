@@ -101,5 +101,14 @@ namespace FactoryManagementSystem.DAL
 
             return paramArray;
         }
+
+        public DataTable GetShellingDetails(string strYear)
+        {
+            var sqlHelper = new SQLDataAccessHelper();
+            var paramArray = new SqlParameter[1];
+            paramArray[0] = new SqlParameter() { ParameterName = "@Year", Value = strYear };            
+            var ds = sqlHelper.ExecuteQuery("spGetShellingDetails", CommandType.StoredProcedure, paramArray);
+            return ds.Tables[0];
+        }
     }
 }

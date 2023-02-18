@@ -122,7 +122,7 @@
     <Content Include="Factory\Admin\FactoryOutward.aspx" />
     <Content Include="Factory\User\BinDetails.aspx" />
     <Content Include="Factory\User\Bins.aspx" />
-    <Content Include="Factory\User\Companies.aspx" />
+    <Content Include="Factory\User\Company.aspx" />
     <Content Include="Factory\User\CompanyDetails.aspx" />
     <Content Include="Factory\User\FactoryIntake.aspx" />
     <Content Include="Factory\User\Shelling.aspx" />
@@ -195,7 +195,7 @@
     <Compile Include="DAL\AddEditFactoryOutwardDAL.cs" />
     <Compile Include="DAL\BinDAL.cs" />
     <Compile Include="DAL\BinMoistDAL.cs" />
-    <Compile Include="DAL\CompanieDAL.cs" />
+    <Compile Include="DAL\CompanyDAL.cs" />
     <Compile Include="DAL\FactoryIntakeDAL.cs" />
     <Compile Include="DAL\FactoryOutwardDAL.cs" />
     <Compile Include="DAL\ProductionDAL.cs" />
@@ -263,12 +263,12 @@
     <Compile Include="Factory\User\Bins.aspx.designer.cs">
       <DependentUpon>Bins.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Factory\User\Companies.aspx.cs">
-      <DependentUpon>Companies.aspx</DependentUpon>
+    <Compile Include="Factory\User\Company.aspx.cs">
+      <DependentUpon>Company.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Factory\User\Companies.aspx.designer.cs">
-      <DependentUpon>Companies.aspx</DependentUpon>
+    <Compile Include="Factory\User\Company.aspx.designer.cs">
+      <DependentUpon>Company.aspx</DependentUpon>
     </Compile>
     <Compile Include="Factory\User\CompanyDetails.aspx.cs">
       <DependentUpon>CompanyDetails.aspx</DependentUpon>

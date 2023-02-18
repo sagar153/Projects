@@ -20,7 +20,7 @@ namespace FactoryManagementSystem.Factory.Admin
 
         private void LoadData()  // To show the data in the DataGridView  
         {
-            CompanieDAL companyDAL = new CompanieDAL();
+            CompanyDAL companyDAL = new CompanyDAL();
             var companyDetails = companyDAL.GetAllCompanies();
 
             if (companyDetails.Rows.Count > 0)
@@ -62,7 +62,7 @@ namespace FactoryManagementSystem.Factory.Admin
         protected void grdBins_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             int id = Convert.ToInt16(grdCompany.DataKeys[e.RowIndex].Values["CompanyId"].ToString());
-            CompanieDAL companyDAL = new CompanieDAL();
+            CompanyDAL companyDAL = new CompanyDAL();
             Models.Company company = new Models.Company();
             company.CompanyId = id;
             company.CompanyName = "";
@@ -77,7 +77,7 @@ namespace FactoryManagementSystem.Factory.Admin
             TextBox txtCompanyName = grdCompany.Rows[e.RowIndex].FindControl("txtCompanyName") as TextBox;
             CheckBox chkIsActive = grdCompany.Rows[e.RowIndex].FindControl("chIsActive") as CheckBox;
 
-            CompanieDAL companyDAL = new CompanieDAL();
+            CompanyDAL companyDAL = new CompanyDAL();
             Models.Company company = new Models.Company();
             company.CompanyId = id;
             company.CompanyName = txtCompanyName.Text.ToString();
@@ -91,7 +91,7 @@ namespace FactoryManagementSystem.Factory.Admin
         {
             TextBox txtCompanyName = grdCompany.FooterRow.FindControl("txtCompanyNames") as TextBox;
 
-            CompanieDAL companyDAL = new CompanieDAL();
+            CompanyDAL companyDAL = new CompanyDAL();
             Models.Company company = new Models.Company();
             company.CompanyId = 0;
             company.CompanyName = txtCompanyName.Text.ToString();

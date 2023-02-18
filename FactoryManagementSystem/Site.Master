@@ -71,7 +71,7 @@
                         <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i
                             class="fas fa-industry"></i>Factory </a>
                         <div class='dashboard-nav-dropdown-menu'>
-                            <a href="/Factory/User/Companies.aspx" class="dashboard-nav-dropdown-item">Companies</a>
+                            <a href="/Factory/User/Company.aspx" class="dashboard-nav-dropdown-item">Companies</a>
                             <a href="/Factory/User/Bins.aspx" class="dashboard-nav-dropdown-item">Bins</a>  
                             <a href="/Factory/User/FactoryIntake.aspx" class="dashboard-nav-dropdown-item">InTake</a>
                             <a href="#" class="dashboard-nav-dropdown-item">OutWard</a>  

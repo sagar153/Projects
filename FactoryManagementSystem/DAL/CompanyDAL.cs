@@ -7,7 +7,7 @@ using System.Web;
 
 namespace FactoryManagementSystem.DAL
 {
-    public class CompanieDAL
+    public class CompanyDAL
     {
         public DataTable GetAllCompanies()
         {
@@ -63,6 +63,16 @@ namespace FactoryManagementSystem.DAL
             paramArray[3] = new SqlParameter() { ParameterName = "@OperationType", Value = operatorType };
 
             return paramArray;
+        }
+
+        public DataTable GetCompaniesDetailsById(string strYear, int intCompanyId)
+        {
+            var sqlHelper = new SQLDataAccessHelper();
+            var paramArray = new SqlParameter[2];
+            paramArray[0] = new SqlParameter() { ParameterName = "@CompanyId", Value = intCompanyId };
+            paramArray[1] = new SqlParameter() { ParameterName = "@Year", Value = strYear };
+            var ds = sqlHelper.ExecuteQuery("spGetCompanyDetailsById", CommandType.StoredProcedure, paramArray);
+            return ds.Tables[0];
         }
     }
 }

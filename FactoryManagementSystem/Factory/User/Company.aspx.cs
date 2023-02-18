@@ -20,7 +20,7 @@ namespace FactoryManagementSystem.Factory.User
 
         private void LoadData()  // To show the data in the DataGridView  
         {
-            CompanieDAL companiesDAL = new CompanieDAL();
+            CompanyDAL companiesDAL = new CompanyDAL();
             gvCompanies.DataSource = companiesDAL.GetActiveCompanies();
             gvCompanies.DataBind();
         }
@@ -32,7 +32,7 @@ namespace FactoryManagementSystem.Factory.User
                 GridViewRow row = (GridViewRow)((Control)e.CommandSource).NamingContainer;
 
                 Label Id = (Label)row.FindControl("lblCompanyId");
-                Response.Redirect("/Factory/Admin/Bins.aspx");
+                Response.Redirect("/Factory/User/CompanyDetails.aspx?Id=" + Id.Text);
             }
         }
     }

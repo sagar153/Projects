@@ -60,7 +60,7 @@ namespace FactoryManagementSystem.Factory.Admin
 
         private void LoadDropDown()
         {
-            DAL.CompanieDAL companieDAL = new DAL.CompanieDAL();
+            DAL.CompanyDAL companieDAL = new DAL.CompanyDAL();
 
             var companyData = companieDAL.GetActiveCompanies();
 

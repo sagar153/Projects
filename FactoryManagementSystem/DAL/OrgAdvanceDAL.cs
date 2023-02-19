@@ -22,8 +22,8 @@ namespace FactoryManagementSystem.DAL
             paramArray[3] = new SqlParameter() { ParameterName = "@Advance", Value = 0.0 };
             paramArray[4] = new SqlParameter() { ParameterName = "@AdvanceDate", Value = DateTime.Now };
             paramArray[5] = new SqlParameter() { ParameterName = "@Mode", Value = "" };
-            paramArray[6] = new SqlParameter() { ParameterName = "@Remarks", Value = "" };
-            
+            paramArray[6] = new SqlParameter() { ParameterName = "@Remarks", Value = "" }; paramArray[6] = new SqlParameter() { ParameterName = "@Remarks", Value = "" };
+
             if (intAdvanceId > 0)
                 paramArray[7] = new SqlParameter() { ParameterName = "@OperationType", Value = 6 };
             else if (isActiveOnly)

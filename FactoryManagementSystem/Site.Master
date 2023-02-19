@@ -84,8 +84,8 @@
                         <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i
                             class="fas fa-wrench"></i>Production </a>
                         <div class='dashboard-nav-dropdown-menu'>
-                            <a href="#" class="dashboard-nav-dropdown-item">Varieties</a>
-                            <a href="#" class="dashboard-nav-dropdown-item">Acres</a>  
+                            <a href="/Production/User/Varieties.aspx" class="dashboard-nav-dropdown-item">Varieties</a>
+                            <a href="/Production/User/Areas.aspx" class="dashboard-nav-dropdown-item">Acres</a>  
                             <a href="#" class="dashboard-nav-dropdown-item">Areas</a>
                             <a href="#" class="dashboard-nav-dropdown-item">Organisers</a>  
                             <a href="#" class="dashboard-nav-dropdown-item">Farmers</a> 

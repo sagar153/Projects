@@ -59,7 +59,7 @@ namespace FactoryManagementSystem.Production.Admin
 
                 LoadDropDown();
 
-                ddlOrganiser.SelectedItem.Value = data.Rows[0]["OrganiserId"].ToString();
+                ddlOrganiser.SelectedValue = data.Rows[0]["OrganiserId"].ToString();
             }
         }
 

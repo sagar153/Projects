@@ -52,7 +52,7 @@ namespace FactoryManagementSystem.Factory.Admin
 
                 LoadDropDown();
 
-                ddlCompany.SelectedItem.Value = data.Rows[0]["CompanyId"].ToString();
+                ddlCompany.SelectedValue = data.Rows[0]["CompanyId"].ToString();
             }
         }
 

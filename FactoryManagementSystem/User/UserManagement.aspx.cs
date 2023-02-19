@@ -110,5 +110,11 @@ namespace FactoryManagementSystem.User
             grdUsers.EditIndex = -1;
             LoadData();
         }
+
+        protected void grdUsers_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grdUsers.PageIndex = e.NewPageIndex;
+            LoadData();
+        }
     }
 }

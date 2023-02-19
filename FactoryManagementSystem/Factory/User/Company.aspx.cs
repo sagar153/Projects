@@ -35,5 +35,11 @@ namespace FactoryManagementSystem.Factory.User
                 Response.Redirect("/Factory/User/CompanyDetails.aspx?Id=" + Id.Text);
             }
         }
+
+        protected void gvCompanies_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvCompanies.PageIndex = e.NewPageIndex;
+            LoadData();
+        }
     }
 }

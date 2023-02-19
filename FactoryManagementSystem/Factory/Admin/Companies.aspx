@@ -15,6 +15,7 @@
                             AutoGenerateColumns="False"
                             ShowHeaderWhenEmpty="True"
                             AllowPaging="True"
+                            PageSize="10"
                             AllowSorting="True"
                             ShowFooter="True"
                             EmptyDataText="No Records Found"
@@ -23,6 +24,7 @@
                             OnRowCancelingEdit="grdBins_RowCancelingEdit"
                             OnRowEditing="grdBins_RowEditing"
                             OnRowUpdating="grdBins_RowUpdating"
+                            OnPageIndexChanging="grdCompany_PageIndexChanging"
                             Width="600px">
                             <Columns>
                                 <asp:TemplateField HeaderText="Company Name" HeaderStyle-HorizontalAlign="Center">

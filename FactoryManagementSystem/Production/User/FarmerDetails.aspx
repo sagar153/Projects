@@ -27,6 +27,8 @@
                             ShowFooter="True"
                             EmptyDataText="No Records Found"
                             DataKeyNames=""
+                            PageSize="10"
+                            OnPageIndexChanging="gvFarmerDetails_PageIndexChanging"
                             CssClass="table table-striped table-bordered table-hover table-condensed"
                             Width="90%">
                             <Columns>

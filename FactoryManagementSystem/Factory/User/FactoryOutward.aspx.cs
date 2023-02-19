@@ -25,5 +25,11 @@ namespace FactoryManagementSystem.Factory.User
             grdOutward.DataSource = outwardDAL.GetActiveFactoryOutward(strYear);
             grdOutward.DataBind();
         }
+
+        protected void grdOutward_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grdOutward.PageIndex = e.NewPageIndex;
+            LoadData();
+        }
     }
 }

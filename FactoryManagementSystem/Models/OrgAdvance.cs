@@ -9,6 +9,7 @@ namespace FactoryManagementSystem.Models
     {
         public int OrganiserAdvanceId { get; set; }
         public int OrganiserId { get; set; }
+        public string OrganiserName { get; set; }
         public string Year { get; set; }
         public decimal Advance { get; set; }
         public DateTime AdvanceDate { get; set; }

@@ -45,5 +45,12 @@ namespace FactoryManagementSystem.Production.User
                 Response.Redirect("/Production/User/FarmerDetails.aspx?type=variety&variety=" + variety + "&area=" + lnkArea.Text);
             }
         }
+
+        protected void gvVarieties_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvVarieties.PageIndex = e.NewPageIndex;
+            var variety = Convert.ToString(Request.Params["name"]);
+            LoadData(variety);
+        }
     }
 }

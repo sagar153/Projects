@@ -25,6 +25,8 @@
                             OnRowCancelingEdit="grdBins_RowCancelingEdit"
                             OnRowEditing="grdBins_RowEditing"
                             OnRowUpdating="grdBins_RowUpdating"
+                            PageSize="10"
+                            OnPageIndexChanging="grdBins_PageIndexChanging"
                             Width="600px">
                             <Columns>
                                 <asp:TemplateField HeaderText="Bin Name" HeaderStyle-HorizontalAlign="Center">

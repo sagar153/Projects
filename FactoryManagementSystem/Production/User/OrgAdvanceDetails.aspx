@@ -1,18 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="OrgAdvance.aspx.cs" Inherits="FactoryManagementSystem.Production.Admin.OrgAdvance" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="OrgAdvanceDetails.aspx.cs" Inherits="FactoryManagementSystem.Production.User.OrgAdvanceDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:HiddenField ID="hdnOrgName" runat="server"/>
     <table style="width: 100%;">
         <tr>
             <td style="text-align: center">
                 <strong>ADVANCES</strong></td>
         </tr>
-        <tr style="height: 20px; text-align: right">
-            <td>
-                <button id="btnAdd" runat="server" cssclass="btn btn-primary btn-sm"
-                    onserverclick="btnAdd_Click">
-                    <i class="fas fa-plus"></i>
-                </button>
-            </td>
-        </tr>
+        
         <tr>
             <td>
                 <asp:UpdatePanel ID="UpdatePanelCR" runat="server">
@@ -23,12 +17,11 @@
                             ShowHeaderWhenEmpty="True"
                             AllowPaging="True"
                             AllowSorting="True"
-                            ShowFooter="True"
+                            ShowFooter="True"                            
                             EmptyDataText="No Records Found"
-                            DataKeyNames="OrganiserAdvanceId"
-                            OnRowCommand="grdAdvance_RowCommand"
-                            OnPageIndexChanging="grdAdvance_PageIndexChanging"
+                            DataKeyNames=""         
                             PageSize="10"
+                            OnPageIndexChanging="grdAdvance_PageIndexChanging"
                             CssClass="table table-striped table-bordered table-hover table-condensed"
                             Width="90%">
                             <Columns>
@@ -61,12 +54,7 @@
                                     <ItemTemplate>
                                         <asp:Label ID="lblRemark" runat="server" Text='<%# Bind("Remarks") %>'></asp:Label>
                                     </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="" HeaderStyle-HorizontalAlign="Center">
-                                    <ItemTemplate>
-                                        <asp:LinkButton ID="lnkEditDetails" Text="Edit" CommandName="EditAdvance" runat="server"></asp:LinkButton>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
+                                </asp:TemplateField>                               
                             </Columns>
                             <PagerStyle HorizontalAlign="Left" />
                         </asp:GridView>

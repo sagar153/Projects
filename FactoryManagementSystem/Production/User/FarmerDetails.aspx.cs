@@ -75,5 +75,22 @@ namespace FactoryManagementSystem.Production.User
             return strYear;
         }
 
+        protected void gvFarmerDetails_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvFarmerDetails.PageIndex = e.NewPageIndex;
+            var type = Convert.ToString(Request.Params["type"]);
+            if (type == "variety")
+            {
+                variety = Convert.ToString(Request.Params["variety"]);
+                area = Convert.ToString(Request.Params["area"]);
+                lblheader.InnerText = "VARIETIES - " + variety + " - " + area;
+                LoadData(variety, area);
+            }
+            if (type == "acres")
+            {
+                area = Convert.ToString(Request.Params["area"]);
+                LoadDataByArea(area);
+            }
+        }
     }
 }

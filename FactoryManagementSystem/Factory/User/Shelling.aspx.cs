@@ -25,5 +25,11 @@ namespace FactoryManagementSystem.Factory.User
             grdShelling.DataSource = binsDAL.GetShellingDetails(strYear);
             grdShelling.DataBind();
         }
+
+        protected void grdShelling_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grdShelling.PageIndex = e.NewPageIndex;
+            LoadData();
+        }
     }
 }

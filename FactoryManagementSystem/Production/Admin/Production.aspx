@@ -28,6 +28,7 @@
                             EmptyDataText="No Records Found"
                             DataKeyNames="ProductionId"
                             OnRowCommand="grdProduction_RowCommand"
+                            PageSize="10"
                             OnPageIndexChanging="grdProduction_PageIndexChanging"
                             CssClass="table table-striped table-bordered table-hover table-condensed"
                             Width="90%">

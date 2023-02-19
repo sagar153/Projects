@@ -19,6 +19,8 @@
                             ShowFooter="True"
                             EmptyDataText="No Records Found"
                             DataKeyNames="UserId"
+                            PageSize="10"
+                            OnPageIndexChanging="grdUsers_PageIndexChanging"
                             CssClass="table table-striped table-bordered table-hover table-condensed"
                             OnRowCancelingEdit="grdUsers_RowCancelingEdit"
                             OnRowEditing="grdUsers_RowEditing"

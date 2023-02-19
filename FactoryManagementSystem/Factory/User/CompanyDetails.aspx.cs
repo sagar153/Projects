@@ -13,6 +13,7 @@ namespace FactoryManagementSystem.Factory.User
         protected void Page_Load(object sender, EventArgs e)
         {
             var companyId = Convert.ToInt32(Request.Params["Id"]);
+            hdnCompanyId.Value = companyId.ToString();
             if (!Page.IsPostBack)
             {
                 LoadData(companyId);
@@ -32,6 +33,12 @@ namespace FactoryManagementSystem.Factory.User
 
             grdCompanyDetails.DataSource = companyDetails;
             grdCompanyDetails.DataBind();
+        }
+
+        protected void grdCompanyDetails_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grdCompanyDetails.PageIndex = e.NewPageIndex;
+            LoadData(Convert.ToInt32(hdnCompanyId));
         }
     }
 }

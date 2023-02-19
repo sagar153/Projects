@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CompanyDetails.aspx.cs" Inherits="FactoryManagementSystem.Factory.User.CompanyDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-      
+      <asp:HiddenField ID="hdnCompanyId" runat="server"/>
     <table style="width: 100%;">
         <tr>
             <td style="text-align: center">
@@ -18,7 +18,9 @@
                             AllowPaging="True"
                             AllowSorting="True"
                             ShowFooter="True"
-                            EmptyDataText="No Records Found"                            
+                            EmptyDataText="No Records Found"             
+                            PageSize="10"
+                            OnPageIndexChanging="grdCompanyDetails_PageIndexChanging"
                             CssClass="table table-striped table-bordered table-hover table-condensed"                          
                             Width="90%">
                             <Columns>

@@ -1,51 +1,51 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Bins.aspx.cs" Inherits="FactoryManagementSystem.Factory.User.Bins" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Advance.aspx.cs" Inherits="FactoryManagementSystem.Production.User.Advance" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-     <table style="width: 100%;">
+        <table style="width: 100%;">
         <tr>
             <td style="text-align:center">
-                <strong>BINS</strong></td>
+                <strong>ORGANISER</strong></td>
         </tr>
         <tr style="height:20px;"></tr>
         <tr>
             <td>
                 <asp:UpdatePanel ID="UpdatePanelCR" runat="server">
                     <ContentTemplate>
-                        <asp:GridView ID="gvBins"
+                        <asp:GridView ID="gvAdv"
                             runat="server"
                             AutoGenerateColumns="False"
                             ShowHeaderWhenEmpty="True"
-                            OnRowCommand="gvBins_RowCommand"
+                            OnRowCommand="gvAdv_RowCommand"
                             AllowPaging="True"
                             AllowSorting="True"
                             ShowFooter="True"
                             EmptyDataText="No Records Found"
-                            DataKeyNames="BinId"
                             PageSize="10"
-                            OnPageIndexChanging="gvBins_PageIndexChanging"
+                            DataKeyNames="OrganiserName"
+                            OnPageIndexChanging="gvAdv_PageIndexChanging"
                             CssClass="table table-striped table-bordered table-hover table-condensed"                            
                             Width="600px">
-                            <Columns>
-                                <asp:TemplateField HeaderText="Bin Id" HeaderStyle-HorizontalAlign="Center">                                    
+                            <Columns>                                                                                              
+                                <asp:TemplateField HeaderText="OrganiserName" HeaderStyle-HorizontalAlign="Center">                                    
                                     <ItemTemplate>
-                                        <asp:Label ID="lblBinId" runat="server" Text='<%# Bind("BinId") %>'></asp:Label>
+                                        <asp:Label ID="lblOrganiserName" Text='<%# Bind("OrganiserName") %>' runat="server" ></asp:Label>                                        
                                     </ItemTemplate>                                    
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Bin Name" HeaderStyle-HorizontalAlign="Center">                                    
+                                </asp:TemplateField> 
+                                <asp:TemplateField HeaderText="Advance" HeaderStyle-HorizontalAlign="Center">                                    
                                     <ItemTemplate>
-                                        <asp:Label ID="lblBinName" runat="server" Text='<%# Bind("BinName") %>'></asp:Label>
+                                        <asp:Label ID="lblAdvance" Text='<%# Bind("Advance") %>' runat="server" ></asp:Label>                                        
                                     </ItemTemplate>                                    
-                                </asp:TemplateField>                               
+                                </asp:TemplateField> 
                                 <asp:TemplateField HeaderText="" HeaderStyle-HorizontalAlign="Center">                                    
                                     <ItemTemplate>
                                         <asp:LinkButton ID="lnkDetails" Text="View Details" CommandName="Details" runat="server" ></asp:LinkButton>
                                     </ItemTemplate>                                    
-                                </asp:TemplateField>   
+                                </asp:TemplateField> 
                             </Columns>
 
                         </asp:GridView>
                     </ContentTemplate>
                     <Triggers>
-                        <asp:AsyncPostBackTrigger ControlID="gvBins" />
+                        <asp:AsyncPostBackTrigger ControlID="gvAdv" />
                     </Triggers>
                 </asp:UpdatePanel>
             </td>

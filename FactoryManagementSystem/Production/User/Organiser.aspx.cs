@@ -34,5 +34,11 @@ namespace FactoryManagementSystem.Production.User
                 Response.Redirect("/Production/User/OrgDetails.aspx?orgId=" + id);
             }
         }
+
+        protected void gvOrg_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvOrg.PageIndex = e.NewPageIndex;
+            LoadData();
+        }
     }
 }

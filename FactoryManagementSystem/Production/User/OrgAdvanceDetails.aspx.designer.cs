@@ -7,28 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FactoryManagementSystem.Factory.User {
+namespace FactoryManagementSystem.Production.User {
     
     
-    public partial class CompanyDetails {
+    public partial class OrgAdvanceDetails {
         
         /// <summary>
-        /// hdnCompanyId control.
+        /// hdnOrgName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdnCompanyId;
-        
-        /// <summary>
-        /// lblCompanyName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblCompanyName;
+        protected global::System.Web.UI.WebControls.HiddenField hdnOrgName;
         
         /// <summary>
         /// UpdatePanelCR control.
@@ -40,12 +31,12 @@ namespace FactoryManagementSystem.Factory.User {
         protected global::System.Web.UI.UpdatePanel UpdatePanelCR;
         
         /// <summary>
-        /// grdCompanyDetails control.
+        /// grdAdvance control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdCompanyDetails;
+        protected global::System.Web.UI.WebControls.GridView grdAdvance;
     }
 }

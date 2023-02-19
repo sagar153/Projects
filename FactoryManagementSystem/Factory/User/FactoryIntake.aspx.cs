@@ -22,10 +22,29 @@ namespace FactoryManagementSystem.Factory.User
 
             if (intakeDetails.Rows.Count > 0)
             {
-                string strYear = "2022-23";
-                grdFactoryIntake.DataSource = intakeDAL.GetActiveFactoryIntake(strYear);
+                grdFactoryIntake.DataSource = intakeDAL.GetActiveFactoryIntake(GetYear());
                 grdFactoryIntake.DataBind();
             }
+        }
+
+        private string GetYear()
+        {
+            string strYear = string.Empty;
+            try
+            {
+                strYear = Session["Year"].ToString();
+            }
+            catch (Exception ex)
+            {
+                Response.Redirect("/Login.aspx");
+            }
+            return strYear;
+        }
+
+        protected void grdFactoryIntake_PageIndexChanging(object sender, System.Web.UI.WebControls.GridViewPageEventArgs e)
+        {
+            grdFactoryIntake.PageIndex = e.NewPageIndex;
+            LoadData();
         }
     }
 }

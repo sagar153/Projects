@@ -23,6 +23,8 @@
                             OnRowCancelingEdit="grdOrganiser_RowCancelingEdit"
                             OnRowEditing="grdOrganiser_RowEditing"
                             OnRowUpdating="grdOrganiser_RowUpdating"
+                            PageSize="10"
+                            OnPageIndexChanging="grdOrganiser_PageIndexChanging"
                             Width="90%">
                             <Columns>
                                 <asp:TemplateField HeaderText="Organiser Name" HeaderStyle-HorizontalAlign="Center">

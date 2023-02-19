@@ -36,5 +36,11 @@ namespace FactoryManagementSystem.Production.User
                 Response.Redirect("/Production/User/VarietyDetails.aspx?name=" + Id.Text);
             }
         }
+
+        protected void gvVarieties_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvVarieties.PageIndex = e.NewPageIndex;
+            LoadData();
+        }
     }
 }

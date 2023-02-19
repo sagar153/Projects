@@ -17,9 +17,11 @@
                             OnRowCommand="gvCompanies_RowCommand"
                             AllowPaging="True"
                             AllowSorting="True"
+                            PageSize="10"
                             ShowFooter="True"
                             EmptyDataText="No Records Found"
                             DataKeyNames="CompanyId"
+                            OnPageIndexChanging="gvCompanies_PageIndexChanging"
                             CssClass="table table-striped table-bordered table-hover table-condensed"                            
                             Width="600px">
                             <Columns>

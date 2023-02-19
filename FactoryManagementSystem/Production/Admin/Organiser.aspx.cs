@@ -104,5 +104,11 @@ namespace FactoryManagementSystem.Factory.Admin
             grdOrganiser.EditIndex = -1;
             LoadData();
         }
+
+        protected void grdOrganiser_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grdOrganiser.PageIndex = e.NewPageIndex;
+            LoadData();
+        }
     }
 }

@@ -53,5 +53,11 @@ namespace FactoryManagementSystem.Production.User
             }
             return strYear;
         }
+
+        protected void gvAreas_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvAreas.PageIndex = e.NewPageIndex;
+            LoadData();
+        }
     }
 }

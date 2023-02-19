@@ -20,6 +20,8 @@
                             ShowFooter="True"
                             EmptyDataText="No Records Found"
                             DataKeyNames=""
+                            OnPageIndexChanging="gvAreas_PageIndexChanging"
+                            PageSize="10"
                             CssClass="table table-striped table-bordered table-hover table-condensed"                            
                             Width="600px">
                             <Columns>

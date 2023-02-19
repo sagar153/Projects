@@ -35,5 +35,11 @@ namespace FactoryManagementSystem.Factory.User
                 Response.Redirect("/Factory/User/BinDetails.aspx?binId=" + Id.Text);
             }
         }
+
+        protected void gvBins_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvBins.PageIndex = e.NewPageIndex;
+            LoadData();
+        }
     }
 }

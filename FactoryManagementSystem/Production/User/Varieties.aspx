@@ -20,6 +20,8 @@
                             ShowFooter="True"
                             EmptyDataText="No Records Found"
                             DataKeyNames="Variety"
+                            PageSize="10"
+                            OnPageIndexChanging="gvVarieties_PageIndexChanging"
                             CssClass="table table-striped table-bordered table-hover table-condensed"                            
                             Width="600px">
                             <Columns>

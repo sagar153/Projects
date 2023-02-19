@@ -18,6 +18,8 @@
                             AllowPaging="True"
                             AllowSorting="True"
                             ShowFooter="True"
+                            PageSize="10"
+                            OnPageIndexChanging="gvVarieties_PageIndexChanging"
                             EmptyDataText="No Records Found"
                             DataKeyNames="Area"
                             CssClass="table table-striped table-bordered table-hover table-condensed"                            

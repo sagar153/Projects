@@ -18,7 +18,9 @@
                             AllowPaging="True"
                             AllowSorting="True"
                             ShowFooter="True"
-                            EmptyDataText="No Records Found"                            
+                            EmptyDataText="No Records Found" 
+                            PageSize="10"
+                            OnPageIndexChanging="grdShelling_PageIndexChanging"
                             CssClass="table table-striped table-bordered table-hover table-condensed"
                             Width="90%">
                             <Columns>

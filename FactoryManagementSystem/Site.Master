@@ -86,11 +86,11 @@
                         <div class='dashboard-nav-dropdown-menu'>
                             <a href="/Production/User/Varieties.aspx" class="dashboard-nav-dropdown-item">Varieties</a>
                             <a href="/Production/User/Areas.aspx" class="dashboard-nav-dropdown-item">Acres</a>  
-                            <a href="#" class="dashboard-nav-dropdown-item">Areas</a>
+                            <%--<a href="#" class="dashboard-nav-dropdown-item">Areas</a>--%>
                             <a href="/Production/User/Organiser.aspx" class="dashboard-nav-dropdown-item">Organisers</a>  
-                            <a href="#" class="dashboard-nav-dropdown-item">Farmers</a> 
-                            <a href="#" class="dashboard-nav-dropdown-item">Advances</a>
-                            <a href="#" class="dashboard-nav-dropdown-item">Companies</a>                         
+                            <%--<a href="#" class="dashboard-nav-dropdown-item">Farmers</a> --%>
+                            <a href="/Production/User/Advance.aspx" class="dashboard-nav-dropdown-item">Advances</a>
+                            <%--<a href="#" class="dashboard-nav-dropdown-item">Companies</a> --%>                        
                         </div>
                     </div>
                     <a href="/User/UserManagement.aspx" runat="server" visible="false" id="users" class="dashboard-nav-item"><i class="fas fa-users"></i>Users </a>

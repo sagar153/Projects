@@ -16,6 +16,7 @@ CREATE PROCEDURE [dbo].[spOrgAdvanceCRUD]
 	@OrganiserAdvanceId int,
 	@Year nvarchar(50),
 	@OrganiserId int,  
+	@OrganiserName varchar(100) = '',  
 	@Advance decimal(18,2),
 	@AdvanceDate datetime,
 	@Mode varchar(200),
@@ -28,7 +29,9 @@ CREATE PROCEDURE [dbo].[spOrgAdvanceCRUD]
     -- 3) Delete  
     -- 4) Select Active Record  
     -- 5) Selec All  
-	-- 6) By Id
+	-- 6) By AdvanceId
+	-- 7) Distinct Org - Advance
+	-- 8) By Org Id
 AS  
 BEGIN  
     -- SET NOCOUNT ON added to prevent extra result sets from  
@@ -79,6 +82,19 @@ BEGIN
     BEGIN  
         SELECT * FROM [dbo].[OrganiserAdvance] 
 		WHERE [Year] = @Year  AND OrganiserAdvanceId =@OrganiserAdvanceId         
+    END
+	ELSE IF @OperationType=7  
+    BEGIN  
+	    SELECT O.OrganiserName,SUM(OA.Advance) Advance FROM [dbo].[OrganiserAdvance] OA
+		LEFT JOIN [dbo].[Organiser] O ON OA.OrganiserId = O.OrganiserId
+		WHERE [Year] = @Year  AND OA.isActive = 1
+		Group By OrganiserName
+    END
+	ELSE IF @OperationType=8  
+    BEGIN  
+        SELECT O.OrganiserName, OA.* FROM [dbo].[OrganiserAdvance] OA
+		LEFT JOIN [dbo].[Organiser] O ON OA.OrganiserId = O.OrganiserId
+		WHERE [Year] = @Year AND OA.isActive = 1 AND O.OrganiserName = @OrganiserName           
     END
     ELSE   
     BEGIN  

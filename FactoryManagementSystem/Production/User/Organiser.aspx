@@ -20,6 +20,8 @@
                             ShowFooter="True"
                             EmptyDataText="No Records Found"
                             DataKeyNames="OrganiserId"
+                            PageSize="10"
+                            OnPageIndexChanging="gvOrg_PageIndexChanging"
                             CssClass="table table-striped table-bordered table-hover table-condensed"                            
                             Width="600px">
                             <Columns>                                                                                              

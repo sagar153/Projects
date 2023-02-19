@@ -36,7 +36,7 @@
                                 CssClass="table table-striped table-bordered table-hover table-condensed"
                                 OnRowCommand="grdFactoryIntake_RowCommand"
                                 OnPageIndexChanging="grdFactoryIntake_PageIndexChanging"
-                                PageSize="5"
+                                PageSize="10"
                                 Width="100%">
                                 <Columns>
 

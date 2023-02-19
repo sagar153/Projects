@@ -144,8 +144,10 @@
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Production\Admin\Production.aspx" />
     <Content Include="Production\Admin\ProductionDetails.aspx" />
+    <Content Include="Production\User\Advance.aspx" />
     <Content Include="Production\User\FarmerDetails.aspx" />
     <Content Include="Production\User\Areas.aspx" />
+    <Content Include="Production\User\OrgAdvanceDetails.aspx" />
     <Content Include="Production\User\Organiser.aspx" />
     <Content Include="Production\User\OrgDetails.aspx" />
     <Content Include="Production\User\Varieties.aspx" />
@@ -364,6 +366,13 @@
     <Compile Include="Production\Admin\ProductionDetails.aspx.designer.cs">
       <DependentUpon>ProductionDetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Production\User\Advance.aspx.cs">
+      <DependentUpon>Advance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Production\User\Advance.aspx.designer.cs">
+      <DependentUpon>Advance.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Production\User\FarmerDetails.aspx.cs">
       <DependentUpon>FarmerDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -377,6 +386,13 @@
     </Compile>
     <Compile Include="Production\User\Areas.aspx.designer.cs">
       <DependentUpon>Areas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Production\User\OrgAdvanceDetails.aspx.cs">
+      <DependentUpon>OrgAdvanceDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Production\User\OrgAdvanceDetails.aspx.designer.cs">
+      <DependentUpon>OrgAdvanceDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Production\User\Organiser.aspx.cs">
       <DependentUpon>Organiser.aspx</DependentUpon>

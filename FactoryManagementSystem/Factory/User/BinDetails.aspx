@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BinDetails.aspx.cs" Inherits="FactoryManagementSystem.Factory.User.BinDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:HiddenField ID="hdnBinId" runat="server"/>
      <table style="width: 100%;">
         <tr>
             <td style="text-align:center">
@@ -19,6 +20,8 @@
                             ShowFooter="True"
                             EmptyDataText="No Records Found"
                             DataKeyNames="BinDailyMoistId"
+                            PageSize="10"
+                            OnPageIndexChanging="gvBinMoist_PageIndexChanging"
                             CssClass="table table-striped table-bordered table-hover table-condensed"                            
                             Width="90%">
                             <Columns>

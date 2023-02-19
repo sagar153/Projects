@@ -21,7 +21,7 @@ namespace FactoryManagementSystem.Production.Admin
         private void LoadData()  // To show the data in the DataGridView  
         {
             ProductionDAL prodDAL = new ProductionDAL();
-            string strYear = Session["Year"].ToString();
+            string strYear = GetYear();
             var intakeDetails = prodDAL.GetProductionByYear(strYear, false);
 
             if (intakeDetails.Rows.Count > 0)
@@ -39,6 +39,20 @@ namespace FactoryManagementSystem.Production.Admin
                 grdProduction.DataSource = intakeDetails;
                 grdProduction.DataBind();
             }
+        }
+
+        private string GetYear()
+        {
+            string strYear = string.Empty;
+            try
+            {
+                strYear = Session["Year"].ToString();
+            }
+            catch (Exception ex)
+            {
+                Response.Redirect("/Login.aspx");
+            }
+            return strYear;
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)

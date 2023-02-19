@@ -146,6 +146,8 @@
     <Content Include="Production\Admin\ProductionDetails.aspx" />
     <Content Include="Production\User\FarmerDetails.aspx" />
     <Content Include="Production\User\Areas.aspx" />
+    <Content Include="Production\User\Organiser.aspx" />
+    <Content Include="Production\User\OrgDetails.aspx" />
     <Content Include="Production\User\Varieties.aspx" />
     <Content Include="Production\User\VarietyDetails.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -375,6 +377,20 @@
     </Compile>
     <Compile Include="Production\User\Areas.aspx.designer.cs">
       <DependentUpon>Areas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Production\User\Organiser.aspx.cs">
+      <DependentUpon>Organiser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Production\User\Organiser.aspx.designer.cs">
+      <DependentUpon>Organiser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Production\User\OrgDetails.aspx.cs">
+      <DependentUpon>OrgDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Production\User\OrgDetails.aspx.designer.cs">
+      <DependentUpon>OrgDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Production\User\Varieties.aspx.cs">
       <DependentUpon>Varieties.aspx</DependentUpon>

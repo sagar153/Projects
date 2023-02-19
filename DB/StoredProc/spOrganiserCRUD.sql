@@ -28,6 +28,7 @@ CREATE PROCEDURE [dbo].[spOrganiserCRUD]
     -- 3) Delete  
     -- 4) Selec All 
 	-- 5) All Active
+	-- 6) Distinct Orgs
 AS  
 BEGIN  
     -- SET NOCOUNT ON added to prevent extra result sets from  
@@ -70,6 +71,10 @@ BEGIN
 	ELSE IF @OperationType=5  
     BEGIN  
         SELECT * FROM [dbo].[Organiser]	WHERE isActive = 1  
+    END  
+	ELSE IF @OperationType=6  
+    BEGIN  
+        SELECT distinct OrganiserId, OrganiserName FROM [dbo].[Organiser]	WHERE isActive = 1  
     END  
 	ELSE   
     BEGIN  

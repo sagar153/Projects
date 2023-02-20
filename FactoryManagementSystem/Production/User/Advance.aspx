@@ -4,7 +4,7 @@
         <tr>
             <td style="text-align:center">
                 <strong>ORGANISER</strong></td>
-        </tr>
+        </tr>        
         <tr style="height:20px;"></tr>
         <tr>
             <td>

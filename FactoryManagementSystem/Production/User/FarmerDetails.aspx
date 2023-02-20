@@ -8,7 +8,14 @@
                     <label runat="server" id="lblheader" />
                 </strong></td>
         </tr>
-        <tr style="height: 20px;"></tr>
+        <tr style="height: 20px; text-align: right">
+            <td>
+                <button id="btnAdd" runat="server" cssclass="btn btn-primary btn-sm"
+                    onserverclick="btnAdd_ServerClick">
+                    <i class="fas fa-file-excel"></i>
+                </button>
+            </td>
+        </tr>
         <tr style="height: 20px;">
             <td>
                 <label runat="server" id="lblOrg" />

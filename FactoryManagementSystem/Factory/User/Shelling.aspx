@@ -6,6 +6,14 @@
             <td style="text-align: center">
                 <strong>FACTORY - SHELLING</strong></td>
         </tr>
+        <tr style="height: 20px; text-align: right">
+            <td>
+                <button id="btnAdd" runat="server" cssclass="btn btn-primary btn-sm"
+                    onserverclick="btnAdd_ServerClick">
+                    <i class="fas fa-file-excel"></i>
+                </button>
+            </td>
+        </tr>
         <tr style="height: 20px;"></tr>
         <tr>
             <td>
@@ -65,6 +73,9 @@
                                     <ItemTemplate>
                                         <asp:Label ID="lblVariety" runat="server" Text='<%# Bind("InMoist") %>'></asp:Label>
                                     </ItemTemplate>
+                                    <FooterTemplate>
+                                        <asp:Label ID="lblTotal" Text="Total:" runat="server"></asp:Label>
+                                    </FooterTemplate>
                                 </asp:TemplateField>
                                 <%--Bags--%>
                                 <asp:TemplateField HeaderText="Bags" HeaderStyle-HorizontalAlign="Center">

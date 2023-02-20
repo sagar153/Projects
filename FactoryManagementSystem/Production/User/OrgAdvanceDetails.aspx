@@ -6,7 +6,14 @@
             <td style="text-align: center">
                 <strong>ADVANCES</strong></td>
         </tr>
-        
+        <tr style="height: 20px; text-align: right">
+            <td>
+                <button id="btnAdd" runat="server" cssclass="btn btn-primary btn-sm"
+                    onserverclick="btnAdd_ServerClick">
+                    <i class="fas fa-file-excel"></i>
+                </button>
+            </td>
+        </tr>
         <tr>
             <td>
                 <asp:UpdatePanel ID="UpdatePanelCR" runat="server">
@@ -30,6 +37,9 @@
                                     <ItemTemplate>
                                         <asp:Label ID="lblOrganiserName" runat="server" Text='<%# Bind("OrganiserName") %>'></asp:Label>
                                     </ItemTemplate>
+                                    <FooterTemplate>
+                                        <asp:Label ID="lblTotal" Text="Total:" runat="server"></asp:Label>
+                                    </FooterTemplate>
                                 </asp:TemplateField>
                                 <%--Advance--%>
                                 <asp:TemplateField HeaderText="Advance" HeaderStyle-HorizontalAlign="Center">

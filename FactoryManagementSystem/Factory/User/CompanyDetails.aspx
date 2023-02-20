@@ -6,6 +6,14 @@
             <td style="text-align: center">
                 <strong>COMPANY - <Label id="lblCompanyName" runat="server"/></strong></td>
         </tr>
+        <tr style="height: 20px; text-align: right">
+            <td>
+                <button id="btnAdd" runat="server" cssclass="btn btn-primary btn-sm"
+                    onserverclick="btnAdd_ServerClick">
+                    <i class="fas fa-file-excel"></i>
+                </button>
+            </td>
+        </tr>
         <tr style="height: 20px;"></tr>
         <tr>
             <td>
@@ -34,13 +42,17 @@
                                 <asp:TemplateField HeaderText="Lorry No" HeaderStyle-HorizontalAlign="Center">                                    
                                     <ItemTemplate>
                                         <asp:Label ID="lblLorryNo" runat="server" Text='<%# Bind("LorryNo") %>'></asp:Label>
-                                    </ItemTemplate>                                    
+                                    </ItemTemplate> 
+                                    
                                 </asp:TemplateField>
                                 <%--Variety--%>
                                 <asp:TemplateField HeaderText="Variety" HeaderStyle-HorizontalAlign="Center">                                    
                                     <ItemTemplate>
                                         <asp:Label ID="lblVariety" runat="server" Text='<%# Bind("Variety") %>'></asp:Label>
-                                    </ItemTemplate>                                    
+                                    </ItemTemplate>   
+                                    <FooterTemplate>
+                                        <asp:Label ID="lblTotal" Text="Total:" runat="server"></asp:Label>
+                                    </FooterTemplate>
                                 </asp:TemplateField>
                                 <%--Weight--%>
                                 <asp:TemplateField HeaderText="Weight" HeaderStyle-HorizontalAlign="Center">                                    

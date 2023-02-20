@@ -1,6 +1,7 @@
 ﻿using FactoryManagementSystem.DAL;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -22,7 +23,13 @@ namespace FactoryManagementSystem.Factory.User
         {
             string strYear = Convert.ToString(Session["Year"]);
             BinMoistDAL binsDAL = new BinMoistDAL();
-            grdShelling.DataSource = binsDAL.GetShellingDetails(strYear);
+            var details = binsDAL.GetShellingDetails(strYear);
+            grdShelling.DataSource = details;
+            
+            if (details.Rows.Count > 0)
+            {
+                grdShelling.Columns[7].FooterText = details.AsEnumerable().Select(x => x.Field<int>("Bags")).Sum().ToString();
+            }
             grdShelling.DataBind();
         }
 
@@ -30,6 +37,36 @@ namespace FactoryManagementSystem.Factory.User
         {
             grdShelling.PageIndex = e.NewPageIndex;
             LoadData();
+        }
+
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+            //required to avoid the run time error "  
+            //Control 'GridView1' of type 'Grid View' must be placed inside a form tag with runat=server."  
+        }
+
+        public void ExportToExcel()
+        {
+            Response.Clear();
+
+            Response.AddHeader("content-disposition", "attachment;filename = Shelling.xls");
+            Response.ContentType = "application/vnd.xls";
+
+            System.IO.StringWriter stringWrite = new System.IO.StringWriter();
+
+            System.Web.UI.HtmlTextWriter htmlWrite =
+            new HtmlTextWriter(stringWrite);
+
+            grdShelling.RenderControl(htmlWrite);
+
+            Response.Write(stringWrite.ToString());
+
+            Response.End();
+        }
+
+        protected void btnAdd_ServerClick(object sender, EventArgs e)
+        {
+            ExportToExcel();
         }
     }
 }

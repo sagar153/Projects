@@ -47,5 +47,35 @@ namespace FactoryManagementSystem.Factory.User
             gvBinMoist.PageIndex = e.NewPageIndex;
             LoadData(Convert.ToInt32(hdnBinId));
         }
+
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+            //required to avoid the run time error "  
+            //Control 'GridView1' of type 'Grid View' must be placed inside a form tag with runat=server."  
+        }
+
+        public void ExportToExcel()
+        {
+            Response.Clear();
+
+            Response.AddHeader("content-disposition", "attachment;filename = BinDetails.xls");
+            Response.ContentType = "application/vnd.xls";
+
+            System.IO.StringWriter stringWrite = new System.IO.StringWriter();
+
+            System.Web.UI.HtmlTextWriter htmlWrite =
+            new HtmlTextWriter(stringWrite);
+
+            gvBinMoist.RenderControl(htmlWrite);
+
+            Response.Write(stringWrite.ToString());
+
+            Response.End();
+        }
+
+        protected void btnAdd_ServerClick(object sender, EventArgs e)
+        {
+            ExportToExcel();
+        }
     }
 }

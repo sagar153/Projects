@@ -1,6 +1,7 @@
 ﻿using FactoryManagementSystem.DAL;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -41,6 +42,12 @@ namespace FactoryManagementSystem.Production.User
             var OrgAdvanceDetails = orgAdvanceDAL.GetAdvanceByOrganiser(GetYear(), orgName);
 
             grdAdvance.DataSource = OrgAdvanceDetails;
+            
+
+            if (OrgAdvanceDetails.Rows.Count > 0)
+            {
+                grdAdvance.Columns[1].FooterText = OrgAdvanceDetails.AsEnumerable().Select(x => x.Field<int>("Bags")).Sum().ToString();
+            }
             grdAdvance.DataBind();
         }
 
@@ -48,6 +55,36 @@ namespace FactoryManagementSystem.Production.User
         {
             grdAdvance.PageIndex = e.NewPageIndex;
             LoadData(hdnOrgName.Value);
+        }
+
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+            //required to avoid the run time error "  
+            //Control 'GridView1' of type 'Grid View' must be placed inside a form tag with runat=server."  
+        }
+
+        public void ExportToExcel()
+        {
+            Response.Clear();
+
+            Response.AddHeader("content-disposition", "attachment;filename = Advance.xls");
+            Response.ContentType = "application/vnd.xls";
+
+            System.IO.StringWriter stringWrite = new System.IO.StringWriter();
+
+            System.Web.UI.HtmlTextWriter htmlWrite =
+            new HtmlTextWriter(stringWrite);
+
+            grdAdvance.RenderControl(htmlWrite);
+
+            Response.Write(stringWrite.ToString());
+
+            Response.End();
+        }
+
+        protected void btnAdd_ServerClick(object sender, EventArgs e)
+        {
+            ExportToExcel();
         }
     }
 }

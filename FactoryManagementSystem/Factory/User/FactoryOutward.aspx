@@ -1,12 +1,34 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FactoryOutward.aspx.cs" Inherits="FactoryManagementSystem.Factory.User.FactoryOutward" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-     <table style="width: 100%;">
+    <table style="width: 100%;">
         <tr>
             <td style="text-align: center">
                 <strong>FACTORY - OUTWARD</strong></td>
         </tr>
-         <tr style="height: 20px; text-align: right">
-            <td>
+        <tr style="height: 10px;"></tr>
+        <tr style="height: 20px;">
+            <td style="width: 90%">
+                <table>
+                    <tr>
+                        <td style="width: 35px;">Date:</td>
+                        <td style="width: 50px; padding-right: 10px;">
+                            <asp:TextBox TextMode="Date" runat="server" ID="calDate"></asp:TextBox></td>
+                        <td style="width: 65px;">Company:</td>
+                        <td style="width: 100px; padding-right: 10px;">
+                            <asp:TextBox runat="server" ID="txtCompany"></asp:TextBox></td>
+                        <td style="width: 50px;">Variety:</td>
+                        <td style="width: 100px; padding-right: 10px;">
+                            <asp:TextBox runat="server" ID="txtVariety"></asp:TextBox></td>
+                        <td>
+                            <button id="btnSearch" runat="server" cssclass="btn btn-primary btn-sm" onserverclick="btnSearch_ServerClick">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="text-align: right; width: 10%">
                 <button id="btnAdd" runat="server" cssclass="btn btn-primary btn-sm"
                     onserverclick="btnAdd_ServerClick">
                     <i class="fas fa-file-excel"></i>
@@ -15,7 +37,7 @@
         </tr>
         <tr style="height: 20px;"></tr>
         <tr>
-            <td>
+            <td colspan="2">
                 <asp:UpdatePanel ID="UpdatePanelCR" runat="server">
                     <ContentTemplate>
                         <asp:GridView ID="grdOutward"
@@ -25,18 +47,18 @@
                             AllowPaging="True"
                             AllowSorting="True"
                             ShowFooter="True"
-                            EmptyDataText="No Records Found"          
+                            EmptyDataText="No Records Found"
                             PageSize="10"
                             OnPageIndexChanging="grdOutward_PageIndexChanging"
                             CssClass="table table-striped table-bordered table-hover table-condensed"
-                            Width="90%">
+                            Width="100%">
                             <Columns>
                                 <%--Date--%>
                                 <asp:TemplateField HeaderText="Date" HeaderStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
                                         <asp:Label ID="lblDate" runat="server" Text='<%# Bind("Date") %>'></asp:Label>
                                     </ItemTemplate>
-                                </asp:TemplateField>                                
+                                </asp:TemplateField>
                                 <%--CompanyName--%>
                                 <asp:TemplateField HeaderText="Company" HeaderStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
@@ -63,7 +85,7 @@
                                     <ItemTemplate>
                                         <asp:Label ID="lblWeight" runat="server" Text='<%# Bind("Weight") %>'></asp:Label>
                                     </ItemTemplate>
-                                </asp:TemplateField>                                
+                                </asp:TemplateField>
                                 <%--Bags--%>
                                 <asp:TemplateField HeaderText="Bags" HeaderStyle-HorizontalAlign="Center">
                                     <ItemTemplate>

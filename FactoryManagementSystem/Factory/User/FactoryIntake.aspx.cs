@@ -20,8 +20,8 @@ namespace FactoryManagementSystem.Factory.User
         private void LoadData()  // To show the data in the DataGridView  
         {
             FactoryIntakeDAL intakeDAL = new FactoryIntakeDAL();
-            var intakeDetails = intakeDAL.GetAllFactoryIntake();
-            grdFactoryIntake.DataSource = intakeDAL.GetActiveFactoryIntake(GetYear());
+            var intakeDetails = intakeDAL.GetActiveFactoryIntake(GetYear());
+            grdFactoryIntake.DataSource = intakeDetails;
             if (intakeDetails.Rows.Count > 0)
             {
                 grdFactoryIntake.Columns[5].FooterText = intakeDetails.AsEnumerable().Select(x => x.Field<decimal>("Weight")).Sum().ToString();
@@ -77,6 +77,29 @@ namespace FactoryManagementSystem.Factory.User
         protected void btnAdd_ServerClick(object sender, EventArgs e)
         {
             ExportToExcel();
+        }
+
+        protected void btnSearch_ServerClick(object sender, EventArgs e)
+        {
+            FactoryIntakeDAL intakeDAL = new FactoryIntakeDAL();
+            var details = intakeDAL.GetActiveFactoryIntake(GetYear());
+
+            var filter = details.AsEnumerable();
+            if (!string.IsNullOrEmpty(calDate.Text.Trim()))
+                filter = filter.Where(p => p.Field<DateTime>("Date").Date.ToString() == (Convert.ToDateTime(calDate.Text).Date.ToString()));
+            if (!string.IsNullOrEmpty(txtCompany.Text.Trim()))
+                filter = filter.Where(p => p.Field<string>("CompanyName").ToLower().Contains(txtCompany.Text.Trim().ToLower()));
+            if (!string.IsNullOrEmpty(txtVariety.Text.Trim()))
+                filter = filter.Where(p => p.Field<string>("Variety").ToLower().Contains(txtVariety.Text.Trim().ToLower()));
+
+            DataView view = filter.AsDataView();
+
+            grdFactoryIntake.DataSource = view;
+            if (view.Count > 0)
+            {
+                grdFactoryIntake.Columns[5].FooterText = filter.Select(x => x.Field<decimal>("Weight")).Sum().ToString();
+            }
+            grdFactoryIntake.DataBind();
         }
     }
 }

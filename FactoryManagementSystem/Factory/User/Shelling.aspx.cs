@@ -21,9 +21,8 @@ namespace FactoryManagementSystem.Factory.User
 
         private void LoadData()  // To show the data in the DataGridView  
         {
-            string strYear = Convert.ToString(Session["Year"]);
             BinMoistDAL binsDAL = new BinMoistDAL();
-            var details = binsDAL.GetShellingDetails(strYear);
+            var details = binsDAL.GetShellingDetails(GetYear());
             grdShelling.DataSource = details;
             
             if (details.Rows.Count > 0)
@@ -43,6 +42,20 @@ namespace FactoryManagementSystem.Factory.User
         {
             //required to avoid the run time error "  
             //Control 'GridView1' of type 'Grid View' must be placed inside a form tag with runat=server."  
+        }
+
+        private string GetYear()
+        {
+            string strYear = string.Empty;
+            try
+            {
+                strYear = Session["Year"].ToString();
+            }
+            catch (Exception ex)
+            {
+                Response.Redirect("/Login.aspx");
+            }
+            return strYear;
         }
 
         public void ExportToExcel()
@@ -67,6 +80,30 @@ namespace FactoryManagementSystem.Factory.User
         protected void btnAdd_ServerClick(object sender, EventArgs e)
         {
             ExportToExcel();
+        }
+
+        protected void btnSearch_ServerClick(object sender, EventArgs e)
+        {
+            BinMoistDAL binsDAL = new BinMoistDAL();
+            var details = binsDAL.GetShellingDetails(GetYear());
+
+            var filter = details.AsEnumerable();
+            if (!string.IsNullOrEmpty(calDate.Text.Trim()))
+                filter = filter.Where(p => p.Field<DateTime>("Date").Date.ToString() == (Convert.ToDateTime(calDate.Text).Date.ToString()));
+            if (!string.IsNullOrEmpty(txtCompany.Text.Trim()))
+                filter = filter.Where(p => p.Field<string>("CompanyName").ToLower().Contains(txtCompany.Text.Trim().ToLower()));
+            if (!string.IsNullOrEmpty(txtBin.Text.Trim()))
+                filter = filter.Where(p => p.Field<string>("BinName").ToLower().Contains(txtBin.Text.Trim().ToLower()));
+
+            DataView view = filter.AsDataView();
+
+            grdShelling.DataSource = view;
+
+            if (details.Rows.Count > 0)
+            {
+                grdShelling.Columns[7].FooterText = details.AsEnumerable().Select(x => x.Field<int>("Bags")).Sum().ToString();
+            }
+            grdShelling.DataBind();
         }
     }
 }

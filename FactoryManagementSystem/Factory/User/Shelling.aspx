@@ -6,7 +6,29 @@
             <td style="text-align: center">
                 <strong>FACTORY - SHELLING</strong></td>
         </tr>
-        <tr style="height: 20px; text-align: right">
+        <tr style="height: 10px;"></tr>
+        <tr style="height: 20px;">
+            <td style="width: 90%">
+                <table>
+                    <tr>
+                        <td style="width: 35px;">Date:</td>
+                        <td style="width: 50px; padding-right: 10px;">
+                            <asp:TextBox TextMode="Date" runat="server" ID="calDate"></asp:TextBox></td>
+                        <td style="width: 65px;">Company:</td>
+                        <td style="width: 100px; padding-right: 10px;">
+                            <asp:TextBox runat="server" ID="txtCompany"></asp:TextBox></td>
+                        <td style="width: 25px;">Bin:</td>
+                        <td style="width: 100px; padding-right: 10px;">
+                            <asp:TextBox runat="server" ID="txtBin"></asp:TextBox></td>
+                        <td>
+                            <button id="btnSearch" runat="server" cssclass="btn btn-primary btn-sm" onserverclick="btnSearch_ServerClick">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="text-align: right; width: 10%">
             <td>
                 <button id="btnAdd" runat="server" cssclass="btn btn-primary btn-sm"
                     onserverclick="btnAdd_ServerClick">
@@ -26,11 +48,11 @@
                             AllowPaging="True"
                             AllowSorting="True"
                             ShowFooter="True"
-                            EmptyDataText="No Records Found" 
+                            EmptyDataText="No Records Found"
                             PageSize="10"
                             OnPageIndexChanging="grdShelling_PageIndexChanging"
                             CssClass="table table-striped table-bordered table-hover table-condensed"
-                            Width="90%">
+                            Width="100%">
                             <Columns>
                                 <%--Date--%>
                                 <asp:TemplateField HeaderText="Date" HeaderStyle-HorizontalAlign="Center">

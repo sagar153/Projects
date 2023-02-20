@@ -8,6 +8,7 @@
                     <label runat="server" id="lblheader">FARMERS LIST</label>
                 </strong></td>
         </tr>
+        <tr style="height: 10px;"></tr>
         <tr style="height: 20px;">
             <td>
                 <table>
@@ -40,7 +41,7 @@
         <tr style="height: 20px;">
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 <asp:UpdatePanel ID="UpdatePanelCR" runat="server">
                     <ContentTemplate>
                         <asp:GridView ID="gvFarmerDetails"

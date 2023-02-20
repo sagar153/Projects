@@ -6,8 +6,29 @@
             <td style="text-align: center">
                 <strong>COMPANY - <Label id="lblCompanyName" runat="server"/></strong></td>
         </tr>
-        <tr style="height: 20px; text-align: right">
-            <td>
+        <tr style="height: 10px;"></tr>
+        <tr style="height: 20px;">
+            <td style="width: 90%">
+                <table>
+                    <tr>
+                        <td style="width: 35px;">Date:</td>
+                        <td style="width: 50px; padding-right: 10px;">
+                            <asp:TextBox TextMode="Date" runat="server" ID="calDate"></asp:TextBox></td>
+                        <td style="width: 65px;">LorryNo:</td>
+                        <td style="width: 100px; padding-right: 10px;">
+                            <asp:TextBox runat="server" ID="txtLorry"></asp:TextBox></td>
+                        <td style="width: 50px;">Variety:</td>
+                        <td style="width: 100px; padding-right: 10px;">
+                            <asp:TextBox runat="server" ID="txtVariety"></asp:TextBox></td>
+                        <td>
+                            <button id="btnSearch" runat="server" cssclass="btn btn-primary btn-sm" onserverclick="btnSearch_ServerClick">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="text-align: right; width: 10%">
                 <button id="btnAdd" runat="server" cssclass="btn btn-primary btn-sm"
                     onserverclick="btnAdd_ServerClick">
                     <i class="fas fa-file-excel"></i>
@@ -16,7 +37,7 @@
         </tr>
         <tr style="height: 20px;"></tr>
         <tr>
-            <td>
+            <td colspan="2">
                 <asp:UpdatePanel ID="UpdatePanelCR" runat="server">
                     <ContentTemplate>
                         <asp:GridView ID="grdCompanyDetails"
@@ -30,7 +51,7 @@
                             PageSize="10"
                             OnPageIndexChanging="grdCompanyDetails_PageIndexChanging"
                             CssClass="table table-striped table-bordered table-hover table-condensed"                          
-                            Width="90%">
+                            Width="100%">
                             <Columns>
                                  <%--Date--%>
                                 <asp:TemplateField HeaderText="Date" HeaderStyle-HorizontalAlign="Center">                                    

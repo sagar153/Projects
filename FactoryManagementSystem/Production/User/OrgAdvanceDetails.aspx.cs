@@ -40,13 +40,11 @@ namespace FactoryManagementSystem.Production.User
             OrgAdvanceDAL orgAdvanceDAL = new OrgAdvanceDAL();
 
             var OrgAdvanceDetails = orgAdvanceDAL.GetAdvanceByOrganiser(GetYear(), orgName);
-
-            grdAdvance.DataSource = OrgAdvanceDetails;
-            
+            grdAdvance.DataSource = OrgAdvanceDetails;            
 
             if (OrgAdvanceDetails.Rows.Count > 0)
             {
-                grdAdvance.Columns[1].FooterText = OrgAdvanceDetails.AsEnumerable().Select(x => x.Field<int>("Bags")).Sum().ToString();
+                grdAdvance.Columns[1].FooterText = OrgAdvanceDetails.AsEnumerable().Select(x => x.Field<decimal>("Advance")).Sum().ToString();
             }
             grdAdvance.DataBind();
         }

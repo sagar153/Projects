@@ -1,6 +1,7 @@
 ﻿using FactoryManagementSystem.DAL;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -76,6 +77,23 @@ namespace FactoryManagementSystem.Factory.User
         protected void btnAdd_ServerClick(object sender, EventArgs e)
         {
             ExportToExcel();
+        }
+
+        protected void btnSearch_ServerClick(object sender, EventArgs e)
+        {
+            BinMoistDAL binsDAL = new BinMoistDAL();
+            var details = binsDAL.GetActiveBinMoist(GetYear(), Convert.ToInt32(Request.Params["binId"]));
+            var filter = details.AsEnumerable();
+            if (!string.IsNullOrEmpty(calDate.Text.Trim()))
+                filter = filter.Where(p => p.Field<DateTime>("Date").Date.ToString()==(Convert.ToDateTime(calDate.Text).Date.ToString()));
+            if (!string.IsNullOrEmpty(txtCompany.Text.Trim()))
+                filter = filter.Where(p => p.Field<string>("CompanyName").ToLower().Contains(txtCompany.Text.Trim().ToLower()));
+            if (!string.IsNullOrEmpty(txtBinName.Text.Trim()))
+                filter = filter.Where(p => p.Field<string>("BinName").ToLower().Contains(txtBinName.Text.Trim().ToLower()));
+
+            DataView view = filter.AsDataView();
+            gvBinMoist.DataSource = view;
+            gvBinMoist.DataBind();
         }
     }
 }

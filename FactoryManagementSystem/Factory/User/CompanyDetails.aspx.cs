@@ -24,8 +24,7 @@ namespace FactoryManagementSystem.Factory.User
         private void LoadData(int companyId)  // To show the data in the DataGridView  
         {
             CompanyDAL companyDAL = new CompanyDAL();
-            string strYear = Convert.ToString(Session["Year"]);
-            var companyDetails = companyDAL.GetCompaniesDetailsById(strYear, companyId);
+            var companyDetails = companyDAL.GetCompaniesDetailsById(GetYear(), companyId);
 
             grdCompanyDetails.DataSource = companyDetails;          
 
@@ -72,6 +71,46 @@ namespace FactoryManagementSystem.Factory.User
         protected void btnAdd_ServerClick(object sender, EventArgs e)
         {
             ExportToExcel();
+        }
+
+        protected void btnSearch_ServerClick(object sender, EventArgs e)
+        {
+            CompanyDAL companyDAL = new CompanyDAL();
+            
+            var details = companyDAL.GetCompaniesDetailsById(GetYear(), Convert.ToInt32(Request.Params["Id"]));
+
+            var filter = details.AsEnumerable();
+            if (!string.IsNullOrEmpty(calDate.Text.Trim()))
+                filter = filter.Where(p => p.Field<DateTime>("Date").Date.ToString() == (Convert.ToDateTime(calDate.Text).Date.ToString()));
+            if (!string.IsNullOrEmpty(txtLorry.Text.Trim()))
+                filter = filter.Where(p => p.Field<string>("LorryNo").ToLower().Contains(txtLorry.Text.Trim().ToLower()));
+            if (!string.IsNullOrEmpty(txtVariety.Text.Trim()))
+                filter = filter.Where(p => p.Field<string>("Variety").ToLower().Contains(txtVariety.Text.Trim().ToLower()));
+
+            DataView view = filter.AsDataView();
+            grdCompanyDetails.DataSource = view;
+
+            if (view.Count > 0)
+            {
+                grdCompanyDetails.Columns[3].FooterText = filter.Select(x => x.Field<decimal>("Weight")).Sum().ToString();
+                grdCompanyDetails.Columns[8].FooterText = filter.Select(x => x.Field<int>("Bags")).Sum().ToString();
+            }
+            grdCompanyDetails.DataBind();
+            
+        }
+
+        private string GetYear()
+        {
+            string strYear = string.Empty;
+            try
+            {
+                strYear = Session["Year"].ToString();
+            }
+            catch (Exception ex)
+            {
+                Response.Redirect("/Login.aspx");
+            }
+            return strYear;
         }
     }
 }

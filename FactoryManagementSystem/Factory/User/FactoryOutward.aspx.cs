@@ -19,11 +19,24 @@ namespace FactoryManagementSystem.Factory.User
             }
         }
 
+        private string GetYear()
+        {
+            string strYear = string.Empty;
+            try
+            {
+                strYear = Session["Year"].ToString();
+            }
+            catch (Exception ex)
+            {
+                Response.Redirect("/Login.aspx");
+            }
+            return strYear;
+        }
+
         private void LoadData()  // To show the data in the DataGridView  
         {
-            string strYear = Convert.ToString(Session["Year"]);
             FactoryOutwardDAL outwardDAL = new FactoryOutwardDAL();
-            var details = outwardDAL.GetActiveFactoryOutward(strYear);
+            var details = outwardDAL.GetActiveFactoryOutward(GetYear());
             grdOutward.DataSource = details;
             
             if (details.Rows.Count > 0)
@@ -68,6 +81,30 @@ namespace FactoryManagementSystem.Factory.User
         protected void btnAdd_ServerClick(object sender, EventArgs e)
         {
             ExportToExcel();
+        }
+
+        protected void btnSearch_ServerClick(object sender, EventArgs e)
+        {
+            FactoryOutwardDAL outwardDAL = new FactoryOutwardDAL();
+            var details = outwardDAL.GetActiveFactoryOutward(GetYear());
+
+            var filter = details.AsEnumerable();
+            if (!string.IsNullOrEmpty(calDate.Text.Trim()))
+                filter = filter.Where(p => p.Field<DateTime>("Date").Date.ToString() == (Convert.ToDateTime(calDate.Text).Date.ToString()));
+            if (!string.IsNullOrEmpty(txtCompany.Text.Trim()))
+                filter = filter.Where(p => p.Field<string>("CompanyName").ToLower().Contains(txtCompany.Text.Trim().ToLower()));
+            if (!string.IsNullOrEmpty(txtVariety.Text.Trim()))
+                filter = filter.Where(p => p.Field<string>("Variety").ToLower().Contains(txtVariety.Text.Trim().ToLower()));
+
+            DataView view = filter.AsDataView();
+
+            grdOutward.DataSource = view;
+            if (view.Count > 0)
+            {
+                grdOutward.Columns[5].FooterText = filter.Select(x => x.Field<int>("Bags")).Sum().ToString();
+                grdOutward.Columns[4].FooterText = filter.Select(x => x.Field<decimal>("Weight")).Sum().ToString();
+            }
+            grdOutward.DataBind();
         }
     }
 }

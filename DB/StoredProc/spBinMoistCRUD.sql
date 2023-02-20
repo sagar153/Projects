@@ -34,8 +34,10 @@ CREATE PROCEDURE [dbo].[spBinMoistCRUD]
     -- 1) Insert  
     -- 2) Update  
     -- 3) Delete  
-    -- 4) Get only Active  
+    -- 4) Get only Active By BinId
     -- 5) Selec All  
+	-- 6) Get All Active
+	-- 7) Get By BinMoistId
 AS  
 BEGIN  
     -- SET NOCOUNT ON added to prevent extra result sets from  
@@ -109,7 +111,29 @@ BEGIN
 		LEFT JOIN [dbo].[Bins] B ON BM.BinId = B.BinId
 		LEFT JOIN [dbo].[Companies] C ON BM.CompanyId = C.CompanyId
 		WHERE BM.isActive = 1 AND [Year] = @Year AND BM.BinId = @BinId
-    END  
+    END
+	ELSE IF @OperationType=6 
+    BEGIN  
+        SELECT 
+		B.BinName, 
+		C.CompanyName, 
+		BM.* 
+		FROM [dbo].[BinMoist] BM
+		LEFT JOIN [dbo].[Bins] B ON BM.BinId = B.BinId
+		LEFT JOIN [dbo].[Companies] C ON BM.CompanyId = C.CompanyId
+		WHERE BM.isActive = 1 AND [Year] = @Year
+    END
+	ELSE IF @OperationType=7 
+    BEGIN  
+        SELECT 
+		B.BinName, 
+		C.CompanyName, 
+		BM.* 
+		FROM [dbo].[BinMoist] BM
+		LEFT JOIN [dbo].[Bins] B ON BM.BinId = B.BinId
+		LEFT JOIN [dbo].[Companies] C ON BM.CompanyId = C.CompanyId
+		WHERE BM.isActive = 1 AND BinDailyMoistId = @BinMoistId
+    END
     ELSE   
     BEGIN  
         SELECT * FROM [dbo].[BinMoist]

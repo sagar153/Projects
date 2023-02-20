@@ -17,11 +17,24 @@ namespace FactoryManagementSystem.Factory.Admin
             }
         }
 
+        private string GetYear()
+        {
+            string strYear = string.Empty;
+            try
+            {
+                strYear = Session["Year"].ToString();
+            }
+            catch (Exception ex)
+            {
+                Response.Redirect("/Login.aspx");
+            }
+            return strYear;
+        }
+
         private void LoadData()  // To show the data in the DataGridView  
         {
-            string strYear = Convert.ToString(Session["Year"]);
             DAL.FactoryOutwardDAL outwardDAL = new DAL.FactoryOutwardDAL();
-            var outTakeDetails = outwardDAL.GetAllFactoryOutward(strYear);
+            var outTakeDetails = outwardDAL.GetAllFactoryOutward(GetYear());
 
             if (outTakeDetails.Rows.Count > 0)
             {
@@ -56,7 +69,7 @@ namespace FactoryManagementSystem.Factory.Admin
         {
             GridViewRow row = (GridViewRow)((Control)e.CommandSource).NamingContainer;
 
-            int id = Convert.ToInt16(grdFactoryOutward.DataKeys[row.RowIndex].Values["FactoryOutWardId"].ToString());
+            int id = Convert.ToInt32(grdFactoryOutward.DataKeys[row.RowIndex].Values["FactoryOutWardId"].ToString());
 
             if (e.CommandName == "EditIntake")
             {

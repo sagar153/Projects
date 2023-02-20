@@ -114,8 +114,10 @@
     <Content Include="Content\main.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Factory\Admin\AddEditBinMoist.aspx" />
     <Content Include="Factory\Admin\AddEditFactoryIntake.aspx" />
     <Content Include="Factory\Admin\AddEditFatcoryOutward.aspx" />
+    <Content Include="Factory\Admin\BinMoist.aspx" />
     <Content Include="Factory\Admin\Bins.aspx" />
     <Content Include="Factory\Admin\Companies.aspx" />
     <Content Include="Factory\Admin\FactoryIntake.aspx" />
@@ -227,6 +229,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Factory\Admin\AddEditBinMoist.aspx.cs">
+      <DependentUpon>AddEditBinMoist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Factory\Admin\AddEditBinMoist.aspx.designer.cs">
+      <DependentUpon>AddEditBinMoist.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Factory\Admin\AddEditFactoryIntake.aspx.cs">
       <DependentUpon>AddEditFactoryIntake.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -240,6 +249,13 @@
     </Compile>
     <Compile Include="Factory\Admin\AddEditFatcoryOutward.aspx.designer.cs">
       <DependentUpon>AddEditFatcoryOutward.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Factory\Admin\BinMoist.aspx.cs">
+      <DependentUpon>BinMoist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Factory\Admin\BinMoist.aspx.designer.cs">
+      <DependentUpon>BinMoist.aspx</DependentUpon>
     </Compile>
     <Compile Include="Factory\Admin\Bins.aspx.cs">
       <DependentUpon>Bins.aspx</DependentUpon>

@@ -95,14 +95,6 @@
                                             <asp:Label ID="lblBags" runat="server" Text='<%# Bind("Bags") %>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-
-                                    <%--Lot--%>
-                                    <asp:TemplateField HeaderText="Lot" HeaderStyle-HorizontalAlign="Center">
-                                        <ItemTemplate>
-                                            <asp:Label ID="lblLot" runat="server" Text='<%# Bind("Lot") %>'></asp:Label>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-
                                     <%--Executive--%>
                                     <asp:TemplateField HeaderText="Executive" HeaderStyle-HorizontalAlign="Center">
                                         <ItemTemplate>

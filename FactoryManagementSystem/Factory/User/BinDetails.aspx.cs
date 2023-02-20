@@ -25,7 +25,7 @@ namespace FactoryManagementSystem.Factory.User
         private void LoadData(int binId)  // To show the data in the DataGridView  
         {
             BinMoistDAL binsDAL = new BinMoistDAL();
-            gvBinMoist.DataSource = binsDAL.GetActiveBinMoist(GetYear(), binId);
+            gvBinMoist.DataSource = binsDAL.GetActiveBinMoistByBinId(GetYear(), binId);
             gvBinMoist.DataBind();
         }
 
@@ -82,7 +82,7 @@ namespace FactoryManagementSystem.Factory.User
         protected void btnSearch_ServerClick(object sender, EventArgs e)
         {
             BinMoistDAL binsDAL = new BinMoistDAL();
-            var details = binsDAL.GetActiveBinMoist(GetYear(), Convert.ToInt32(Request.Params["binId"]));
+            var details = binsDAL.GetActiveBinMoistByBinId(GetYear(), Convert.ToInt32(Request.Params["binId"]));
             var filter = details.AsEnumerable();
             if (!string.IsNullOrEmpty(calDate.Text.Trim()))
                 filter = filter.Where(p => p.Field<DateTime>("Date").Date.ToString()==(Convert.ToDateTime(calDate.Text).Date.ToString()));

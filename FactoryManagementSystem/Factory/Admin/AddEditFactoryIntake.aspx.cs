@@ -44,8 +44,7 @@ namespace FactoryManagementSystem.Factory.Admin
                 txtVariety.Text = data.Rows[0]["Variety"].ToString();
                 txtWeight.Text = data.Rows[0]["Weight"].ToString();
                 txtMoist.Text = data.Rows[0]["Moist"].ToString();
-                txtBags.Text = data.Rows[0]["Bags"].ToString();
-                txtLot.Text = data.Rows[0]["Lot"].ToString();
+                txtBags.Text = data.Rows[0]["Bags"].ToString();                
                 txtExecutive.Text = data.Rows[0]["Executive"].ToString();
                 txtRemarks.Text = data.Rows[0]["Remarks"].ToString();
                 chkActive.Checked = Convert.ToBoolean(data.Rows[0]["isActive"].ToString());
@@ -94,7 +93,7 @@ namespace FactoryManagementSystem.Factory.Admin
             factoryIntake.Weight = Convert.ToDecimal(txtWeight.Text);
             factoryIntake.Moist = Convert.ToDecimal(txtMoist.Text);
             factoryIntake.Bags = Convert.ToInt32(txtBags.Text);
-            factoryIntake.Lot = Convert.ToInt32(txtLot.Text);
+            factoryIntake.Lot = 0;
             factoryIntake.Executive = txtExecutive.Text;
             factoryIntake.BinId = Convert.ToInt32(ddlBin.SelectedItem.Value);
             factoryIntake.Remarks = txtRemarks.Text;

@@ -9,13 +9,13 @@ namespace FactoryManagementSystem.DAL
 {
     public class FactoryIntakeDAL
     {
-        public DataTable GetAllFactoryIntake()
+        public DataTable GetAllFactoryIntake(string strYear)
         {
             var sqlHelper = new SQLDataAccessHelper();
             var paramArray = new SqlParameter[15];
             paramArray[0] = new SqlParameter() { ParameterName = "@FactoryIntakeId", Value = 0 };
             paramArray[1] = new SqlParameter() { ParameterName = "@CompanyId", Value = 0 };
-            paramArray[2] = new SqlParameter() { ParameterName = "@Year", Value = "" };
+            paramArray[2] = new SqlParameter() { ParameterName = "@Year", Value = strYear };
             paramArray[3] = new SqlParameter() { ParameterName = "@Date", Value = DateTime.Now };
             paramArray[4] = new SqlParameter() { ParameterName = "@LorryNo", Value = "" };
             paramArray[5] = new SqlParameter() { ParameterName = "@Variety", Value = "" };

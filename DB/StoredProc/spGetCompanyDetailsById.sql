@@ -11,7 +11,7 @@ GO
 -- Author:      <Naveen>   
 -- Description: <spGetCompanyDetailsByVariety>  
 -- =============================================  
---exec spGetCompanyDetailsByVariety '2022-23',1
+--exec spGetCompanyDetailsById '2022-23',1
 CREATE PROCEDURE [dbo].[spGetCompanyDetailsById]   
     -- Add the parameters for the stored procedure here
 	@Year varchar(50),  

@@ -82,10 +82,9 @@ BEGIN
     END  
 	ELSE
 	BEGIN  
-
         SELECT B.BinName, C.CompanyName, FI.* FROM [dbo].[FactoryIntake] FI
 		 JOIN [dbo].[Bins] B ON FI.BinId = B.BinId
-		 JOIN [dbo].[Companies] C ON FI.CompanyId = C.CompanyId		
+		 JOIN [dbo].[Companies] C ON FI.CompanyId = C.CompanyId	AND [Year] = @Year	
     END 
        
 END  

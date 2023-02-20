@@ -10,52 +10,16 @@
 namespace FactoryManagementSystem.Factory.Admin {
     
     
-    public partial class AddEditFactoryIntake {
+    public partial class AddEditBinMoist {
         
         /// <summary>
-        /// hdnFactoryIntakeId control.
+        /// hdnBinMoistId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdnFactoryIntakeId;
-        
-        /// <summary>
-        /// lblCompany control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCompany;
-        
-        /// <summary>
-        /// ddlCompany control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCompany;
-        
-        /// <summary>
-        /// lblYear control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblYear;
-        
-        /// <summary>
-        /// txtYear control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtYear;
+        protected global::System.Web.UI.WebControls.HiddenField hdnBinMoistId;
         
         /// <summary>
         /// lblDate control.
@@ -76,22 +40,58 @@ namespace FactoryManagementSystem.Factory.Admin {
         protected global::System.Web.UI.WebControls.TextBox calDate;
         
         /// <summary>
-        /// lblLorryNo control.
+        /// lblYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLorryNo;
+        protected global::System.Web.UI.WebControls.Label lblYear;
         
         /// <summary>
-        /// txtLorryNo control.
+        /// txtYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLorryNo;
+        protected global::System.Web.UI.WebControls.TextBox txtYear;
+        
+        /// <summary>
+        /// lblBin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBin;
+        
+        /// <summary>
+        /// ddlBin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlBin;
+        
+        /// <summary>
+        /// lblCompany control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCompany;
+        
+        /// <summary>
+        /// ddlCompany control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlCompany;
         
         /// <summary>
         /// lblVariety control.
@@ -112,94 +112,130 @@ namespace FactoryManagementSystem.Factory.Admin {
         protected global::System.Web.UI.WebControls.TextBox txtVariety;
         
         /// <summary>
-        /// lblWeight control.
+        /// lblMornigUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblWeight;
+        protected global::System.Web.UI.WebControls.Label lblMornigUp;
         
         /// <summary>
-        /// txtWeight control.
+        /// txtMornUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtWeight;
+        protected global::System.Web.UI.WebControls.TextBox txtMornUp;
         
         /// <summary>
-        /// lblMoist control.
+        /// lblMornDown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMoist;
+        protected global::System.Web.UI.WebControls.Label lblMornDown;
         
         /// <summary>
-        /// txtMoist control.
+        /// txtMornDown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMoist;
+        protected global::System.Web.UI.WebControls.TextBox txtMornDown;
         
         /// <summary>
-        /// lblBags control.
+        /// lblEvnUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBags;
+        protected global::System.Web.UI.WebControls.Label lblEvnUp;
         
         /// <summary>
-        /// txtBags control.
+        /// txtEvnUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBags;
+        protected global::System.Web.UI.WebControls.TextBox txtEvnUp;
         
         /// <summary>
-        /// Exective control.
+        /// lblEvnDown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Exective;
+        protected global::System.Web.UI.WebControls.Label lblEvnDown;
         
         /// <summary>
-        /// txtExecutive control.
+        /// txtEvnDown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtExecutive;
+        protected global::System.Web.UI.WebControls.TextBox txtEvnDown;
         
         /// <summary>
-        /// lblBin control.
+        /// lblShelling control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBin;
+        protected global::System.Web.UI.WebControls.Label lblShelling;
         
         /// <summary>
-        /// ddlBin control.
+        /// chkShelling control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlBin;
+        protected global::System.Web.UI.WebControls.CheckBox chkShelling;
+        
+        /// <summary>
+        /// lblShellingDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblShellingDate;
+        
+        /// <summary>
+        /// calShellingDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox calShellingDate;
+        
+        /// <summary>
+        /// lblLot control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLot;
+        
+        /// <summary>
+        /// txtLot control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtLot;
         
         /// <summary>
         /// lblRemarks control.

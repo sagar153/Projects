@@ -77,6 +77,7 @@ namespace FactoryManagementSystem.Factory.Admin
             factoryOutward.FactoryOutWardId = factoryOutwardId;
             factoryOutward.CompanyId = Convert.ToInt32(ddlCompany.SelectedItem.Value);
             factoryOutward.Year = txtYear.Text;
+            factoryOutward.DCNo = txtDCNo.Text.ToString();
             factoryOutward.Date = Convert.ToDateTime(calDate.Text);
             factoryOutward.LorryNo = txtLorryNo.Text;
             factoryOutward.Variety = txtVariety.Text;

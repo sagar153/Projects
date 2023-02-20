@@ -21,7 +21,7 @@ CREATE PROCEDURE [dbo].[spFactoryOutwardCRUD]
 	@Variety nvarchar(50),
 	@Weight decimal(18,2),
 	@Bags int,
-	@DCNo int,
+	@DCNo varchar(50),
 	@Executive varchar(100),
 	@Remarks varchar(1000),
 	@isActive bit,

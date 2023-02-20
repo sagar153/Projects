@@ -1,7 +1,7 @@
 USE [FactoryManagement]
 GO
 
-/****** Object:  Table [dbo].[FactoryOutward]    Script Date: 17-02-2023 12:12:16 ******/
+/****** Object:  Table [dbo].[FactoryOutward]    Script Date: 20-02-2023 19:13:29 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -17,7 +17,7 @@ CREATE TABLE [dbo].[FactoryOutward](
 	[LorryNo] [varchar](50) NOT NULL,
 	[Weight] [decimal](18, 2) NULL,
 	[Bags] [int] NULL,
-	[DCNo] [int] NULL,
+	[DCNo] [varchar](50) NULL,
 	[CompanyExecutive] [varchar](100) NULL,
 	[Remarks] [varchar](1000) NULL,
 	[isActive] [bit] NOT NULL,

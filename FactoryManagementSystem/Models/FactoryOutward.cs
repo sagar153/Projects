@@ -15,7 +15,7 @@ namespace FactoryManagementSystem.Models
         public string LorryNo { get; set; }
         public decimal Weight { get; set; }
         public int Bags { get; set; }
-        public int DCNo { get; set; }
+        public string DCNo { get; set; }
         public string CompanyExecutive { get; set; }
         public string Remarks { get; set; }
        

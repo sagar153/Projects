@@ -1,0 +1,8 @@
+USE [FactoryManagement]
+GO
+
+/****** Object:  User [NT AUTHORITY\SYSTEM]    Script Date: 23-02-2023 14:39:59 ******/
+CREATE USER [NT AUTHORITY\SYSTEM] FOR LOGIN [NT AUTHORITY\SYSTEM] WITH DEFAULT_SCHEMA=[dbo]
+GO
+
+

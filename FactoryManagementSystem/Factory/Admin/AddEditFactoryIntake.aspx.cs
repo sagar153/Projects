@@ -90,9 +90,30 @@ namespace FactoryManagementSystem.Factory.Admin
             factoryIntake.Date = Convert.ToDateTime(calDate.Text);
             factoryIntake.LorryNo = txtLorryNo.Text;
             factoryIntake.Variety = txtVariety.Text;
-            factoryIntake.Weight = Convert.ToDecimal(txtWeight.Text);
-            factoryIntake.Moist = Convert.ToDecimal(txtMoist.Text);
-            factoryIntake.Bags = Convert.ToInt32(txtBags.Text);
+            if (!string.IsNullOrEmpty(txtWeight.Text))
+            {
+                factoryIntake.Weight = Convert.ToDecimal(txtWeight.Text);
+            }
+            else
+            {
+                factoryIntake.Weight = null;
+            }
+            if (!string.IsNullOrEmpty(txtMoist.Text))
+            {
+                factoryIntake.Moist = Convert.ToDecimal(txtMoist.Text);
+            }
+            else
+            {
+                factoryIntake.Moist = null;
+            }
+            if (!string.IsNullOrEmpty(txtBags.Text))
+            {
+                factoryIntake.Bags = Convert.ToInt32(txtBags.Text);
+            }
+            else
+            {
+                factoryIntake.Bags = null;
+            }            
             factoryIntake.Lot = 0;
             factoryIntake.Executive = txtExecutive.Text;
             factoryIntake.BinId = Convert.ToInt32(ddlBin.SelectedItem.Value);

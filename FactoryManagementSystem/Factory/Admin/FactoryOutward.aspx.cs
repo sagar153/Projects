@@ -67,12 +67,11 @@ namespace FactoryManagementSystem.Factory.Admin
 
         protected void grdFactoryOutward_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            GridViewRow row = (GridViewRow)((Control)e.CommandSource).NamingContainer;
-
-            int id = Convert.ToInt32(grdFactoryOutward.DataKeys[row.RowIndex].Values["FactoryOutWardId"].ToString());
-
             if (e.CommandName == "EditIntake")
             {
+                GridViewRow row = (GridViewRow)((Control)e.CommandSource).NamingContainer;
+
+                int id = Convert.ToInt32(grdFactoryOutward.DataKeys[row.RowIndex].Values["FactoryOutWardId"].ToString());
                 Response.Redirect("/Factory/Admin/AddEditFatcoryOutward.aspx?OutwardId=" + id.ToString());
             }
         }

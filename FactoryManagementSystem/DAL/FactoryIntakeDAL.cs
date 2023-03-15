@@ -85,9 +85,30 @@ namespace FactoryManagementSystem.DAL
             paramArray[3] = new SqlParameter() { ParameterName = "@Date", Value = factoryIntake.Date };
             paramArray[4] = new SqlParameter() { ParameterName = "@LorryNo", Value = factoryIntake.LorryNo };
             paramArray[5] = new SqlParameter() { ParameterName = "@Variety", Value = factoryIntake.Variety };
-            paramArray[6] = new SqlParameter() { ParameterName = "@Weight", Value = factoryIntake.Weight };
-            paramArray[7] = new SqlParameter() { ParameterName = "@Moist", Value = factoryIntake.Moist };
-            paramArray[8] = new SqlParameter() { ParameterName = "@Bags", Value = factoryIntake.Bags };
+            if (factoryIntake.Moist == null)
+            {
+                paramArray[6] = new SqlParameter() { ParameterName = "@Weight", Value = DBNull.Value };
+            }
+            else
+            {
+                paramArray[6] = new SqlParameter() { ParameterName = "@Weight", Value = factoryIntake.Weight };
+            }
+            if (factoryIntake.Moist == null)
+            {
+                paramArray[7] = new SqlParameter() { ParameterName = "@Moist", Value = DBNull.Value };
+            }
+            else
+            {
+                paramArray[7] = new SqlParameter() { ParameterName = "@Moist", Value = factoryIntake.Moist };
+            }
+            if (factoryIntake.Bags == null)
+            {
+                paramArray[8] = new SqlParameter() { ParameterName = "@Bags", Value = DBNull.Value };
+            }
+            else
+            {
+                paramArray[8] = new SqlParameter() { ParameterName = "@Bags", Value = factoryIntake.Bags };
+            }
             paramArray[9] = new SqlParameter() { ParameterName = "@Lot", Value = factoryIntake.Lot };
             paramArray[10] = new SqlParameter() { ParameterName = "@Executive", Value = factoryIntake.Executive };
             paramArray[11] = new SqlParameter() { ParameterName = "@BinId", Value = factoryIntake.BinId };

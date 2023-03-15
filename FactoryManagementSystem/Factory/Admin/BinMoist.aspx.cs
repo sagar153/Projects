@@ -55,13 +55,12 @@ namespace FactoryManagementSystem.Factory.Admin
         }
 
         protected void grdBinMoist_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            GridViewRow row = (GridViewRow)((Control)e.CommandSource).NamingContainer;
-
-            int id = Convert.ToInt32(grdBinMoist.DataKeys[row.RowIndex].Values["BinDailyMoistId"].ToString());
-
+        {            
             if (e.CommandName == "EditBinMoist")
             {
+                GridViewRow row = (GridViewRow)((Control)e.CommandSource).NamingContainer;
+
+                int id = Convert.ToInt32(grdBinMoist.DataKeys[row.RowIndex].Values["BinDailyMoistId"].ToString());
                 Response.Redirect("/Factory/Admin/AddEditBinMoist.aspx?Id=" + id.ToString());
             }
         }

@@ -61,12 +61,11 @@ namespace FactoryManagementSystem.Production.Admin
         }
 
         protected void grdProduction_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            GridViewRow row = (GridViewRow)((Control)e.CommandSource).NamingContainer;
-            int id = Convert.ToInt16(grdProduction.DataKeys[row.RowIndex].Values["ProductionId"].ToString());
-
+        {            
             if (e.CommandName == "EditProd")
             {
+                GridViewRow row = (GridViewRow)((Control)e.CommandSource).NamingContainer;
+                int id = Convert.ToInt16(grdProduction.DataKeys[row.RowIndex].Values["ProductionId"].ToString());
                 Response.Redirect("/Production/Admin/ProductionDetails.aspx?prodId=" + id.ToString());
             }
         }

@@ -68,13 +68,12 @@ namespace FactoryManagementSystem.Factory.Admin
         }
 
         protected void grdFactoryIntake_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            GridViewRow row = (GridViewRow)((Control)e.CommandSource).NamingContainer;
-
-            int id = Convert.ToInt32(grdFactoryIntake.DataKeys[row.RowIndex].Values["FactoryIntakeId"].ToString());
-
+        {            
             if (e.CommandName == "EditIntake")
             {
+                GridViewRow row = (GridViewRow)((Control)e.CommandSource).NamingContainer;
+
+                int id = Convert.ToInt32(grdFactoryIntake.DataKeys[row.RowIndex].Values["FactoryIntakeId"].ToString());
                 Response.Redirect("/Factory/Admin/AddEditFactoryIntake.aspx?IntakeId="+id.ToString());
             }
         }

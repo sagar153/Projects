@@ -27,7 +27,7 @@ namespace FactoryManagementSystem.Factory.User
             
             if (details.Rows.Count > 0)
             {
-                grdShelling.Columns[7].FooterText = details.AsEnumerable().Select(x => x.Field<int>("Bags")).Sum().ToString();
+                grdShelling.Columns[7].FooterText = details.AsEnumerable().Sum(r => r.Field<int?>("Bags") ?? 0).ToString();
             }
             grdShelling.DataBind();
         }

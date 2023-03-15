@@ -47,12 +47,12 @@ namespace FactoryManagementSystem.Production.Admin
         }
 
         protected void grdAdvance_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            GridViewRow row = (GridViewRow)((Control)e.CommandSource).NamingContainer;
-            int id = Convert.ToInt16(grdAdvance.DataKeys[row.RowIndex].Values["OrganiserAdvanceId"].ToString());
-
+        {            
             if (e.CommandName == "EditAdvance")
             {
+                GridViewRow row = (GridViewRow)((Control)e.CommandSource).NamingContainer;
+                int id = Convert.ToInt16(grdAdvance.DataKeys[row.RowIndex].Values["OrganiserAdvanceId"].ToString());
+
                 Response.Redirect("/Production/Admin/OrgAdvanceDetails.aspx?advanceId=" + id.ToString());
             }
         }

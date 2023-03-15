@@ -4,7 +4,7 @@
     <table style="width: 100%;">
         <tr>
             <td style="text-align: center">
-                <strong>Factory Intake Management</strong></td>
+                <strong>Bin Moist & shelling</strong></td>
         </tr>
         <tr style="height: 20px; text-align: right">
             <td>

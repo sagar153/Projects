@@ -85,7 +85,7 @@ namespace FactoryManagementSystem.DAL
             paramArray[3] = new SqlParameter() { ParameterName = "@Date", Value = factoryIntake.Date };
             paramArray[4] = new SqlParameter() { ParameterName = "@LorryNo", Value = factoryIntake.LorryNo };
             paramArray[5] = new SqlParameter() { ParameterName = "@Variety", Value = factoryIntake.Variety };
-            if (factoryIntake.Moist == null)
+            if (factoryIntake.Weight == null)
             {
                 paramArray[6] = new SqlParameter() { ParameterName = "@Weight", Value = DBNull.Value };
             }

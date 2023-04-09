@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CompanyDetails.aspx.cs" Inherits="FactoryManagementSystem.Factory.User.CompanyDetails" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" EnableEventValidation ="false" CodeBehind="CompanyDetails.aspx.cs" Inherits="FactoryManagementSystem.Factory.User.CompanyDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
       <asp:HiddenField ID="hdnCompanyId" runat="server"/>
     <table style="width: 100%;">

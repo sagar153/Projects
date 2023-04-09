@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FactoryIntake.aspx.cs" Inherits="FactoryManagementSystem.Factory.User.FactoryIntake" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" EnableEventValidation ="false" CodeBehind="FactoryIntake.aspx.cs" Inherits="FactoryManagementSystem.Factory.User.FactoryIntake" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     
     <table style="width: 100%;">

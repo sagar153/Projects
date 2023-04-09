@@ -31,8 +31,8 @@ namespace FactoryManagementSystem.Factory.User
             if (companyDetails.Rows.Count > 0)
             {
                 lblCompanyName.InnerText = companyDetails.Rows[0]["CompanyName"].ToString();
-                grdCompanyDetails.Columns[3].FooterText = companyDetails.AsEnumerable().Select(x => x.Field<decimal>("Weight")).Sum().ToString();
-                grdCompanyDetails.Columns[8].FooterText = companyDetails.AsEnumerable().Select(x => x.Field<int>("Bags")).Sum().ToString();
+                grdCompanyDetails.Columns[3].FooterText = companyDetails.AsEnumerable().Select(x => x.Field<decimal?>("Weight")).Sum().ToString();
+                grdCompanyDetails.Columns[8].FooterText = companyDetails.AsEnumerable().Select(x => x.Field<int?>("Bags")).Sum().ToString();
             }
             grdCompanyDetails.DataBind();
         }
@@ -40,7 +40,8 @@ namespace FactoryManagementSystem.Factory.User
         protected void grdCompanyDetails_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             grdCompanyDetails.PageIndex = e.NewPageIndex;
-            LoadData(Convert.ToInt32(hdnCompanyId));
+            var companyId = Convert.ToInt32(Request.Params["Id"]);
+            LoadData(companyId);
         }
 
         public override void VerifyRenderingInServerForm(Control control)
@@ -60,6 +61,10 @@ namespace FactoryManagementSystem.Factory.User
 
             System.Web.UI.HtmlTextWriter htmlWrite =
             new HtmlTextWriter(stringWrite);
+
+            grdCompanyDetails.AllowPaging = false;
+            var companyId = Convert.ToInt32(Request.Params["Id"]);
+            LoadData(companyId);
 
             grdCompanyDetails.RenderControl(htmlWrite);
 

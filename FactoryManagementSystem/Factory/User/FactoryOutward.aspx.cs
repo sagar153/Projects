@@ -41,8 +41,8 @@ namespace FactoryManagementSystem.Factory.User
             
             if (details.Rows.Count > 0)
             {
-                grdOutward.Columns[5].FooterText = details.AsEnumerable().Select(x => x.Field<int>("Bags")).Sum().ToString();
-                grdOutward.Columns[4].FooterText = details.AsEnumerable().Select(x => x.Field<decimal>("Weight")).Sum().ToString();
+                grdOutward.Columns[5].FooterText = details.AsEnumerable().Select(x => x.Field<int?>("Bags")).Sum().ToString();
+                grdOutward.Columns[4].FooterText = details.AsEnumerable().Select(x => x.Field<decimal?>("Weight")).Sum().ToString();
             }
             grdOutward.DataBind();
         }
@@ -70,6 +70,9 @@ namespace FactoryManagementSystem.Factory.User
 
             System.Web.UI.HtmlTextWriter htmlWrite =
             new HtmlTextWriter(stringWrite);
+
+            grdOutward.AllowPaging = false;
+            LoadData();
 
             grdOutward.RenderControl(htmlWrite);
 

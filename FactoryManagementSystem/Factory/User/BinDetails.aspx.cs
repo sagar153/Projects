@@ -17,7 +17,6 @@ namespace FactoryManagementSystem.Factory.User
             hdnBinId.Value = binId.ToString();
             if (!Page.IsPostBack)
             {
-
                 LoadData(binId);
             }
         }
@@ -46,7 +45,8 @@ namespace FactoryManagementSystem.Factory.User
         protected void gvBinMoist_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvBinMoist.PageIndex = e.NewPageIndex;
-            LoadData(Convert.ToInt32(hdnBinId));
+            var binId = Convert.ToInt32(Request.Params["binId"]);
+            LoadData(binId);
         }
 
         public override void VerifyRenderingInServerForm(Control control)
@@ -66,6 +66,10 @@ namespace FactoryManagementSystem.Factory.User
 
             System.Web.UI.HtmlTextWriter htmlWrite =
             new HtmlTextWriter(stringWrite);
+
+            gvBinMoist.AllowPaging = false;
+            var binId = Convert.ToInt32(Request.Params["binId"]);
+            LoadData(binId);
 
             gvBinMoist.RenderControl(htmlWrite);
 

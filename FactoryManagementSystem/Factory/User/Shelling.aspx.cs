@@ -70,6 +70,9 @@ namespace FactoryManagementSystem.Factory.User
             System.Web.UI.HtmlTextWriter htmlWrite =
             new HtmlTextWriter(stringWrite);
 
+            grdShelling.AllowPaging = false;
+            LoadData();
+
             grdShelling.RenderControl(htmlWrite);
 
             Response.Write(stringWrite.ToString());

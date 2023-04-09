@@ -24,7 +24,7 @@ namespace FactoryManagementSystem.Factory.User
             grdFactoryIntake.DataSource = intakeDetails;
             if (intakeDetails.Rows.Count > 0)
             {
-                grdFactoryIntake.Columns[5].FooterText = intakeDetails.AsEnumerable().Select(x => x.Field<decimal>("Weight")).Sum().ToString();
+                grdFactoryIntake.Columns[5].FooterText = intakeDetails.AsEnumerable().Select(x => x.Field<decimal?>("Weight")).Sum().ToString();
             }
             grdFactoryIntake.DataBind();
         }
@@ -66,6 +66,9 @@ namespace FactoryManagementSystem.Factory.User
 
             System.Web.UI.HtmlTextWriter htmlWrite =
             new HtmlTextWriter(stringWrite);
+
+            grdFactoryIntake.AllowPaging = false;
+            LoadData();
 
             grdFactoryIntake.RenderControl(htmlWrite);
 
